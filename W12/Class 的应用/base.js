@@ -1,5 +1,6 @@
+//默认参数
 import {DEFAULTS} from './defaults.js'
-// base
+// 常量
 import {ELEMENT_NODE,SLIDER_ANIMATION_CLASSNAME} from './constants.js';
 
 class BaseSlider {
