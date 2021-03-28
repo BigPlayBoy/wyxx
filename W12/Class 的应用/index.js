@@ -1,5 +1,5 @@
 import Slider from './Slider.js';
-import mySlider from './mySlider.js';
+// import mySlider from './mySlider.js';
 
 const slider = document.querySelector(".slider");
 const leftBtn = document.querySelector(".leftBtn");
@@ -23,4 +23,4 @@ slider.addEventListener('mouseout', () => {
     }, 1500);
 }, false);
 new Slider(slider, myOptions);
-new mySlider(slider, myOptions);
+// new mySlider(slider, myOptions);
