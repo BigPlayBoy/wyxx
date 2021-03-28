@@ -11,3 +11,12 @@ https://babeljs.io/  babel 官网
 安装webpack需要的包
  npm install --save-dev webpack-cli@3.3.12  webpack@4.44.1
  webpack 官网 https://www.webpackjs.com/
+
+ 在webpack中安装babel-loader相关依赖
+ npm install --save-dev babel-loader@8.1.0 @babel/core@7.11.0 @babel/preset-env@7.11.0
+
+ 安装 core-js
+ npm install --save-dev core-js@3.6.5
+
+ 安装html-webpack-plugin
+ npm install --save-dev html-webpack-plugin@4.3.0
