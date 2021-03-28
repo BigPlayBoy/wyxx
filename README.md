@@ -20,3 +20,5 @@ https://babeljs.io/  babel 官网
 
  安装html-webpack-plugin
  npm install --save-dev html-webpack-plugin@4.3.0
+安装 css-loader
+npm install --save-dev css-loader@4.1.1
