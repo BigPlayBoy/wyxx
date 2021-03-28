@@ -8,3 +8,6 @@ https://babeljs.io/  babel 官网
 
  "build": "babel src -d lib"
  用babel把src目录里面的文件编译一下，放到lib文件夹中
+安装webpack需要的包
+ npm install --save-dev webpack-cli@3.3.12  webpack@4.44.1
+ webpack 官网 https://www.webpackjs.com/
