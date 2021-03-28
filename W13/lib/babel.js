@@ -1,24 +1,30 @@
-let name = 'Alex';
-const age = 18;
+"use strict";
 
-const add = (x, y) => x + y;
+require("./index.js");
 
-new Promise((resolve, reject) => {
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var name = 'Alex';
+var age = 18;
+
+var add = function add(x, y) {
+  return x + y;
+};
+
+new Promise(function (resolve, reject) {
   resolve("成功");
-}).then(value => {
+}).then(function (value) {
   console.log(value);
 });
 Array.from([1, 2]);
 
-class Person {
-  constructor(name, age) {
-    Object.assign(this, {
-      name,
-      age
-    });
-  }
+var Person = function Person(name, age) {
+  _classCallCheck(this, Person);
 
-}
+  Object.assign(this, {
+    name: name,
+    age: age
+  });
+};
 
 new Person('alex', 18);
-import './index.js';
