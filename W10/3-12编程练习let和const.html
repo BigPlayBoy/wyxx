@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        li{
+            transition: all 0.3s ease 0s;
+        }
+        .current{
+            font-size: 32px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>jquery</li>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>ES6</li>
+    </ul>
+    <script type="text/javascript">
+        //补充代码
+        var lis = document.querySelectorAll("li");
+        for (let i = 0; i < lis.length; i++) {
+            // 先将每个li原本的文本保存起来
+            let innertext=lis[i].innerText;
+            lis[i].onmousemove = function () {
+                console.log("给每个li元素绑定事件监听");
+                lis[i].innerText=innertext+"我是第"+(i+1)+"个";
+                lis[i].className="current";
+            };
+            lis[i].onmouseout = function () {
+                console.log("给每个li元素绑定事件监听");
+                lis[i].className=" ";
+                lis[i].innerText=innertext;
+            };
+        }
+    </script>
+</body>
+
+</html>

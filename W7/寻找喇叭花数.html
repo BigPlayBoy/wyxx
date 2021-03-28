@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function factorial(a){
+            result=1;
+            for(var i=a;i>1;i--){
+                result*=i;
+            }
+            return result;
+        }
+        function labahua(i){
+            var a=i.toString().charAt(0);
+            var b=i.toString().charAt(1);
+            var c=i.toString().charAt(2);
+            // document.write(factorial(a)+"<br>")
+            if(factorial(a)+factorial(b)+factorial(c)==i) return true;
+            return false;
+        }
+        for (var i=100;i<1000;i++){
+            if(labahua(i)){
+                document.write(i+"是喇叭花数<br>");
+            }else{
+                // document.write(i+"不是喇叭花数<br>");
+            }
+        }
+    </script>
+</body>
+</html>

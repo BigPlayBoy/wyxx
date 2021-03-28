@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 88px;
+            height: 88px;
+            background-image: url(images/xin.png);
+            background-repeat: no-repeat;
+        }
+        .father{
+            position: relative;
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+        .son{
+            position: absolute;
+            top: 0;
+            animation: heart .6s ease 0s infinite;
+        }
+        @keyframes heart {
+            from{
+                transform: scale(0);
+                opacity: 1;
+            }
+            to{
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box father">
+        <div class="box son"></div>
+    </div>
+</body>
+</html>

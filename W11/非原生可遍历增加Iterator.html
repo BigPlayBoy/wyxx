@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            "0": "xm",
+            "sex": "male",
+            length: 2
+        }
+        // 在此补充代码
+        obj[Symbol.iterator] = () => {
+            let index = 0;
+            return {
+                next() {
+                    let value;
+                    let done;
+                    if (index == '0') {
+                        value = obj[index];
+                        done = false;
+                        index = 'sex';
+                    } else if (index == "sex") {
+                        value = obj[index];
+                        done = false;
+                        index = 'length';
+                    } else if (index == "length") {
+                        value = obj[index];
+                        done = false;
+                        index = 'undefined';
+                    } else {
+                        value = undefined;
+                        done = true
+                    }
+                    return {
+                        value,
+                        done
+                    }
+                }
+            }
+        }
+        for (const value of obj) {
+            console.log("输出结果为");
+            console.log(value);
+        }
+        console.log(...obj);
+
+    </script>
+</body>
+
+</html>

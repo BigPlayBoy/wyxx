@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //封装一个函数，这个函数的功能就是私有化变量
+        function fun() {
+            // 定义一个局部变量
+            var a = 0;
+            // return function(){
+            //     alert(a);
+            // }
+            return {
+                getA: function () {
+                    return a;
+                },
+                add:function(){
+                    a++;
+                },
+                pow:function(n){
+                    a*=n;
+                }
+            }
+        }
+        var obj = fun();
+        // 如果想在fun（）函数外面使用a  必须通过调用getA()方法；
+        console.log(obj.getA());
+        obj.add();
+
+        console.log(obj.getA());
+        obj.pow(10);
+        console.log(obj.getA());
+
+        
+    </script>
+</body>
+
+</html>

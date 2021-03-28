@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var username="小星星";
+        function func(){
+            console.log(username);
+            var username="小鱼";
+            function funcname(){
+                username="xiaomu";
+            }
+            funcname(username);
+            console.log(username);
+        }
+        func();
+        console.log(username);
+
+
+        function out(){
+            var num=1;
+            function inner(){
+                num++;
+                console.log(num);
+            }
+            return inner;
+        }
+        var fn1=out();
+        var fn2=out();
+        fn1();
+        fn1();
+        fn2();
+        fn2();
+        if(isNan)
+    </script>
+</body>
+</html>

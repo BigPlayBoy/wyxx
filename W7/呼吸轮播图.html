@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>呼吸轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel {
+            width: 360px;
+            height: 240px;
+            border: 1px solid red;
+            margin: 100px auto;
+            position: relative;
+        
+        }
+
+        .carousel ul {
+            list-style: none;
+           
+        }
+
+        .carousel ul li {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease 0s;
+        }
+        /* 只有第一张透明度为1 */
+        .carousel ul li:first-child{
+            opacity:1;
+        }
+
+        .carousel .leftbtn {
+            width: 30px;
+            height: 30px;
+            background-color: green;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            left: 20px;
+        }
+
+        .carousel .rightbtn {
+            width: 30px;
+            height: 30px;
+            background-color: green;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+        <ul id="list">
+            <li><img src="images/03-01.jpg" alt=""></li>
+            <li><img src="images/03-02.jpg" alt=""></li>
+            <li><img src="images/03-03.jpg" alt=""></li>
+            <li><img src="images/03-04.jpg" alt=""></li>
+            <li><img src="images/03-05.jpg" alt=""></li>
+            <li><img src="images/03-06.jpg" alt=""></li>
+        </ul>
+        <a href="javascript:;" class="leftbtn" id="leftbtn"></a>
+        <a href="javascript:;" class="rightbtn" id="rightbtn"></a>
+    </div>
+    <script>
+        var leftbtn = document.getElementById("leftbtn");
+        var rightbtn = document.getElementById("rightbtn");
+        var list = document.getElementById("list");
+        var imgs=list.children;
+        var i=0;
+        var lock=true;
+        console.log(imgs.length);
+        leftbtn.onclick=function(){
+            if(!lock)return;
+            lock=false;
+            imgs[i].style.opacity=0;
+            i++;
+            if(i==(imgs.length-1))i=0;
+            imgs[i].style.opacity=1;
+            console.log(i);
+            setTimeout(function(){
+                lock=true;
+            },500);
+
+        }
+        rightbtn.onclick=function(){
+            if(!lock)return;
+            lock=false;
+            imgs[i].style.opacity=0;
+            i--;
+            if(i==-1)i=imgs.length-1;
+            imgs[i].style.opacity=1;
+            console.log(i);
+            setTimeout(function(){
+                lock=true;
+            },500);
+        }
+    </script>
+</body>
+
+</html>

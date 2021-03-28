@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完成注册功能</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        form span {
+            display: none;
+        }
+
+        .inline {
+            display: inline-block;
+            background-color: red;
+            width: 400px;
+            height: 20px;
+        }
+
+        #p1,
+        #p2,
+        #p3 {
+            display: inline-block;
+            width: 50px;
+            height: 10px;
+            /* padding: 5px  0 5px ; */
+            margin-right: 20px;
+            background-color: gray;
+        }
+
+        .rows {
+            /* height: 50px; */
+            /* line-height: 50px; */
+            padding: 10px 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="get">
+        <div class="rows">
+            请输入您的用户名：
+            <input type="text" name="" id="userName">
+            <span id="userNameWarning">6-30位字母、数字或’_’，字母开头</span>
+        </div>
+        <div class="rows">
+            请输入您的密码：
+            <input type="text" name="" id="password1">
+            <span id="password1Warning">6-20位字母或数字</span>
+            <!-- 三个p标签代表三个小条进行反馈 -->
+            <p id="p1"></p>
+            <p id="p2"></p>
+            <p id="p3"></p>
+
+        </div>
+        <div class="rows">
+            请再次输入您的密码：
+            <input type="text" name="" id="password2">
+            <span id="password2Warning">6-20位字母或数字</span>
+        </div>
+        <div>
+            <button id="btn">注册</button>
+        </div>
+    </form>
+    <script>
+        var userName = document.getElementById("userName");
+        var userNameWarning = document.getElementById("userNameWarning");
+        var password1 = document.getElementById("password1");
+        var password1Warning = document.getElementById("password1Warning");
+        var password2 = document.getElementById("password2");
+        var password2Warning = document.getElementById("password2Warning");
+        // 注册按钮
+        var btn = document.getElementById("btn");
+        // 所有的校验函数都单独写出来方便btn调用
+        // 用户名校验
+        function checkname() {
+            var user = userName.value;
+            console.log(user);
+            if (/^[a-zA-Z]{1}\w{5,29}$/.test(user)) {
+                userNameWarning.style.display = "inline";
+                userNameWarning.innerText = "用户名输入正确";
+                userNameWarning.style.color = "green";
+                return true;
+
+            } else {
+                userNameWarning.style.display = "inline";
+                userNameWarning.innerText = "6-30位字母、数字或’_’，字母开头";
+                userNameWarning.style.color = "red";
+                return false;
+            }
+        }
+        userName.onchange = function () {
+            checkname();
+        };
+        //  2、密码输入框，正确的条件是：6-20位字母或数字组成
+        // （1） 如果输入内容的不满足条件时，输入框下面给出提示内容为：6-20位字母或数字，且字体颜色变为红色。
+        // （2） 如果输入的密码内容是纯数字、纯小写字母或者纯大写字母，密码强度为低，只有第一块变为红色。
+        // （3） 如果是两种类型的结合，那么密码强度为一般，第二块变为橘色。
+        // （4） 如果是三种类型的结合，那么密码强度为高，第三块变为绿色。
+        // 第一个密码校验
+        function checkPasswd() {
+            var password = password1.value;
+            console.log(password);
+            if (/^[a-z0-9]{6,20}$/i.test(password)) {
+                // 上面的这个表达式，已经保证密码是数字，小写字母，或者大写字母的组合了
+                if (/^\d+$/.test(password) || /^[a-z]+$/.test(password) || /^[A-Z]+$/.test(password)) {
+                    // 如果输入的密码内容是纯数字、纯小写字母或者纯大写字母，密码强度为低，只有第一块变为红色。
+                    console.log("密码内容是纯数字、纯小写字母或者纯大写字母，密码强度为低，只有第一块变为红色。");
+                    p1.style.backgroundColor = "red";
+                    p2.style.backgroundColor = "gray";
+                    p3.style.backgroundColor = "gray";
+                } else if (/^[a-z]{6,20}$/i.test(password) || /^[a-z0-9]{6,20}$/.test(password) || /^[A-Z0-9]{6,20}$/.test(password)) {
+                    console.log("两种类型的结合，那么密码强度为一般，第二块变为橘色。");
+                    p1.style.backgroundColor = "red";
+                    p2.style.backgroundColor = "orange";
+                    p3.style.backgroundColor = "gray";
+                } else if (/^[a-zA-Z0-9]{6,20}$/.test(password)) {
+                    console.log("三种类型的结合，那么密码强度为高，第三块变为绿色");
+                    p1.style.backgroundColor = "red";
+                    p2.style.backgroundColor = "orange";
+                    p3.style.backgroundColor = "green";
+                }
+                return true;
+                // password1Warning.style.display = "inline";
+                // password1Warning.innerText = "用户名输入正确";
+                // password1Warning.style.color = "green";
+            } else {
+                password1Warning.style.display = "inline";
+                password1Warning.innerText = "6-30位字母、数字或’_’，字母开头";
+                password1Warning.style.color = "red";
+                return false;
+            }
+        }
+        password1.onblur = function () {
+            checkPasswd();
+        }
+        password1.onfocus = function () {
+            password1Warning.style.display = "none";
+        }
+        //         3、密码确认框，正确的条件是：与上面的密码输入框的内容一致。
+        // （1） 如果为空，那么后面给出文字提示“输入框不能为空”，且字体颜色变为红色。
+        // （2） 如果输入的密码跟上面的密码不一致，则提示“两次密码输入不一致，请重新输入”且字体颜色变为红色。
+        // （3） 如果输入的密码跟上面一致，则提示“两次输入一致”。
+        // 第二个密码校验
+        function checkPasswdAgain() {
+            var password = password2.value;
+            console.log(password);
+            if (!password) {
+                password2Warning.style.display = "inline";
+                password2Warning.innerText = "输入框不能为空";
+                password2Warning.style.color = "red";
+                return false;
+            } else if (password == password1.value) {
+                password2Warning.style.display = "inline";
+                password2Warning.innerText = "密码一致";
+                password2Warning.style.color = "green";
+                return true;
+            } else {
+                password2Warning.style.display = "inline";
+                password2Warning.innerText = "两次密码输入不一致，请重新输入";
+                password2Warning.style.color = "red";
+                return false;
+            }
+        }
+        password2.onblur = function () {
+
+
+        }
+        // 点击注册按钮，要检查所有的输入框
+        btn.onclick = function () {
+            console.log("检查所有的输入框是否合法");
+            if (checkname() && checkPasswd() && checkPasswdAgain()) {
+                console.log("校验通过");
+                return true;
+            }
+            alert("请填写正确的信息");
+            console.log("校验不通过");
+            return false;
+        }
+    </script>
+</body>
+
+</html>

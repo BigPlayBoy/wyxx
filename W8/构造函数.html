@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数</title>
+</head>
+
+<body>
+    <script>
+        function People(name, age, sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+
+        }
+        People.prototype.sayHello = function () {
+            console.log("你好，我是" + this.name + ",我今年" + this.age + "岁了，我是" + this.sex + "的");
+        }
+        People.prototype.email = "1@qq.com";
+        var xiaoming = new People("小明", 12, "男");
+        var xiaohong = new People("小红", 1, "女");
+        console.log(xiaoming);
+        xiaoming.sayHello();
+        xiaoming.email = "112@qq.com";
+        console.log(xiaoming);
+        console.log(xiaoming.email);
+        console.log(xiaohong.email);
+        console.log(xiaoming.hasOwnProperty('email'));
+        console.log(xiaohong.hasOwnProperty('email'));
+    </script>
+</body>
+
+</html>

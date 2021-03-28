@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的上下文规则3</title>
+</head>
+<body>
+    <Script>
+        function fun(){
+            console.log("我是fun函数，我的实参列表是:");
+            for(var i=0;i<arguments.length;i++){
+                console.log(arguments[i]);
+            }
+            arguments[3]();
+        }
+        fun("A","B","C",function(){
+            console.log(this[1]);
+        });
+    </Script>
+</body>
+</html>

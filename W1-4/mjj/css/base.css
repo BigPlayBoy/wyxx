@@ -1,0 +1,60 @@
+.center-wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+.clearfix {
+    overflow: hidden;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+/*  */
+section .hd{
+    position: relative;
+    /* margin-bottom: 36px; */
+}
+section .hd h2{
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+}
+section .hd .fenge{
+    width: 93px ;
+    height: 3px;
+    background-color: #0058AA;
+    margin: 0 auto;
+}
+section .hd em{
+    display: block;
+    width: 240px;
+    margin: 0 auto ;
+    /* border-bottom: 3px solid #0058AA ; */
+    padding-top: 4px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+section .hd::before{
+    content: '';
+    width: 490px;
+    height: 3px;
+    background-color: #808080;
+    position: absolute;
+    left: 0;
+    top: 38px;
+}
+section .hd::after{
+    content: '';
+    width: 490px;
+    height: 3px;
+    background-color: #808080;
+    position: absolute;
+    right: 0;
+    top: 38px;
+}

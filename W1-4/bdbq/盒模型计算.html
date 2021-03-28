@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .box1{
+            width: 400px;
+            height: 300px;
+            padding: 10px;
+            border: 6px solid blue;
+        }
+        .box2{
+            /* display: none; */
+            visibility: hidden;
+            width: 388px;
+            height: 188px;
+            border: 6px solid green;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .box3{
+            box-sizing: border-box;
+            width: 388px;
+            height: 48px;
+            border: 6px solid orange;
+            padding: 10px 0px;
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">
+            这里是一段话
+        </div>
+        <div class="box3">
+            这里是另一段话
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 编写一个函数，返回斐波那契数列中下标为n的那一项 -->
+    <script>
+        //1、1、2、3、5、8、13、21
+        function feibo(n) {
+            if (n == 1||n==0) return 1;
+            return feibo(n - 1) + feibo(n - 2);
+        }
+        document.write(feibo(5));
+    </script>
+</body>
+
+</html>

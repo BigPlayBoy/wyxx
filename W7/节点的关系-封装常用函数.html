@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <p>我是段落A</p>
+        <p>我是段落A</p>
+        <p>我是段落A</p>
+        我是文本
+        <!-- 我是注释 -->
+        <p id="para">我是段落B</p>
+        <p>我是段落C</p>
+        <p>我是段落C</p>
+        <p>我是段落C</p>
+        <p>我是段落C</p>
+    </div>
+    <script>
+        var box = document.getElementById("box");
+        var para = document.getElementById("para");
+        console.log(box.childNodes);
+        console.log(para);
+        // 封装一个函数，这个函数可以返回元素的子元素节点（兼容到IE6），类似children的功能
+        function getChildren(node) {
+            var children = [];
+            // 遍历node节点的所有子节点，判断每一个子节点的nodeType属性是不是1
+            // 如果是1，就推入结果
+            for (var i = 0; i < node.childNodes.length; i++) {
+                if (node.childNodes[i].nodeType == 1) {
+                    children.push(node.childNodes[i]);
+                }
+            }
+            return children;
+        }
+        // 封装一个函数，这个函数可以返回元素的前一个元素节点（兼容到IE6），类似previousElementSiling的功能
+        function getPreviousElementSiling(node) {
+            var o = node;
+            while (o.previousSibling != null) {
+                if (o.previousSibling.nodeType == 1) {
+                    return o.previousSibling;
+                }
+                o = o.previousSibling;
+            }
+        }
+        //返回元素的所有元素兄弟节点
+        function getAllElementSibling(node){
+            // 前面的元素节点
+            var prevs=[];
+            // 后面的元素节点
+            var nexts=[];
+            var o=node;
+            while (o.previousSibling != null) {
+                if (o.previousSibling.nodeType == 1) {
+                    prevs.unshift( o.previousSibling);
+                }
+                o = o.previousSibling;
+            }
+            o=node;
+            while (o.nextSibling != null) {
+                if (o.nextSibling.nodeType == 1) {
+                    nexts.push( o.nextSibling);
+                }
+                o = o.nextSibling;
+            }
+            return prevs.concat(nexts);
+
+        }
+        var children_nodes = getChildren(box);
+        console.log(children_nodes);
+        var a = getPreviousElementSiling(para);
+        console.log(a);
+        var b=getAllElementSibling(para);
+        console.log(b);
+    </script>
+</body>
+
+</html>

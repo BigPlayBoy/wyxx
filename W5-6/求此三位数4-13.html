@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>综合算法</title>
+</head>
+
+<body>
+    有一个三位数，个位数比百位数大，而百位数比十位数大，并且各位数字之和等于各位数字相乘之积，求此三位数。
+    <script>
+    // 补充代码
+    var a,b,c;
+    for(var i=100;i<1000;i++){
+        a=Number(i.toString().charAt(0));
+        b=Number(i.toString().charAt(1));
+        c=Number(i.toString().charAt(2));
+        // document.write(a,b,c);
+        // document.write("<br>");
+
+       
+        if(c>a&&a>b&&(a+b+c)==(a*b*c)){
+            document.write(i);
+        }
+        
+    }
+    
+    </script>
+</body>
+
+</html>

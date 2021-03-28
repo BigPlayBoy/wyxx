@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date对象</title>
+</head>
+<body>
+    <script>
+        var date=new Date();
+        document.write("年份："+date.getFullYear()+"<br>");
+        document.write("月份："+(date.getMonth()+1)+"<br>");
+        document.write("日期："+date.getDate()+"<br>");
+        document.write("星期："+date.getDay()+"<br>");
+        document.write("小时："+date.getHours()+"<br>");
+        document.write("分钟："+date.getMinutes()+"<br>");
+        document.write("秒数："+date.getSeconds()+"<br>");
+        // 显示时间戳
+        var dateStamp1=date.getTime();
+        var dateStamp2=Date.parse(date);
+        console.log("时间戳为：",dateStamp1);//这个可以显示毫秒数
+        
+        console.log("时间戳为：",dateStamp2);//这个方法得到的没有毫秒数
+    </script>
+</body>
+</html>

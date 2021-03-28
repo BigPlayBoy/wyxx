@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>splice</title>
+</head>
+
+<body>
+    <script>
+        //补充代码
+        var input;
+        var arr=[];
+        while (input != "-1") {
+            input = prompt("请输入您要插入的字符");
+            arr.push(input);
+            document.write(arr+"<br>");
+        }
+        //   跳出循环，前两项换成hello
+        arr.splice(0, 2, 'hello');
+        arr.pop();
+        console.log(arr);
+        document.write(arr+"<br>");
+    </script>
+</body>
+
+</html>

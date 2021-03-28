@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call和apply</title>
+</head>
+<body>
+    <script>
+        function sum(){
+            alert(this.chinese+this.math+this.english);
+        }
+        var xiaoming={
+            chinese:89,
+            math:95,
+            english:73
+        }
+        // xiaoming.sum=sum;
+        // xiaoming.sum();
+        sum.call(xiaoming);
+        sum.apply(xiaoming);
+    </script>
+</body>
+</html>

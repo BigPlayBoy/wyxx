@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现深克隆</title>
+</head>
+
+<body>
+    <script>
+        function deepCloneArray(a) {
+            // 如果是基本类型值，则将结果直接推入结果数组
+            var temp = [];
+            if (Array.isArray(a)) {
+                for (var i = 0; i < a.length; i++) {
+                    temp.push(deepCloneArray(a[i]));
+                }
+            } else{
+                temp.push(a);
+            };
+
+            return temp;
+        }
+
+        var arr1 = [11, 2, 33, 44, [55, 66, 77, 88], 5, [4, 3, 2], 1];
+        var result = deepCloneArray(arr1);
+        // for (var i = 0; i < arr1.length; i++) {
+        //     result.push(deepCloneArray(arr1[i]));
+
+        // }
+        document.write(result + "<br>");
+        arr1[4].push(99);
+        document.write(arr1 + "<br>");
+        document.write(arr1.length + "<br>");
+
+        document.write(result.length + "<br>");
+
+    </script>
+</body>
+
+</html>

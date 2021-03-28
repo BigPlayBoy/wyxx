@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素关系选择器</title>
+    <style>
+        .box>p{
+            color: red;
+        }
+        div>div{
+            color: green;
+        }
+        h3+p{
+            background-color: blueviolet;
+        }
+        h3~p{
+            font-size: 30px;
+        }
+        div>span+p{
+            color: red;
+        }
+        div p:nth-child(3){
+            background-color: black;
+        }
+        li:first-child{color: red;}
+        ol li:first-child{
+            color: red;
+        }
+        ol li:nth-child(2){
+            color: green;
+        }
+        ol li:last-child{
+            color:blue;
+        }
+        thead tr:first-child{
+            background-color: yellow;
+        }
+        tbody tr:nth-child(odd){
+            color: orange;
+        }
+        tbody tr:nth-child(even){
+            color:green;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>3-16编程练习</h2>
+    <table border="1" cellspacing="0" width="200">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年纪</th>
+            </tr>
+        </thead>
+        <tbody> 
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>男</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>李四</td>
+                <td>女</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>赵五</td>
+                <td>男</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>王二</td>
+                <td>男</td>
+                <td>12</td>
+            </tr>
+        </tbody>  
+    </table>
+    <ul>
+        <li>家用电器
+            <ol>
+                <li>冰箱</li>
+                <li>洗衣机</li>
+                <li>空调</li>
+            </ol>
+        </li>
+        <li>清洁用品
+            <ol>
+                <li>洗衣液</li>
+                <li>消毒液</li>
+                <li>洗厕液</li>
+            </ol>
+        </li>
+        <li>妇婴用品
+            <ol>
+                <li>奶粉</li>
+                <li>纸尿裤</li>
+                <li>奶瓶</li>
+            </ol>
+        </li>
+    </ul>
+    <!-- 这不知道这样的布局合理不合理，老师，这个题目，还有更合理的布局没有？ -->
+    <div >
+        <!-- 下面这句话不知道要加什么标签，所以选择使用span，不然不方便选择下面的p标签 -->
+        <span>我是第1个div</span>
+        <p>我是第1个P,我要变红色</p>
+        <p>我是第2个p</p>
+    </div>
+    <div>
+        <span>我是第2个div</span>
+        <p>我是第2个p，我要变红色</p>
+        <p>我是第4个p</p>
+        <p>我是第5个p</p>
+    </div>
+    <ul>
+        <li>
+            家用电器
+            <ol>
+                <li>冰箱</li>
+                <li>洗衣机</li>
+                <li>空调</li>
+            </ol>
+        </li>
+        <li>
+            清洁用品
+            <ol>
+                <li>洗衣液</li>
+                <li>消毒液</li>
+                <li>洗厕液</li>
+            </ol>
+        </li>
+        <li>妇婴用品</li>
+    </ul>
+</body>
+</html>

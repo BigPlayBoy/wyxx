@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动与定位4-6</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main {
+            position: relative;
+        }
+        
+        .banner {
+            width: 1920px;
+        }
+        
+        .banner {
+            width: 1920px;
+        }
+        
+        .banner img {
+            width: 1920px;
+        }
+        
+        .form {
+            background-color: rgba(0, 0, 0, .5);
+            /* padding-top: 100px; */
+            /* margin-top: 100px; */
+        }
+        
+        .form form {
+            /* background-color: rgba(0, 0, 0, 11); */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 504px;
+            height: 600px;
+            margin-top: -300px;
+            margin-left: -252px;
+            text-align: center;
+            line-height: 40px;
+            color: #808080;
+            background: none;
+        }
+        
+        .form p {
+            /* width: 504px;
+            height: 40px; */
+            margin-bottom: 20px;
+        }
+        
+        .form p input {
+            width: 504px;
+            height: 40px;
+            background: none;
+            border: 2px solid #808080;
+            outline: none;
+        }
+        
+        .form form p textarea {
+            width: 504px;
+            height: 110px;
+            border: 2px solid #808080;
+            background: none;
+            outline: none;
+        }
+        
+        .form form p:last-child input {
+            width: 200px;
+            color: #808080;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <banner class="banner">
+            <img src="images/banner3.jpg" alt="">
+            <div class="form">
+                <form action="#">
+                    <p>
+                        <input type="text" name="" id="" placeholder="your Nane">
+                    </p>
+                    <p>
+                        <input type="text" name="" id="" placeholder="your Phone">
+                    </p>
+                    <p>
+                        <input type="email" name="" id="" placeholder="your Email">
+                    </p>
+                    <p>
+                        <textarea name="" id="" cols="30" rows="5" placeholder="Write Your Comment Here"></textarea>
+                    </p>
+                    <p>
+                        <input type="button" value="SEND MESSAGE">
+                    </p>
+                </form>
+            </div>
+        </banner>
+    </div>
+</body>
+
+</html>

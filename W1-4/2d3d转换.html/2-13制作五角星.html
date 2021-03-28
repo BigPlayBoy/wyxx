@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>制作五星红旗</title>
+    <style>
+        .flag {
+            width: 600px;
+            height: 400px;
+            background-color: rgb(255, 0, 0);
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+            perspective: 100px;
+        }
+        
+        .flag .star {
+            width: 0px;
+            height: 0px;
+            border-right: 100px solid transparent;
+            border-left: 100px solid transparent;
+            border-bottom: 70px solid yellow;
+            /* background-color: yellow; */
+            float: left;
+            position: relative;
+            top: 50px;
+            left: 10px;
+            /* transform: rotate(35deg); */
+        }
+        
+        .flag .star::before {
+            content: '';
+            border-bottom: 80px solid yellow;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            /* background-color: yellow; */
+            position: absolute;
+            top: -45px;
+            left: -65px;
+            transform: rotate(-35deg);
+        }
+        
+        .flag .star::after {
+            content: '';
+            border-right: 100px solid transparent;
+            border-bottom: 70px solid yellow;
+            border-left: 100px solid transparent;
+            /*background-color: yellow; */
+            position: absolute;
+            left: -105px;
+            top: 3px;
+            transform: rotate(-70deg);
+        }
+        
+        .flag .star1 {
+            transform: scale(0.5) rotate(35deg);
+            /* transform: ; */
+        }
+        
+        .flag .star2 {
+            transform: translate(-125px, -46px) scale(0.2);
+        }
+        
+        .flag .star3 {
+            transform: translate(-275px, -10px) scale(0.2);
+        }
+        
+        .flag .star4 {
+            transform: translate(105px, -20px) scale(0.2);
+        }
+        
+        .flag .star5 {
+            transform: translate(-125px, 25px) scale(0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flag">
+        <div class="star star1"></div>
+        <div class="star star2"></div>
+        <div class="star star3"></div>
+        <div class="star star4"></div>
+        <div class="star star5"></div>
+
+    </div>
+
+
+</body>
+
+</html>

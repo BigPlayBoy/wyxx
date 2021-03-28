@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            function Person(name, age) {
+                this.name = name;
+                this.age = age;
+                this.say = function() {
+                    alert(this.name, this.age)
+                }
+            }
+            Person.prototype.run = function() {
+                console.log("run")
+            }
+            Person.intro = "this is a Person class"
+            Person.show = function() {
+                console.log('show')
+            }
+        */
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            run() {
+                console.log("run");
+            }
+            static intro = "this is a Person class";
+            static show() {
+                console.log("show");
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

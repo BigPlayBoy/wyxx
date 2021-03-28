@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 2000px;
+        }
+        #box {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="info">0</h1>
+    <div id="box">我是一个盒子</div>
+    <input type="text" id="input">
+    <script>
+        var box = document.getElementById("box");
+        var input = document.getElementById("input");
+        var t = 200;
+        var l = 200;
+        document.onkeydown = function (e) {
+            var i = parseInt(e.keyCode);
+
+            switch (i) {
+                case 37: l -= 3; break;
+                case 38: t -= 3; break;
+                case 39: l += 3; break;
+                case 40: t += 3; break;
+            }
+            box.style.left = l + "px";
+            box.style.top = t + "px";
+        }
+        // 在盒子里面滚动鼠标 数字会动
+        var box = document.getElementById("box");
+        var info = document.getElementById("info");
+        // 全局变量就是info中显示的数字
+        var a=0;
+        // 给盒子添加鼠标滚轮事件监听
+        box.onmousewheel=function(e){
+            // 阻止鼠标滚轮的默认事件，在这个盒子里面滚动，不再引发页面滚动
+            e.preventDefault();
+            if(e.deltaY>0){
+                a--;
+            }else{a++;}
+            info.innerText=a;
+        }
+    </script>
+</body>
+
+</html>

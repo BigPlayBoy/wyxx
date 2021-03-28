@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // let  const  声明变量和常量
+        // // let 代替var声明变量
+        // let b = 1;
+        // // const声明常量，常量声明之后不能再变化
+        // const c = 1;
+        // console.log(b);
+        // console.log(c);
+        // b++;
+        // // c++;
+        // console.log(b);
+        // console.log(c);
+
+        // const arr1 = [1, 2, 3];
+        // var arr2 = arr1;
+        // arr2.push(4);
+        // console.log(arr1);
+        // arr1.push(6);
+        // console.log(arr1);
+        // let a = 22;
+        // function func() {
+        //     console.log(a);
+        //     let a = 1;
+        // }
+        // func();
+    </script>
+    <script>
+        const a = 0;
+        function person() {
+            const obj = {
+                a: 1,
+                run: function () {
+                    for (let i = 0; i < 3; i++) {
+                        if (i == 2) {
+                            console.log(a);
+                        }
+                    }
+                }
+            }
+            obj.run();
+        }
+        person();
+    </script>
+</body>
+
+</html>

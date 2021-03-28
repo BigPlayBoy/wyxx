@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>猜数字</title>
+</head>
+
+<body>
+    <script>
+        //补充代码
+        var a = parseInt(Math.random() * 98) + 2;
+        var i;
+        var j = 0;
+        var min = 1, max = 100;
+        while (true) {
+            j++;
+            i = Number(prompt("请输入您猜的数字！" + min + "-" + max + "之间"));
+            if (isNaN(i)) {
+                alert("请输入有效的数字!!!请输入您猜的数字！" + min + "-" + max + "之间");
+                continue;
+            }
+            if (i <= min || i >= max) {
+                continue;
+            }
+            if (i < a) {
+                min = i;
+                alert("猜小了,您猜了" + j + "次,请输入您猜的数字！" + min + "-" + max + "之间");
+            } else if (i == a) {
+                alert("猜对了，数字是：" + a + "您猜了" + j + "次");
+                break;
+            } else {
+                max = i;
+                alert("猜大了,您猜了" + j + "次,请输入您猜的数字！" + min + "-" + max + "之间");
+            }
+        }
+    </script>
+</body>
+
+</html>

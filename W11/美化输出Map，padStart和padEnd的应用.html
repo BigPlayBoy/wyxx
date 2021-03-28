@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // const m = new Map([
+        //     ['apple', '10'],
+        //     ['strawberry', '5'],
+        //     ['Banana', '0']
+        // ])
+        // // 在此补充代码
+        // for (let [key, value] of m.entries()) {
+        //     console.log(`${key.padEnd(12, '-')} Count:${value.padStart(3, '0')}`);
+        // }
+        var str = '  imooc  ';
+        // 添加代码
+        var result='';
+        for (const [index,value] of [...str].entries()) {
+            console.log(index,value);
+            if (value ==' ') {
+                continue;
+            }
+            result+=value;
+        }
+        console.log(result);
+    </script>
+</body>
+
+</html>

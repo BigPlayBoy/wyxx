@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断水仙花数</title>
+</head>
+
+<body>
+    <script>
+        function shuixianhua(a) {
+            var b = a;
+            var x = a % 10;
+            a = parseInt(a / 10);
+            var y = a % 10;
+            a = parseInt(a / 10);
+            var z = a % 10;
+            console.log(Math.pow(x, 3));
+            console.log(Math.pow(y, 3));
+            console.log(Math.pow(z, 3));
+            var s = Math.pow(x, 3) + Math.pow(y, 3) + Math.pow(z, 3);
+            if (s == b) {
+                // alert(b+"是一个水仙花数.");
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function shuixianhua1(a) {
+
+            var x = parseInt(a / 100);
+            console.log("x的值是：" + x);
+            console.log(Math.pow(x, 3));
+            var y = parseInt(a / 10) % 10;
+            console.log("y的值是：" + y);
+            console.log(Math.pow(y, 3));
+            var z = a % 10;
+            console.log("z的值是：" + z);
+            console.log(Math.pow(z, 3));
+            var s = Math.pow(x, 3) + Math.pow(y, 3) + Math.pow(z, 3);
+            if (s == a) {
+                // alert(b+"是一个水仙花数.");
+                return true;
+            } else {
+                return false;
+            }
+        }
+        function shuixianhua2(a) {
+
+            var x = String(a).charAt(0);
+            var y = String(a).charAt(1);
+            var z = String(a).charAt(2);
+            var s = Math.pow(x, 3) + Math.pow(y, 3) + Math.pow(z, 3);
+            if (s == a) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        // 获取输入的数字
+        var a = Number(prompt("请输入一个整数"));
+        if (isNaN(a) && 100 <= a && a < 1000) {
+            var s = shuixianhua2(a);
+            if (s) {
+                alert(a + "是一个水仙花数");
+            } else {
+                alert(a + "不是一个水仙花数");
+            }
+        } else {
+            alert("输入的" + a + "不符合规范");
+        }
+        // 第二步，
+
+    </script>
+</body>
+
+</html>

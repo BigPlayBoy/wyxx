@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var h = 35;
+        var f = 94;
+        for (var i = 0; i < h; i++) {
+            for (var j = 0; j < h; j++) {
+                if (i + j == h && 2 * i + 4 * j == f) {
+                    document.write("鸡的数量是：" + i + ",兔子的数量是：" + j);
+                }
+            }
+        }
+        for (var i = 0; i < h; i++) {
+            var b = h - i;
+            if (2 * i + 4 * b == f) {
+                document.write("鸡的数量是：" + i + "只,兔子的数量是：" + b);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

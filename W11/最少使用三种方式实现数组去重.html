@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>实际开发中，经常有去除数组中重复项的需求，例如下列数组：</h2><h2> const arr = [1, 1, ‘1’, 17, true, true, false, false, ‘true’, ‘a’, {}, {}]; </h2><h2>在去除重复项后为： [1, ‘1’, 17, true, false, ‘true’, ‘a’, {}, {}]。 </h2><p>请同学使用至少使用三种方式实现数组去重的需求。</p>
+    <script>
+        const arr = [1, 1, '1', 17, true, true, false, false, 'true', 'a', {}, {}];
+        // 数组去重的第一种方式：通过传入set进行去重
+        const s=new Set();
+        for(let i=0;i<arr.length;i++){
+            s.add(arr[i]);
+        }
+        console.log("去重前");
+        console.log(arr);
+        console.log("通过Set去重后的结果为");
+        console.log([...s]);
+        
+
+        //去重的第二种方式，将数组的元素当成map 的键名传入，键名相同的 ，后者替换前者
+        const m=new Map();
+        for(let i=0;i<arr.length;i++){
+            m.set(arr[i],arr[i]);
+        }
+        console.log("通过Map去重后的结果为");
+        console.log(m);
+        const mta=[];
+        m.forEach((value)=>{
+            mta.push(value);
+        });
+        console.log(mta);
+        //去重的第三种方法，遍历数组，将元素存入新数组中，每存一个都在新数组中进行查找，找不到就存入，找到就跳过
+        const newArr=[];
+        // for(let i=0;i<arr.length;i++){
+        //     if(newArr.indexOf(arr[i])==-1){
+        //         newArr.push(arr[i]);
+        //     }
+        // }
+        for(let i=0;i<arr.length;i++){
+            if(!newArr.includes(arr[i])){
+                newArr.push(arr[i]);
+            }
+        }
+        console.log("通过遍历去重后的结果为");
+        console.log(newArr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件委托</title>
+</head>
+
+<body>
+    <button id="btn">按我创建新的列表项</button>
+    <ul id="list">
+        <li>列表项1</li>
+        <li><span>我是span</span>列表项1</li>
+        <li>列表项1</li>
+        <li><span>我是span</span>列表项1</li>
+        <li><span>我是span</span>列表项1</li>
+        <li>列表项1</li>
+        <li><span>我是span</span>列表项1</li>
+    </ul>
+    <script>
+        var oList = document.getElementById('list');
+        // 监听ul的onclick事件就好了
+        oList.onclick = function (e) {
+            //e.target是动作发生的元素，即：点到哪个li元素 ，哪个元素就变红
+            e.target.style.color = "red";
+        }
+        var btn=document.getElementById("btn");
+        btn.onclick=function(){
+            var nLi=document.createElement("li");
+            nLi.innerText="我是新来的";
+            oList.appendChild(nLi);
+        }
+    </script>
+</body>
+
+</html>

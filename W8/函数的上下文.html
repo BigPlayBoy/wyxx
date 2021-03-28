@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数的上下文</title>
+</head>
+
+<body>
+    <script>
+        function outer() {
+            var a = 1;
+            var b = 2;
+            console.log("我在函数outer里面");
+            return {
+                a: 33,
+                b: 44,
+                fn: function () {
+                    console.log("我在函数fn里面");
+                    console.log(this.a + this.b);
+                }
+            };
+        }
+        var a = outer();
+        a.fn();
+        // fn();
+
+        console.log("****************************************************************");
+        function fun() {
+            console.log("fun函数被调用了");
+            return this.a + this.b;
+        }
+        var a = 1;
+        var b = 20;
+        var obj = {
+            a: 30,
+            b: fun(),//这个位置的fun是直接运行的 ，上下文是window对象
+            fun: fun
+        };
+        // 
+        // console.log(obj.b);
+        var result = obj.fun();
+        console.log(result);
+
+        var c=1;
+        var obj={
+            a:function(){
+                var c=3;
+                return this.b;
+            },
+            b:function (){
+                var c=4;
+                document.write(this.c);
+            },
+            c:2
+        }
+        var obj1=obj.a();
+        obj1();
+
+        
+    </script>
+</body>
+
+</html>

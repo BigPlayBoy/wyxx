@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var age=28;
+        var sex='男';
+        var title=(function (){
+            if(age<18) {
+                return '小朋友';
+            }else{
+                if(sex=='男'){
+                    return '先生';
+                }else {return '女士';}
+            }
+        })();
+        // alert(title);
+        document.write(title);
+        var arr=[];
+        // for(var i=0;i<5;i++){
+        //     arr.push(function(){
+        //         alert(i);//变量i是全局变量，所有函数都共享内存中的同一个变量i
+        //     });
+        // }
+        for(var i=0;i<5;i++){
+            (function (i){//形参
+                arr.push(function (){
+                    alert(i);
+                });
+            })(i);//实参
+        }
+        arr[3]();
+    </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格标签</title>
+    <style type="text/css">
+        h1{
+            color: green;
+        }
+        h2{
+            color: blue;
+        }
+        a{
+            text-decoration: none;
+            color: red;
+        }
+        .color-red{
+            color: red;
+        }
+        .color-green{
+            color: green;
+        }
+        .color-blue{
+            color: blue;
+        }
+        .color-orange {
+            color: orange ;
+        }
+        .color-pink{
+            color: pink;
+        }
+        .fs14{
+            font-size: 14px;
+        }
+        .fs16{
+            font-size: 16px;
+        }
+        .fs18{
+            font-size: 18px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        @import url(css/1.css);
+    </style>
+</head>
+
+<body>
+    <a href="" class="color-red">我是a链接1</a>
+    <a href="" class="color-green">我是a链接2</a>
+    <a href="">我是a链接3</a>
+    <h1>我是h1标签</h1>
+    <h2>我是h2标签</h2>
+    <p>使用<span>导入式</span>导入css文件</p>
+    <ul>
+        <li>选项<span>一</span></li>
+        <li>选项<span>二</span></li>
+        <li>选项<span>三</span></li>
+    </ul>
+    <p style="color: red;font-weight: bolder;">行内式导入css样式</p>
+    <table border="2">
+        <caption>我是表格的标题</caption>
+        <tr>
+            <th>第一季度</th>
+            <th>第二季度</th>
+            <th>第三季度</th>
+            <th>第四季度</th>
+        </tr>
+        <tr>
+            <td>1 </td>
+            <td> 2 123456</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td>F</td>
+            <td>G</td>
+            <td>H</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <td>上午</td>
+            <td>下午</td>
+        </tr>
+        <tr>
+            <td>语文</td>
+            <td>英语</td>
+        </tr>
+        <tr>
+            <td>数学</td>
+            <td>历史</td>
+        </tr>
+    </table>
+    <table border="1" width="300">
+        <caption>课程表</caption>
+        <tr>
+            <th>星期一</th>
+            <th>星期二</th>
+            <th>星期四</th>
+            <th>星期五</th>
+        </tr>
+        <tr>
+            <td colspan="3">语文</td>
+            <td>生物</td>
+        </tr>
+        <tr>
+            <td>语文</td>
+            <td colspan="2">数学</td>
+
+            <td>生物</td>
+        </tr>
+        <tr>
+            <td>语文</td>
+            <td rowspan="2">数学</td>
+            <td>英语</td>
+            <td>生物</td>
+        </tr>
+        <tr>
+            <td>语文</td>
+
+            <td>英语</td>
+            <td>生物</td>
+        </tr>
+    </table>
+    <table border="1" width="500" cellspacing="10" cellpadding="25px" align="center">
+        <caption>课程表</caption>
+        <tr bgcolor="pink" align="center">
+            <th>星期一</th>
+            <th>星期二</th>
+            <th>星期三</th>
+            <th>星期四</th>
+            <th>星期五</th>
+        </tr>
+        <tr align="center">
+            <td rowspan="2">语文</td>
+            <td>数学</td>
+            <td>化学</td>
+            <td>英语</td>
+            <td>生物</td>
+        </tr>
+        <tr align="center">
+            <td>数学</td>
+            <td>化学</td>
+            <td>英语</td>
+            <td>生物</td>
+        </tr>
+        <tr align="center">
+            <td colspan="5">课间活动</td>
+        </tr>
+        <tr align="center">
+            <td>语文
+            </td>
+            <td>数学</td>
+            <td>化学</td>
+            <td>英语</td>
+            <td>生物</td>
+        </tr>
+        <tr align="center">
+            <td>语文</td>
+            <td>数学</td>
+            <td>化学</td>
+            <td>英语</td>
+            <td>生物</td>
+        </tr>
+    </table>
+</body>
+
+</html>

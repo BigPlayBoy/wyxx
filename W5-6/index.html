@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>toUpperCase和toLowerCase</title>
+</head>
+
+<body>
+    <script>
+        // 让用户输入两个数字
+        // var a=Number(prompt("请输入第一个数字"));
+        // var b=Number(prompt("请输入第二个数字"));
+        // var sum=a+b;
+        // alert(a+"+"+b+"="+sum);
+        // var l=Number(prompt("请输入三角形的底边长度"));
+        // var h=Number(prompt("请输入三角形的高"));
+        // var s=l*h/2;
+        // alert("三角形的面积是"+s);
+        // var a=0.2;
+        // var b=0.1;
+        // var sum=a+b;
+        // alert(sum.toFixed(2));
+        // function square(a) {
+        //     return Math.pow(a, 2).toFixed(2);
+        // }
+        // function square1(a) {
+        //     return (a*a).toFixed(2);
+        // }
+        // var a=Number(prompt("请输入正方形的宽"));
+        // alert(square(a));
+        // var num1=10,num2=3;
+        // var num3=num1+num2++;
+        // console.log(num3);
+        // var a = Number(prompt("请输入一个年份:"));
+        // var isrun = (a % 4 == 0 && a % 100 !== 0) || (a % 400 == 0 && a % 100 == 0);
+        // alert(isrun);
+
+        // 用户输入年龄,判断用户是否可以申领驾照 18-70
+        // var age=Number(prompt("请输入你的年龄"));
+        // if (age>=18 && age<=70){
+        //     alert("您今年"+age+"岁了,可以申领驾照了");
+        // }else{
+        //     alert("您今年"+age+"岁了,不可以申领驾照了")
+        // }
+        // if (condition) {
+            
+        // } else {
+            
+        // }
+        // BMI肥胖指数计算
+        var w=Number(prompt("请输入你的体重"));
+        var h=Number(prompt("请输入您的身高"));
+        var bmi=w/(h*h);
+        if(bmi<=18.4){
+            alert("你太瘦了");
+        }else if(bmi<24){
+alert("您的体重正常");
+        }else if(bmi<28){
+            alert("您的体重过胖");
+        }else if(bmi<32){
+            alert("您的体重肥胖");
+        }else{
+            alert("你的体重非常肥胖");
+        }
+    </script>
+</body>
+
+</html>

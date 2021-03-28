@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(a);//预编译提升定义 函数优先提升
+        var a=1;
+        console.log("分割线");
+        console.log(a);//输出1
+        function a(){
+            console.log(2);
+        }
+        console.log("分割线");
+        console.log(a);//输出1  ，说明上面的函数定义没有生效
+        console.log("分割线");
+        var a=3;
+        console.log(a);//输出3
+        function a(){//函数的定义，没有覆盖上面变量的定义
+            console.log(4);
+        }
+        console.log("分割线");
+        console.log(a);
+        console.log("分割线");
+        a();//最后a是个普通变量 不是函数 没法执行
+    </script>
+</body>
+</html>

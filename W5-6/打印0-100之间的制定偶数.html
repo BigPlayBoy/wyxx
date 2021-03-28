@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>打印所有0-100（包含100）之间除了22，44，66以及88之外的偶数，并求他们的和。</title>
+</head>
+<body>
+    <script>
+    //在此处补充代码
+    // ||i==44||i==66||i==88
+    var sum=0;
+    var i=0;
+    while(i<=100){
+        if(i==22||i==44||i==66||i==88){
+            i+=2;
+            continue;
+        }
+        document.write(i+"<br>");
+        sum+=i;
+        i+=2;
+        
+    }
+    document.write(sum);
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1=[2,3,4,5,6,6];
+        var arr2=[];
+        // 遍历第一个数组
+        for(var i=0;i<arr1.length;i++){
+            arr2.push(arr1[i]);
+
+        }
+        document.write(arr1+"<br>");
+        document.write(arr2+"<br>");
+        document.write(arr2==arr1+"<br>");//结果为false 说明只是数组数据一样，单地址不一样，实现了浅克隆
+        
+    </script>
+</body>
+</html>

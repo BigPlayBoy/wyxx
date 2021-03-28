@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>我是第二个页面</h1>
+    <p>
+        <a href="page1.html">去第一个页面</a>
+        <a href="page3.html">去第三个页面</a>
+    </p>
+    <button id="btn1">去上一个页面</button>
+    <button id="btn2">去下一个页面</button>
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        btn1.onclick = function () {
+            history.back();
+        }
+        btn2.onclick = function () {
+            history.go();
+        }
+    </script>
+</body>
+
+</html>

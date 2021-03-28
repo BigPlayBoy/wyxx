@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性选择器</title>
+    <style>
+        img{
+            width: 300px;
+        }
+        img[alt]{
+            border:3px solid red;
+        }
+        img[alt^='无锡']{
+            width: 400px;
+        }
+        img[alt*='场']{
+            width: 500px;
+        }
+        img[alt~='天空']{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/bj/0.jpg" alt="故宫角楼 天空">
+    <img src="images/bj/1.jpg" alt="鸟巢 国家体育馆">
+    <img src="images/bj/2.jpg" alt="十七孔桥">
+
+    <img src="images/wx/0.jpg" alt="无锡体育场">
+    <img src="images/wx/1.jpg" alt="无锡太湖">
+    <img src="images/wx/2.jpg" alt="无锡鼋头渚">
+    <img src="images/wx/3.jpg" alt="无锡夜景">
+</body>
+</html>

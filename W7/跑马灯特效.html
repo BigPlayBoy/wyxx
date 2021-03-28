@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel {
+            width: 360px;
+            height: 240px;
+            border: 1px solid red;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel ul {
+            width: 3000px;
+            list-style: none;
+            position: relative;
+            left: 0px;
+            transition: left 1s linear 0s;
+        }
+
+        .carousel ul li {
+            float: left;
+        }
+
+        .carousel .leftbtn {
+            width: 30px;
+            height: 30px;
+            background-color: green;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            left: 20px;
+        }
+
+        .carousel .rightbtn {
+            width: 30px;
+            height: 30px;
+            background-color: green;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            margin-top: -15px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+        <ul id="list">
+            <li><img src="images/03-01.jpg" alt=""></li>
+            <li><img src="images/03-02.jpg" alt=""></li>
+            <li><img src="images/03-03.jpg" alt=""></li>
+            <li><img src="images/03-04.jpg" alt=""></li>
+            <li><img src="images/03-05.jpg" alt=""></li>
+            <li><img src="images/03-06.jpg" alt=""></li>
+        </ul>
+        <a href="javascript:;" class="leftbtn" id="leftbtn"></a>
+        <a href="javascript:;" class="rightbtn" id="rightbtn"></a>
+    </div>
+    <script>
+        var leftbtn = document.getElementById("leftbtn");
+        var rightbtn = document.getElementById("rightbtn");
+        var list = document.getElementById("list");
+        // 这里不设置left值了 设置为第几张照片
+        var imgNo = 0;
+
+        var cloneli = list.firstElementChild.cloneNode(true);
+        var lock = true;
+        list.appendChild(cloneli);
+        // var 
+        leftbtn.onclick = function (e) {
+            if (!lock) return;
+            console.log(imgNo);
+            if (imgNo == 0) {
+                list.style.transition = "none";
+                list.style.left = -6 * 360 + "px";
+                imgNo = 6;
+                //设置一个延时器，时间为0毫秒
+                setTimeout(function () {
+                    list.style.transition = "left 1s linear 0s";
+                    imgNo--;
+                    list.style.left = -imgNo * 360 + "px";
+
+                }, 0);
+
+            } else {
+                imgNo--;
+                console.log(imgNo);
+                list.style.left = -imgNo * 360 + "px";
+            }
+            lock = false;
+            setTimeout(function () {
+                lock = true;
+            }, 1000);
+
+        }
+        rightbtn.onclick = function (e) {
+            if (!lock) return;
+
+            list.style.transition = "left 1s linear 0s";
+            imgNo++;
+            console.log("当前显示第" + (imgNo + 1) + "个图片");
+            if (imgNo == 6) {
+                // 设置一个延时器，将ul瞬间拉回0的位置
+                setTimeout(function () {
+                    list.style.transition = "none";
+                    list.style.left = 0;
+                    imgNo = 0;
+                }, 1000);
+            }
+            list.style.left = -imgNo * 360 + "px";
+            lock = false;
+            setTimeout(function () {
+                lock = true;
+            }, 1000);
+        };
+        window.onresize = function () {
+            console.log("窗口尺寸改变了");
+        }
+    </script>
+</body>
+
+</html>

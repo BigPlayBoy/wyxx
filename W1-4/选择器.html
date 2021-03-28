@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器练习</title>
+    <style>
+        .box p {
+            color: red;
+        }
+
+        p.fs {
+            font-style: italic;
+        }
+
+        div,
+        p,
+        h3 {
+            color: green;
+        }
+
+        div span {
+            color: pink;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:link {
+            color: orange;
+
+        }
+        p.suit a:visited {
+            color: green;
+        }
+        p.wc a:visited {
+            color: blue;
+        }
+        p.skin a:visited {
+            color: purple;
+        }
+
+        a:hover {
+            font-size: 20px;
+            border: 1px;
+            border-color: red;
+            border-style: solid;
+        }
+
+        a:active {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>商品列表</h2>
+		<p class="suit">
+			 <a href="#">衣服鞋帽</a>
+		</p>
+	    <p class="wc">
+	   	     <a href="#">厕所清洁</a>
+	    </p>
+	    <p class="skin">
+	   	     <a href="#">化妆用品</a>
+	    </p>	
+    <p>
+        <a href="http://www.imooc.com">第一个超级链接</a>
+        <a href="http://www.jd.com">第二个超级链接</a>
+        <a href="http://www.jd.com">第三个超级链接</a>
+        <a href="http://www.jd.com">第四个超级链接</a>
+    </p>
+    <div class="fs">
+        我是div
+        <p>我是div内部的p<span>我是span</span></p>
+        <p>我是div内部的p<span>我是span</span></p>
+    </div>
+    <p class="fs">我是p<span>我是span</span></p>
+    <p class="fs">我是p<span>我是span</span></p>
+    <h3>我是h3</h3>
+    <div class="box">
+        <ul>
+            <li>
+                <p>我是一个段落<em>这里是强调文字</em></p>
+            </li>
+            <li>
+                <p>我是一个段落</p>
+            </li>
+            <li>
+                <p>我是一个段落<em>这里是强调文字</em></p>
+            </li>
+        </ul>
+        <p>我是一个段落</p>
+        <p>我是一个段落</p>
+        <p>我是一个段落</p>
+    </div>
+    <p>我是一个段落</p>
+    <p>我是一个段落</p>
+    <p>我是一个段落</p>
+    <p>我是一个段落</p>
+</body>
+
+</html>

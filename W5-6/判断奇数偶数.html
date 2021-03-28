@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>if算法</title>
+</head>
+
+<body>
+    <script>
+    //补充代码
+    var n=Number(prompt("请输入数字"));
+    if(isNaN(n)||n<0){
+        alert("不是自然数")
+    }else{
+        //把小数也要排除掉
+        if(n.toString().indexOf('.')==-1){
+            if(n%2==0){
+            alert("是偶数");
+        }else{
+            alert("是奇数");
+        }
+        }else{
+            alert("请输入整数");
+        }
+        
+    }
+    </script>
+</body>
+
+</html>

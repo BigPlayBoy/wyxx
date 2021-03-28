@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Object.entries()</title>
+</head>
+<body>
+<div id="list">
+    <!--html结构参考如下：-->
+     <dl>
+         <dt>前端</dt>
+         <dd>Vue</dd>
+         <dd>Vue</dd>
+         <dd>Vue</dd>
+     </dl>
+</div>
+<script>
+    var classfies = {
+        "前端": ["Vue", "Angular", "React"],
+        "后端": ["Php", "Java", "Python"]
+    }
+    /*补充代码*/
+    var html='';
+    const list=document.getElementById("list");
+    for (const [key,value] of Object.entries(classfies)){
+        console.log(key,value);
+        html=html+'<dl><dt> '+key+"</dt>";
+        // html+=value.join("");
+        for(const values of value){
+            html+="<dd>"+values+"</dd>";
+        }
+        html+="</dl>";
+        console.log(html);
+    }
+    list.innerHTML=html;
+</script>
+</body>
+</html>

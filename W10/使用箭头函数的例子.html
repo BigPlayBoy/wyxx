@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">开始计时</button>
+    <div id="info">0</div>
+    <script>
+        const btn = document.getElementById("btn");
+        const info = document.getElementById("info");
+
+        // const timer = {
+        //     time: 0,
+        //     start: function () {
+        //         // 之前的做法，先在这里保存this方便以后调用
+        //         var self=this;
+        //         btn.addEventListener('click', function () {
+        //             setInterval(function () {
+        //                 self.time++;
+        //                 info.innerHTML = self.time;
+        //             }, 1000);
+
+        //         }, false);
+        //     }
+        // }
+        const timer = {
+            time: 0,
+            start: function () {
+                // 之前的做法，先在这里保存this方便以后调用
+                var self=this;
+                // 这两层的函数都改为箭头函数
+                // 3.找到这里，这里是匿名函数 有this了 ，谁调用它 ，this就指向谁，现在是timer调用  this 就指向timer了
+
+                btn.addEventListener('click',  () =>{
+                    // 这个也是箭头函数
+                    // 2.找到这里，它也是箭头函数，也没有this 继续向上找
+                    setInterval( () =>{
+                        // 1.箭头函数没有this，会向上寻找this
+                        // 4.此时this指向timer ，就可以获取  time的值了
+                        self.time++;
+                        info.innerHTML = self.time;
+                    }, 1000);
+
+                }, false);
+            }
+        }
+        timer.start();
+    </script>
+</body>
+
+</html>

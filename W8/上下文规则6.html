@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上下文规则6</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px dotted red;
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+    <div id="box5"></div>
+    <script>
+        function setColorToRed() {
+            this.style.backgroundColor = "red";
+        }
+        // setTimeout(,200);
+        var box1 = document.getElementById("box1");
+        var box2 = document.getElementById("box2");
+        var box3 = document.getElementById("box3");
+        var box4 = document.getElementById("box4");
+        var box5 = document.getElementById("box5");
+        box1.onclick = setColorToRed;
+        box2.onclick = setColorToRed;
+        box3.onclick = setColorToRed;
+        // 点击那个盒子，哪个盒子2000ms后变红
+        function setColorToOrange() {
+            // 使用self备份上下文，这样使用延时器就不会丢了上下文了
+            var self=this;
+            setTimeout(function(){
+                self.style.backgroundColor = "orange";
+
+            },2000);
+        }
+        box4.onclick = setColorToOrange;
+        box5.onclick = setColorToOrange;
+    </script>
+</body>
+
+</html>

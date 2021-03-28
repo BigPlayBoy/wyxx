@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li.li1{
+            color:orange !important;
+        }
+        div#div span{
+            color: green;
+            font-weight: bolder;
+        }
+        #div .p1 span{
+            color: red;
+            font-weight: normal;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="div">
+        <p class="p1"> 
+            <span>权值相同，</span>就近原则
+        </p>
+        <p class="p2">
+            <span>权值不同，</span>哪个权值高，就用哪个
+        </p>
+    </div>
+    <ul>
+        <li style="color:green" class="li1">JS基础</li>  
+        <li>JS函数</li> 
+        <li>JS对象</li>
+    </ul>
+    <ol>
+        <li class="li1">CSS基础</li>  
+        <li>CSS语法</li> 
+        <li>CSS优先级</li>
+    </ol>
+</body>
+</html>

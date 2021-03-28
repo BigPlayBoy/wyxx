@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fun();
+        // 这个函数会第二次执行，这是因为这个匿名函数 赋值给了fun，以后再执行，也是执行这个函数了
+        // 变量声明提升，无法覆盖函数定义的提升
+        var fun =function(){
+            alert("我是通过匿名函数定义出来的,这也就是通过变量的定义定义出来的");
+        }
+        // 先执行这个函数，这是因为这个是通过函数变量提升的。
+        function fun(){
+            alert("我是通过普通函数定义方法定义出来的2");
+
+        }
+        fun();
+
+        document.write(fn);
+        // function fn(){}
+        var fn=function(){}
+    </script>
+</body>
+</html>

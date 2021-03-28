@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装一个创建DOM元素的方法</title>
+</head>
+
+<body>
+    <script>
+        //    const createElement=(tag='div',content={content:'默认内容',class:'default'})=>{
+        //         let temp=document.createElement(tag);
+        //         temp.className=content.class;
+        //         temp.innerText=content.content;
+        //         // return temp;
+        //     }
+        // 空的花括号是函数参数默认值，如果不传参，就默认传空对象
+        // 第一个花括号，是对象的解构赋值
+        const body=document.getElementsByTagName("body")[0];
+        const createElement = (tag = 'div', { content = 'default', classs = 'default' } = {} ,parentNode=body ) => {
+            let temp = document.createElement(tag);
+            temp.className = classs;
+            temp.innerText = content;
+            parentNode.appendChild(temp);
+            // console.log(temp);
+            return temp;
+        }
+        console.log(createElement());
+        console.log(createElement('a'));
+        console.log(createElement('span', { content: "慕课网" }));
+        console.log(createElement('span', { undefined, class: "span" }));
+
+    </script>
+</body>
+
+</html>

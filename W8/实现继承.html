@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现继承</title>
+</head>
+<body>
+    <script>
+        // 先定义父类
+        function People(name,age,sex){
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+        }
+        People.prototype.sayHello=function(){
+            console.log("你好我是："+this.name);
+        }
+        People.prototype.sleep=function(){
+            console.log(this.name+"在睡觉zzZZ");
+        }
+        // 定义学生类
+        function Student(name,age,sex,studyNumber,school){
+            this.name=name;
+            this.age=age;
+            this.sex=sex;
+            this.studyNumber=studyNumber;
+            this.school=school;
+        }
+        // 在写Student类的方法之前添加一个关键语句
+        Student.prototype=new People();
+
+        Student.prototype.study=function(){
+            console.log(this.name+"在学习");
+        }
+        var xiaohong =new Student("小红",12,"男",20210101,"实验小学");
+        xiaohong.sayHello();
+        xiaohong.study();
+    </script>
+</body>
+</html>

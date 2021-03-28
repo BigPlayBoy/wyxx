@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+    <Script>
+        
+        var oDiv=document.getElementById("box");
+        var oTable=document.createElement("table");
+
+        for(var i=0;i<20;i++){
+            var tr=document.createElement("tr");
+            for(var j=0;j<12;j++){
+                var td=document.createElement("td");
+                td.innerText="第"+j+"个元素";
+                tr.appendChild(td);
+            }
+            oTable.appendChild(tr);
+        }
+        oDiv.appendChild(oTable);
+    </Script>
+</body>
+</html>

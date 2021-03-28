@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // for (var i = 18; i > -7; i -= 4) {
+        //     console.log(i);
+        // }
+        // for (var j = 0; j <= 1; j += 0.2) {
+        //     console.log(Number(j.toFixed(1)));
+        // }
+        // // for(var i=0;i++){
+        // //     document.write("*");
+        // // }
+        // // 计算1+2+3+...+99+100的和
+        // var sum = 0;
+        // for (var i = 1; i <= 100; i++) {
+        //     sum += i
+        // }
+        // document.write("1+2+3+...+99+100的和是" + sum);
+        // var sum = 1;
+        // for (var i = 1; i <= 100; i++) {
+        //     sum *= i;
+        // }
+        // document.write("<h1>1+2+3+...+99+100的和是" + sum+"</h1>");
+        // document.write("<h1>1-10000中，哪个数字除以3余1,除以4余2,除以5余3</h1>");
+        // for (var i = 1; i <= 100; i++) {
+        //     if(i%3==1&&i%4==2&&i%5==3){
+        //         document.write(i+"数字除以3余1,除以4余2,除以5余3<br>");
+        //     }
+        // }
+        document.write("<h1>寻找n的平方大于456789的n</h1>");
+        var n = 1;
+        document.write(n + "<br>");
+        while (n * n <= 456789) {
+            // document.write(n + "<br>");
+            n++;
+        }
+        var mydate=new Date();
+        document.write(n);
+        document.write("<h1>*********************</h1>");
+        document.write("<h1>小兔子拔萝卜,第一天拔一个,第二天拔两个,第三天拔三个，多少天拔500个</h1>");
+        var sum = 0;
+        var i = 1;
+        document.write(mydate.getTime());
+        while (sum < 500) {
+            sum += i;
+            i++;
+        }
+        i-=1;
+        document.write("第"+i+"天拔够500个，此时一共"+sum+"个");
+        document.write(mydate.getTime());
+
+    </script>
+</body>
+
+</html>

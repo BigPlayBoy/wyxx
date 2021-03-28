@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <script>
+        // const add = (...args) => {
+        //     return args.reduce((total, num) => {
+        //         return total + Math.round(num);
+        //     }, 0);
+        // }
+        // document.write(add(2, 2, 3, 4, 5, 5)+"<br>")
+        // document.write([1, 2, 3, 4, 5, 4, 3, 2, 1]);
+
+        let arr=[];
+        for(let i=0;i<10;i++){
+            arr.push(parseInt(Math.random()*100));
+        }
+        arr.sort((a,b)=>{
+            return b-a;
+        });
+        console.log(arr);
+        document.write(arr+"<br>");
+        document.write(`这组数中最大的值是：${Math.max(...arr)},最小的值是：${Math.min(...arr)}`);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            width: 150px;
+            height: 30px;
+            font-size: 20px;
+            line-height: 30px ;
+            border: 2px solid red;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面上有一个无序列表，它内部有20个li 请批量给他们添加点击事件监听，实现以下效果
+    点击那个li元素 那个li元素就变红
+    -->
+    <!-- <ul id="ul1">
+        <li>牛奶</li>
+        <li>草莓</li>
+        <li>香蕉</li>
+        <li>水蜜桃</li>
+        <li>哈密瓜</li>
+        <li>火龙果</li>
+        <li>山竹</li>
+        <li>荔枝</li>
+        <li>樱桃</li>
+        <li>苹果</li>
+        <li>核桃</li>
+    </ul> -->
+    <!-- <script>
+        var lis=document.getElementsByTagName("li");
+        for(var i=0;i<lis.length;i++){
+            lis[i].onclick=function(e){
+                // this 表示点击的这个元素
+                this.style.backgroundColor="green";
+            };
+        }
+    </script> -->
+
+    <!-- 新增元素动态绑定事件
+        页面上有一个空的无序列表<ul>，制作一个按钮，点击这个按钮就能增加一个li元素。
+        并且给每个增加的元素也要有点击事件监听 -->
+    <p>
+        <input type="button" value="点我增加列表项" id="btn">
+    </p>
+        <ul id="ul2">
+
+    </ul>
+    <script>
+        var ul=document.getElementById("ul2");
+        var btn=document.getElementById("btn");
+        btn.onclick=function(e){
+            var li=document.createElement("li");
+            li.innerText="新增的列表项";
+            li.onclick=function(e){
+                this.style.color="red";
+            };
+            ul.append(li);
+        };
+    </script>
+</body>
+</html>

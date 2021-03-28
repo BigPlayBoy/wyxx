@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>模版字符串</title>
+</head>
+
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <script type="text/javascript">
+        let person = {
+            name: "xiaoming",
+            age: 18
+        }
+        let elem = document.querySelector('.div1');
+        elem.innerHTML = "He is <b>" + person.name + " </b> " + "and we wish to know his" + person.age + ".That is all<br>";
+        // 补充代码
+        let elem1 = document.querySelector('.div2');
+        elem1.innerHTML = `He is <b> ${person.name}  </b> and 输出反引号 ---\`    输出反斜杠\\we wish to know his ${person.age} .That is all<br>`;
+          function fun() {
+            return 'Web攻城狮';
+        }
+        const str = `慕课网前端${fun()}`;
+        document.write(str);
+    </script>
+</body>
+
+</html>

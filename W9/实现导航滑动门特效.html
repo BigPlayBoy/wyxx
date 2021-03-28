@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现导航滑动门特效</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .nav {
+            padding-top: 20px;
+            height: 70px;
+            overflow: hidden;
+        }
+
+        .logo {
+            float: left;
+            margin-right: 100px;
+        }
+
+        nav {
+            float: left;
+            position: relative;
+
+        }
+
+        nav ul {
+            overflow: hidden;
+        }
+
+        nav ul li {
+            float: left;
+            margin-right: 30px;
+
+        }
+
+        nav ul li a.current {
+            color: #f01400;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            padding: 0 20px;
+            line-height: 50px;
+            height: 50px;
+            font-size: 36px;
+            color: black;
+        }
+
+        .buyNow {
+            float: right;
+
+        }
+
+        .buyNow a {
+            width: 100px;
+            font-size: 32px;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+
+        .xiahuaxian {
+            position: absolute;
+            width: 72px;
+            height: 5px;
+            left: 20px;
+            bottom: -10px;
+            background-color: #f01400;
+            transition: left 0.5s linear 0s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="logo">
+            <h1>慕课手机</h1>
+        </div>
+        <nav>
+            <ul id="navUl">
+                <li><a class="current" data-n="0" href="javsscript:;">首页</a></li>
+                <li><a data-n="1" href="javsscript:;">外观</a></li>
+                <li><a data-n="2" href="javsscript:;">配置</a></li>
+                <li><a data-n="3" href="javsscript:;">型号</a></li>
+                <li><a data-n="4" href="javsscript:;">说明</a></li>
+            </ul>
+            <div class="xiahuaxian" id="xiahuaxian">
+
+            </div>
+        </nav>
+        <div class="buyNow" style="left:20px"><a href="javascript:;">立即购买</a>
+
+        </div>
+    </div>
+    <script>
+        var navUl = document.getElementById("navUl");
+        var xhx = document.getElementById("xiahuaxian");
+        var navUlList = navUl.getElementsByTagName("a");
+        console.log(navUlList);
+        var index = 0;
+        var l = 20;//最开始的偏移量
+        xhx.style.left = "20px";
+        navUl.onmouseover = function (e) {
+            if (e.target.tagName.toLowerCase() == 'a') {
+                var n = parseInt(e.target.getAttribute("data-n"));
+                var left1 = l + 142 * n;//每次向右移动142px
+                xhx.style.left = left1 + "px";
+                for (var i = 0; i < navUlList.length; i++) {
+                        navUlList[i].className=" ";
+                }
+                e.target.className="current";
+            }
+        }
+    </script>
+</body>
+
+</html>

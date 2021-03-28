@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算身高体重是否标准</title>
+</head>
+
+<body>
+    <script>
+        // 获取输入的内容
+        function getBZeight(sex, height, weight) {
+            var bzWeight = 0;
+
+            if (isNaN(height) || height < 0) {
+                alert("请输入合法的身高数据！！单位：cm/厘米");
+                return 0;
+                // height = Number(prompt("请输入您的身高：单位：cm"));
+            }
+            if (isNaN(weight) || weight < 0) {
+                alert("请输入合法的体重数据！！单位：kg/千克");
+                return 0;
+                // weight = Number(prompt("请输入您的体重，单位：kg"));
+            }
+            // 判断数据是否合法
+            if (sex == "男" || sex == 1) {
+                // 这是男性
+                bzWeight = (height - 80) * 0.7
+            } else if (sex == "女" || sex == 0) {
+                // 这是女性
+                bzWeight = (height - 70) * 0.6
+            } else {
+                alert("您输入的性别有误！")
+                return 0;
+            }
+            // 计算出标准体重之后，与输入的体重相比较
+            if (weight < bzWeight * 0.95) {
+                alert("太瘦了，要多补充营养哦")
+            } else if (weight < bzWeight * 1.05) {
+                alert("体重正常");
+            } else {
+                alert("该锻炼身体减肥了哦");
+            }
+            return 1;
+        }
+        var sex = prompt("请输入您的性别:[男/1、女/0]");
+        var height = Number(prompt("请输入您的身高：单位：cm"));
+        var weight = Number(prompt("请输入您的体重，单位：kg"));
+        getBZeight(sex,height,weight);
+    </script>
+</body>
+
+</html>

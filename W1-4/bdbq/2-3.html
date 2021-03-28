@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本控件</title>
+</head>
+<body>
+    <p>
+        请输入姓名：<input type="text" name="" id="">
+    </p>
+    <p>
+        请输入密码：<input type="password" name="" id="">
+    </p>
+    <p>
+        请选择性别<label ><input type="radio" name="sex" id="">男</label>
+        <input type="radio" name="sex" id="nv"><label for="nv">女</label>
+    </p>
+    <p>
+        请填写学校：<input type="text" name="" id="" placeholder="填写你的毕业学校">
+    </p>
+    <p>
+        请选择课程
+        <label ><input type="checkbox" name="kemu" id="yw">语文</label>
+        <label ><input type="checkbox" name="kemu" id="sx">数学</label>
+        <label ><input type="checkbox" name="kemu" id="yy">英语</label>
+        <label ><input type="checkbox" name="kemu" id="hx">化学</label>
+        <label ><input type="checkbox" name="kemu" id="sw">生物</label>
+    </p>
+    <form action="">
+        <p>名：<input type="text" name="" id=""></p>
+        <p>姓：<input type="text" name="" id=""></p>
+    </form>
+    <form action="">
+        <p>性别：<label >男<input type="radio" name="sex" id="" value="男"></label>
+            <label >女<input type="radio" name="sex" id="" value="女"></label>
+        </p>
+        <p>
+            我喜欢的水果：
+        </p>
+        <p>
+            <label ><input type="checkbox" name="fruit" id="">苹果</label>
+        </p>
+        <p>
+            <label ><input type="checkbox" name="fruit" id="">梨子</label>
+        </p>
+        <p>
+            <label ><input type="checkbox" name="fruit" id="">桃子</label>
+        </p>
+        <p>
+            请选择支付方式
+            <select name="pay" id="pay">
+                <option value="wx">微信</option>
+                <option value="zfb">支付宝</option>
+                <option value="yh">银行卡</option>
+            </select>
+        </p>
+        <p>
+            请输入个人简介<textarea name="" id="" cols="30" rows="10"></textarea>
+        </p>
+        <h2>HTML新增的表单控件</h2>
+        <p>
+            颜色选择控件<input type="color" name="" id="" required>
+        <p>
+            日期、时间选择控件<input type="date" name="" id="">
+        </p>
+        <p>
+            日期、时间选择控件<input type="time" name="" id="">
+        </p>
+        <p>
+            电子邮件输入控件<input type="email" name="" id="">
+        </p>
+        <p>
+            文件选择控件<input type="file" name="" id="">
+        </p>
+        <p>
+            数字输入控件<input type="number" name="" id="">
+        </p>
+        <p>
+            拖拽条<input type="range" name="" id="">
+        </p>
+        <p>
+            搜索框<input type="search" name="" id="">
+        </p>
+        <p>
+            网址输入控件<input type="url" name="" id="">
+        </p>
+        </p>
+        <p>
+            <input type="text" list="province-list" name="" id="">
+            <datalist id="province-list">
+                <option value="北京">
+                <option value="上海">
+                <option value="四川">
+                <option value="重庆">
+                <option value="云南">
+            </datalist>
+        </p>
+        <p>请做自我介绍：</p>
+        <p><textarea name="" id="" cols="20" rows="3" placeholder="请在此处介绍自己"></textarea></p>
+        <button>我是一个普通按钮</button>
+        <button type="submit">我是一个提交按钮</button>
+        <button type="reset">我是一个重置按钮</button>
+    </form>
+</body>
+</html>

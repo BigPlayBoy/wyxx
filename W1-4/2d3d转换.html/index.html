@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            perspective: 5000px;
+            border: 1px solid red;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        .wutai{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            perspective: 5000px;
+        }
+        
+        .box>div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+        }
+        
+        .box1 {
+            transform: translateZ(100px);
+            background-color: rgba(254, 33, 22, 0.5);
+        }
+        
+        .box2 {
+            /* 顶面 */
+            transform: rotateX(90deg) translateZ(100px);
+            background-color: rgba(125, 44, 99, 0.5);
+        }
+        
+        .box3 {
+            /* 背面 */
+            transform: rotateX(180deg) translateZ(100px);
+            background-color: rgba(134, 55, 110, 0.5);
+        }
+        
+        .box4 {
+            /* 底面 */
+            transform: rotateX(-90deg) translateZ(100px);
+            background-color: rgba(88, 66, 120, 0.5);
+        }
+        
+        .box5 {
+            /* 侧面 */
+            transform: rotateY(90deg) translateZ(100px);
+            background-color: rgba(66, 77, 130, 0.5);
+        }
+        
+        .box6 {
+            transform: rotateY(-90deg) translateZ(100px);
+            background-color: rgba(55, 66, 140, 0.5);
+        }
+        .box{
+            transition: all 3s linear 0s;
+        }
+        .wutai:hover .box{
+            transform: rotateX(360deg) rotateY(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wutai">
+
+    
+    <div class="box">
+        <div class="box1">前面</div>
+        <div class="box2">顶面</div>
+        <div class="box3">背面</div>
+        <div class="box4">底面</div>
+        <div class="box5">右侧</div>
+        <div class="box6">左侧</div>
+    </div>
+</div>
+</body>
+
+</html>

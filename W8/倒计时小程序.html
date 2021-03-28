@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+</head>
+
+<body>
+    <h1>距离2021年高考还有</h1>
+    <h2 id="info"></h2>
+    <script>
+        var info = document.getElementById("info");
+        var timer;
+        function daojishi() {
+            var nd = new Date();
+            var td = new Date(2021, 5, 7);
+            var diff = td - nd;
+            var day = parseInt(diff / (1000 * 60 * 60 * 24));
+            diff = diff - day * (1000 * 60 * 60 * 24);
+            // console.log(day);
+            var h = parseInt(diff / (1000 * 60 * 60));
+            // console.log(h);
+            diff = diff - h * (1000 * 60 * 60);
+            var m = parseInt(diff / (1000 * 60));
+            // console.log(m);
+            diff = diff - m * (1000 * 60);
+            var s = parseInt(diff / (1000));
+            // console.log(s);
+            var str = day + "天" + h + "时" + m + "分" + s + "秒";
+            info.innerText = str;
+        }
+        timer = setInterval(daojishi, 1000);
+    </script>
+</body>
+
+</html>

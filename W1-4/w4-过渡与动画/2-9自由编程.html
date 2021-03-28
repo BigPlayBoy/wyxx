@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 600px;
+            height: 402px;
+            overflow: hidden;
+            position:relative;
+        }
+        .box p{
+            padding-left: 10px;
+            width: 590px;
+            height: 30px;
+            line-height: 30px;
+            background-color: rgba(0,0,0,.5);
+            position: absolute;
+            top:402px;
+            color: white;
+            transition: top .5s linear 0s;
+        }
+        img{
+            width: 600px;
+            height: 402px;
+        }
+        .box:hover p{
+            /* transform: translate(-30px,0px); */
+            top: 372px;
+            /* left: 0px; */
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img class="" src="../images/bb3.jpg" alt="">
+        <p>我也不知道这是什么图片</p>
+    </div>
+</body>
+</html>

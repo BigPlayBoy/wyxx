@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>输入文本</title>
+</head>
+
+<body>
+    <p>字数限制在30字内，<span>您还可以输入<b>30</b> 字</span></p>
+    <textarea cols="50" rows="7" id="text"></textarea>
+    <script type="text/javascript">
+        //补充代码
+
+        var b = document.getElementsByTagName("b")[0];
+        var textarea = document.getElementById("text");
+        var span = document.getElementsByTagName("span")[0];
+        textarea.oninput = function (e) {
+            textarea = document.getElementById("text");
+            var zishu = textarea.value.length;
+            if (zishu > 30) {
+                e.preventDefault();
+                span.innerText = "已经超出" + (parseInt(zishu) - 30) + "个字";
+                alert("您输入超过30个字了！");
+                textarea.value=textarea.value.slice(0,29);
+            }
+            b.innerText = 30 - parseInt(zishu);
+        }
+
+    </script>
+</body>
+
+</html>

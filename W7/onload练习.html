@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+	    <meta charset="UTF-8">
+	    <title>onload</title>
+	    <script type="text/javascript">
+	    	//补充代码
+	    	window.onload=function(){
+	    	    var btn=document.getElementsByTagName("input")[0];
+	    	    btn.onclick=function(){
+	    	        btn.style.backgroundColor="red";
+	    	    }
+	    	    btn.onmouseleave=function(){
+	    	        btn.style.backgroundColor="gray";
+	    	    }
+	    	}
+	    </script>
+	    <style>
+	        input{
+	            backGround-color:black;
+	        }
+	    </style>
+	</head>
+	<body>
+		<input type="button" value="点击改变按钮字体颜色" >
+	</body>
+</html>

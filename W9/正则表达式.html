@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+</head>
+
+<body>
+    <script>
+        var regexp = /^a\d{3}z$/;
+        var str1 = "a123z";
+        var str2 = "a1234z";
+        var str3 = "a123Z";
+        var regexp1 = /^\d{3}-\d{4}-\d{3}$/;
+        var str4 = "123-4567-890";
+
+        console.log(regexp.test(str1));
+        console.log(regexp.test(str2));
+        console.log(regexp1.test(str4));
+        var regexp2 = /^\w\w\w-\w\w\w\w-\w\w\w.$/;
+        var str5 = "abc-1234-asd$";
+        console.log(regexp2.test(str5));
+        console.log("方括号表示法");
+        var str6 = '98288888';
+        console.log(/^\d[0-8]{7}$/.test(str6));
+        console.log("验证字符串是否为四位小写字母，且最后一位不能是m");
+        var str7 = 'amcm';
+        var regexp3 = /^[a-z]{3}[a-ln-z]$/;
+        // var regexp4=/^[a-z]{3}[a-z^m]$/;
+        console.log(regexp3.test(str7));
+        // console.log(regexp4.test(str7));
+        console.log("正则表达式的方法exec");
+        var str8 = "Abc123sdA456aAAAAa789assss587aa";
+        var regexp5 = /\d+/g;
+        var result;
+        while (result = regexp5.exec(str8)) {
+            console.log(result);
+        }
+        var regexp6=/[a-z]+/gi;
+        while (result = regexp6.exec(str8)) {
+            console.log(result);
+        }
+
+    </script>
+</body>
+
+</html>

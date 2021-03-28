@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise 的应用-异步加载图片 </title>
+    <style>
+        img{
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imgbox" id="imgbox">
+
+    </div>
+
+    <script>
+        // 异步加载图片
+        // const loadImgAsync = url => {
+        //     return new Promise((resolve, reject) => {
+        //         // 处理流程
+        //         const img = new Image();
+        //         img.onload = () => {
+        //             // 图片加载完成触发的事件
+        //             console.log("图片加载完毕");
+        //             resolve(img);
+        //         };
+        //         img.onerror = () => {
+        //             // 图片加载失败触发的事件
+        //             console.log("图片加载失败");
+
+        //             reject(new Error(`Could not load image at ${url}`));
+        //         };
+        //         img.src = url;
+        //     });
+        // }
+
+
+
+        const loadImgAsync = url => {
+            return new Promise((resolve, reject) => {
+                // 处理流程
+                const img = new Image();
+                img.src = url;
+
+                img.onload = () => {
+                    // 图片加载完成触发的事件
+                    // console.log("图片加载完毕");
+                    setTimeout(() => {
+                        console.log("图片显示到页面上");
+                        box.appendChild(img);
+                        // resolve也要在一秒后执行
+                        resolve(img);
+                    }, 1000);
+                };
+                img.onerror = () => {
+                    // 图片加载失败触发的事件
+                    console.log("图片加载失败");
+
+                    reject(new Error(`Could not load image at ${url}`));
+                };
+            });
+        }
+        const box = document.getElementById("imgbox");
+        const img1 = document.getElementById("img1");
+        let imgUrl = ["https://img3.mukewang.com/60595b950001d3cd17920764.jpg", "http://climg.mukewang.com/5b16558d00011ed506000338.jpg", "http://climg.mukewang.com/5b165603000146ca06000338.jpg", "http://climg.mukewang.com/5b1656140001c89906000338.jpg"];
+        let index = 0;
+        loadImgAsync(imgUrl[index++]).then(img => {
+            console.log(`第${index + 1}张加载成功`);
+            return loadImgAsync(imgUrl[index++]);
+        }).then(img => {
+            console.log(`第${index + 1}张加载成功`);
+            return loadImgAsync(imgUrl[index++]);
+        }).then(img => {
+            console.log(`第${index + 1}张加载成功`);
+            return loadImgAsync(imgUrl[index++]);
+        });
+
+
+        // const body = document.querySelector('body');
+
+        // const loadimg = (url) => {
+
+        //     return new Promise((resolve, rejev) => {
+
+        //         const img = new Image();
+
+        //         img.src = url;
+
+        //         img.onload = () => {
+
+        //             setTimeout(() => {
+
+        //                 body.appendChild(img);
+
+        //                 resolve();
+
+        //             }, 1000)
+
+        //         }
+
+
+
+        //     })
+
+        // }
+
+        // loadimg(
+
+        //     'http://climg.mukewang.com/5b16558d00011ed506000338.jpg'
+
+        // ).then((img) => {
+
+        //     return loadimg('http://climg.mukewang.com/5b165603000146ca06000338.jpg')
+
+
+
+        // }).then((img) => {
+
+        //     return loadimg('http://climg.mukewang.com/5b1656140001c89906000338.jpg ')
+
+
+
+        // }).catch((img) => {
+
+        //     console.log(img)
+
+        // }
+
+        // )
+
+    </script>
+</body>
+
+</html>

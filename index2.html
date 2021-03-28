@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 60%;
+            height: 600px;
+            margin: 50px auto;
+            background-color: rgba(0,0,0,.5);
+        }
+        .box input{
+            width: 50%;
+            height: 50px;
+        }
+        .box a{
+            width: 200px;
+            height: 50px;
+            margin :20px;
+            font-size: 40px;
+            line-height: 50px;
+            background-color: orange;
+        }
+    </style>
+    <script>
+        function getpwd(){
+            var pwd1=document.getElementById("pwd1").value;
+            alert("您第一次输入的密码是："+pwd1);
+            var pwd2=document.getElementById("pwd2").value;
+            alert("您第二次输入的密码是："+pwd2);
+            if(pwd1==pwd2){
+                alert("您两次输入的密码一致");
+            }else{
+                alert("您两次输入的密码不一致");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <h1>密码输入测试</h1>
+        <form action="" method="get">
+            <div >身份证号：<input type="text" placeholder="请输入您的身份证号"></div>
+            <div >密码：<input id='pwd1' type="password" placeholder="请输入您的密码"></div>
+            <div >确认密码：<input id='pwd2' type="password" placeholder="请输入您的密码"></div>
+            <a href="javascript:getpwd()"> 点我测试 </a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楼层导航开发</title>
+    <style>
+        .content-part {
+            width: 1000px;
+            height: 556px;
+            background-image: linear-gradient(to right, red, green, yellow);
+            margin: 0px auto 30px;
+            font-size: 50px;
+            color: white;
+        }
+        .content-part:last-child{
+            height: 1000px;
+        }
+
+        nav {
+            position: fixed;
+            right: 10px;
+            top: 30px;
+            /* margin-top: -100px; */
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        nav ul li {
+            width: 150px;
+            height: 40px;
+            margin-bottom: 10px;
+            background-color: red;
+            line-height: 40px;
+        }
+
+        nav ul li.current {
+            background-color: purple;
+            color: white;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <ul id="list">
+            <li data-n="苹果" class="current">1苹果</li>
+            <li data-n="芒果">2芒果</li>
+            <li data-n="桃子">3桃子</li>
+            <li data-n="香蕉">4香蕉</li>
+            <li data-n="橘子">5橘子</li>
+            <li data-n="柿子">6柿子</li>
+            <li data-n="草莓">7草莓</li>
+            <li data-n="榴莲">8榴莲</li>
+            <li data-n="火龙果">9火龙果</li>
+            <li data-n="开心果">10开心果</li>
+        </ul>
+    </nav>
+    <section class="content-part" data-n="苹果">苹果</section>
+    <section class="content-part" data-n="芒果">芒果</section>
+    <section class="content-part" data-n="桃子">桃子</section>
+    <section class="content-part" data-n="香蕉">香蕉</section>
+    <section class="content-part" data-n="橘子">橘子</section>
+    <section class="content-part" data-n="柿子">柿子</section>
+    <section class="content-part" data-n="草莓">草莓</section>
+    <section class="content-part" data-n="榴莲">榴莲</section>
+    <section class="content-part" data-n="火龙果">火龙果</section>
+    <section class="content-part" data-n="开心果">开心果</section>
+    <script>
+        var list = document.getElementById("list");
+        var lis=list.getElementsByTagName("li");
+        console.log(lis);
+        list.onclick = function (e) {
+            if (e.target.tagName.toLowerCase() == 'li') {
+                var n = e.target.getAttribute("data-n");
+                console.log(n);
+                var contentpart = document.querySelector(".content-part[data-n=" + n + "]");
+                console.log(contentpart.offsetTop);
+                document.documentElement.scrollTop = contentpart.offsetTop;
+            }
+        }
+        // 在页面加载好之后，将所有的content-part盒子的offsetTop值 推入数组中
+        var offsetTopArr = [];
+        var contentparts = document.querySelectorAll(".content-part");
+        for (var i = 0; i < contentparts.length; i++) {
+            offsetTopArr.push(contentparts[i].offsetTop);
+        }
+        // 为了最后一项可以方便比较，我们在最后推入一个无穷大
+        offsetTopArr.push(Infinity);
+        offsetTopArr[0]=0;
+        // 
+        console.log(offsetTopArr);
+        // 窗口的卷动
+        // 当前所在楼层
+        var nowfloor=-1;
+        window.onscroll = function () {
+            var scrolltop = document.documentElement.scrollTop;
+            scrolltop+=30;
+            // 遍历offsetTopArr  看看当前的scrolltop  在哪两个数之间
+            var i = 0;
+            for (i = 0; i < offsetTopArr.length; i++) {
+                if (scrolltop >= offsetTopArr[i] && scrolltop < offsetTopArr[i + 1]) {
+                    // 退出循环
+                    break;
+                }
+                // 退出时的i是几，就说明现在在第几层
+            }
+            // if(i==offsetTopArr.length-1){
+            //     i==0;
+            // }
+            // 如果当前所在楼层不是i，就表示换楼了，
+            if(nowfloor!=i){
+                console.log("当前在第" + i + "层");
+                nowfloor=i;
+                // 设置下标为i的项有current
+                for(var j=0;j<lis.length;j++){
+                    if(j==i)lis[j].className='current';
+                    else lis[j].className='';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

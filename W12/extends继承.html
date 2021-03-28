@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>extends继承</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name,age,sex){
+                this.name=name;
+                this.age=age;
+                this.say=function(){
+                    console.log("this.say 的内容");
+                }
+            }
+            spaek(){
+                console.log("speak的内容");
+                console.log("此时Person类的speak中的this指向",this)
+            }
+            static speakLouder(){
+                console.log("static 的speak的内容");
+            }
+        }
+        Person.version='1.0';
+        class Programmer extends Person{
+            constructor(name,age,sex){
+                //先调用父类的构造方法
+                super(name,age,sex);
+            }
+            spaek(){
+                console.log("先调用super.speak");
+                super.spaek();
+                console.log("hello world");
+            }
+        }
+        const zs=new Programmer("zhangsan",18,"nan");
+        console.log(zs.age);
+        zs.say();
+        zs.spaek()
+    </script>
+</body>
+</html>

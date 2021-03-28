@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的深浅克隆</title>
+</head>
+
+<body>
+    <script>
+        // 对象的浅克隆
+        var obj1 = {
+            a: 1,
+            b: 2,
+            c: [1, 2, 3, 4],
+            d: function () {
+                console.log("我是d的函数");
+            },
+            e: ['a', 'b', {
+                name: "张三",
+                age: 14,
+                sex: "女",
+                hobbies: ["划船", ["游泳", "蛙泳"]],
+                sayhello: function () {
+                    console.log("我是一个函数哦");
+                }
+            }]
+        }
+
+        var obj2 = {};
+        for (var k in obj1) {
+            obj2[k] = obj1[k];
+        }
+        console.log("obj1的内容是：", obj1);
+        console.log("obj2的内容是：", obj2);
+        obj1.c.push(88);
+
+        obj1.a++;
+        obj1.c[0] = 12;
+        console.log("修改obj1后obj2的内容是：", obj2);
+        console.log("修改obj1后的内容是：", obj1);
+        console.log(obj1.c == obj2.c);
+        function deepClone(n) {
+            // 针对传入的n值，我们要先判断它是普通数值类型还是引用数值类型
+            // 引用类型分为数组和对象，要分开处理
+            // 如果是对象或者数组，我们需要用递归来进行深克隆
+            if (Array.isArray(n)) {
+                // 如果是个数组，我们要循环遍历它
+                for (var i = 0, result = []; i < n.length; i++) {
+                    result.push(deepClone(n[i]));
+                }
+            } else if (typeof n == "object") {
+                // 再判断是不是对象
+                var result = {};
+                for (var k in n) {
+                    result[k] = deepClone(n[k]);
+                }
+            } else {
+               var result= n;
+            }
+            return result
+        }
+        console.log(obj1);
+        var obj4 = deepClone(obj1);
+        console.log(obj4);
+    </script>
+</body>
+
+</html>

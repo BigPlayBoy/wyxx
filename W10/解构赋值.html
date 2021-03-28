@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //     const [,b]=[1,[3,4],5];
+        //     console.log(b);
+        //     const arr = ["a",["b","c",["d"],[undefined,"g",["123456"],["y"]]],"h",["l"]];
+        // const [,[,,,[,,[result="默认值"]]]]=arr;
+        // console.log(result);
+
+        // const arr=[];
+        const arr = [1, 4];
+        // const fn=([a=b,b=1])=>{
+        //     return a+b;
+        // }
+        const fn = [b = 1, a = b] => {
+            return a + b;
+        }
+        console.log(fn(arr));
+    </script>
+</body>
+
+</html>

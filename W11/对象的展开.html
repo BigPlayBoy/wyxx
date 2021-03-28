@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象的展开</title>
+</head>
+<body>
+    <script>
+        const apple={
+            color:['红色','黄色'],
+            shape:'球型',
+            taste:'甜'
+        }
+        apple.color.push('青色');
+        const apple2={...apple};
+        console.log(apple2);
+        const pen={
+            color:'黑色',
+            shape:'圆柱形',
+            use:'写字'
+        }
+        console.log({...apple,...pen});
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         （1）先将字符串转成数组。
+// （2）将数组作为参数传入Set中。
+// （3）使用扩展运算符在数组中展开Set，将Set转成数组。
+// （4）最后再将数组转成字符串，输出到页面中。
+        let str = "study hard and make and progress every day study"
+        // 将str按空格分开，存放到数组中
+        const arr=str.split(' ');
+        const s=new Set();
+        //遍历数组，将数组中的每个单词放到Set中，
+        // 如果set中已经存在这个单词了，就不会再放入，也就完成了去重
+        for(let i=0;i<arr.length;i++){
+            s.add(arr[i]);
+        }
+        console.log(s);//Set(7) {"study", "hard", "and", "make", "progress", …}
+        //将set转化为数组之后，用join将对象转化为字符串
+        // join中的参数是空格 说明要用空格链接数组中的每个元素
+        str=[...s].join(' ');
+        console.log(str);//study hard and make progress every day
+    </script>
+</body>
+</html>

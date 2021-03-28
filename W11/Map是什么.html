@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const m = new Map();
+        // m.set('name', 'tom');
+        // m.set('age', '12');
+        // console.log(m.delete('age'));
+        // console.log(m);//Map(2) {"name" => "tom", "age" => "12"}
+
+        const person={
+            name:"Tom",
+            age:18,
+            sex:'nan',
+            height:178,
+            hobbies:['游泳','跑步','跳绳']
+        }
+        const map=new Map();
+        for(let key in person ) {
+            map.set(key,person[key])
+        }
+        console.log(map);
+    </script>
+</body>
+
+</html>

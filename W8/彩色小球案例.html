@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彩色小球</title>
+    <style>
+        div {
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        #box {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body id="box">
+    <script>
+        function Ball(x, y) {
+            // 小球的圆心坐标，等下通过鼠标的指针进行创建
+            this.x = x;
+            this.y = y;
+            // 圆球的半径
+            this.r = 20;
+            // 小球的运动方向
+            do {
+                this.dx = parseInt(Math.random() * 20) - 10;
+                this.dy = parseInt(Math.random() * 20) - 10;
+
+            } while (this.dx == 0 && this.dy == 0)
+            this.color = colorArr[parseInt(Math.random()*colorArr.length)];
+            this.opacity = 1;
+            this.init();
+            // 把小球推入数组中
+            ballArr.push(this);
+        }
+        // 小球的初始化
+        Ball.prototype.init = function () {
+            this.dom = document.createElement("div");
+            this.dom.style.width = this.r * 2 + "px";
+            this.dom.style.height = this.r * 2 + "px";
+            this.dom.style.top = this.x - this.r + "px";
+            this.dom.style.left = this.y - this.r + "px";
+            this.dom.style.backgroundColor = this.color;
+            this.dom.style.opacity = this.opacity;
+
+            // console.log(this.dom);
+            document.body.appendChild(this.dom);
+        }
+        // 小球更新位置
+        Ball.prototype.update = function () {
+            this.x += this.dx;
+            this.y += this.dy;
+            this.r += 1;
+            this.opacity -= 0.02;
+            this.dom.style.width = this.r * 2 + "px";
+            this.dom.style.height = this.r * 2 + "px";
+            this.dom.style.top = this.x - this.r + "px";
+            this.dom.style.left = this.y - this.r + "px";
+            this.dom.style.opacity = this.opacity;
+
+            if (this.opacity < 0) {
+                for (var i = 0; i < ballArr.length; i++) {
+                    if (ballArr[i] == this) {
+                        // 一个小球消失的话，就从数组中删去
+                        ballArr.splice(i, 1);
+                    }
+                }
+                // 网页上也要删去这个元素
+                document.body.removeChild(this.dom);
+            }
+
+        }
+        var box = document.getElementById("box");
+        var ballArr = [];
+        var colorArr = ['#66cccc', '#ccff66', '#ff99cc', '#ff6666', '#cc3399', '#ff6600'];
+        // 鼠标移动事件，鼠标移动，生成小球，并把鼠标的x，y值传入小球  初始化小球
+        document.onmousemove = function (e) {
+            var x = e.clientX;
+            var y = e.clientY;
+            new Ball(y, x);
+        }
+        setInterval(function () {
+            // 这是个定时器
+            console.log("现在有" + ballArr.length + "个小球");
+            for (var i = 0; i < ballArr.length; i++) {
+                ballArr[i].update();
+            }
+        }, 20);
+
+
+    </script>
+</body>
+
+</html>

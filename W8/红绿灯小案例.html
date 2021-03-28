@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一百个独立的红绿灯</title>
+    <style>
+        #box img {
+            width: 80px;
+            height: 185px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        // 红绿灯的基类
+        function TrafficLight() {
+            // 初始颜色，都是红色
+            this.color = 1;
+            // 初始化
+            this.init();
+            // 绑定监听
+            this.bindEvent();
+            // 
+        }
+
+        // 初始化方法
+        TrafficLight.prototype.init = function () {
+            this.dom = document.createElement("img");
+            this.dom.src = "images/" + this.color + ".jpg";
+            box.appendChild(this.dom);
+        }
+        // 绑定事件监听
+        TrafficLight.prototype.bindEvent = function () {
+            // 当自己的DOM被点击的时候
+            // 改变灯的颜色
+            //备份上下文
+            var self = this;
+            this.dom.onclick = function () {
+                self.changeColor();
+            }
+        }
+        TrafficLight.prototype.changeColor = function () {
+            this.color++;
+            if (this.color == 4) this.color = 1;
+            this.dom.src = "images/" + this.color + ".jpg";
+        }
+        var box = document.getElementById("box");
+        var lightNumber = 10;
+        while (lightNumber--) {
+            new TrafficLight();
+        }
+        // var a = new TrafficLight();
+        // console.log(a);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position:absolute;
+            top:100px;
+            left:100px;
+            transition: left 2s linear 0s;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">按我运动</button>
+    <div id="box">
+
+    </div>
+    <script>
+        var btn=document.getElementById("btn");
+        var box=document.getElementById("box");
+        var pos=1;//1左边  2右边
+        var lock=true;//设置函数节流，当lock为true的时候，运行关键代码
+        btn.onclick=function(){
+            if(!lock)return;
+
+            if(pos==1){
+                box.style.left="1000px"
+                pos=2;
+            }else if(pos==2){
+                box.style.left="0px";
+                pos=1;
+            }
+            lock=false;//运行完关键代码，要上锁
+            //也要设置自动解锁的时间 
+            setTimeout(function(){lock=true;},2000);
+        }
+    </script>
+</body>
+</html>

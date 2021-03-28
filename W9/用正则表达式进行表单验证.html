@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用正则表达式进行表单验证</title>
+    <style>
+        .warning {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            请输入您的姓名：
+            <input type="text" id="nameField">
+            <span class="warning" id="warning1">您输入的姓名格式有误</span>
+        </p>
+        <p>
+            请输入您的手机号：
+            <input type="text" id="telField">
+            <span class="warning" id="telWarning">您输入的手机号格式有误</span>
+        </p>
+       
+    </div>
+    <script>
+        var nameField = document.getElementById("nameField");
+        var warning1 = document.getElementById("warning1");
+        var telField = document.getElementById("telField");
+        var telWarning = document.getElementById("telWarning");
+        var nameRegExp = /^[\u4e00-\u9fa5]{2,4}$/;
+
+        console.log(nameField);
+
+        nameField.onblur = function () {
+            console.log("姓名失去焦点，输入的姓名是："+nameField.value);
+
+            if (nameRegExp.test(nameField.value)){
+                console.log("姓名校验通过");
+                warning1.style.display = "none";
+            }else{
+                warning1.style.display = "inline-block";
+            }
+        };
+        telField.onblur = function () {
+            console.log("姓名失去焦点，输入的手机号是："+telField.value);
+            if (/^1\d{10}$/.test(telField.value)){
+                console.log("姓名校验通过");
+                telWarning.style.display = "none";
+            }else{
+                telWarning.style.display = "inline-block";
+            }
+        };
+    </script>
+</body>
+
+</html>

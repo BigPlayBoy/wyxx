@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素</title>
+    <style>
+        a::after{
+            content: '☆';
+        }
+        a::before{
+            content: '❤';
+        }
+        p::selection{
+            background-color: #f00;
+        }
+        .box1::first-letter{
+            font-size: 80px;
+        }
+        .box1::first-line{
+            background-color: rgb(241, 12, 12);
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <a href="">这是一个超级链接</a>
+    </p>
+    <p>
+        <a href="">这是一个超级链接</a>
+    </p>
+    <p>
+        <a href="">这是一个超级链接</a>
+    </p>
+    <p>
+        <a href="">这是一个超级链接</a>
+    </p>
+    <div class="box1">
+        <p>这是p元素里面的文字这是p元素里面的文字这是p元素里面的文字这是p元素里面的文字这是p元素里面的文字这是p元素里面的文字</p>
+        这是box1里面的文字这是box1里面的文字这是box1里面的文字这是box1里面的文字这是box1里面的文字这是box1里面的文字
+        <div>
+            这是div里面的元素这是div里面的元素这是div里面的元素这是div里面的元素这是div里面的元素这是div里面的元素这是div里面的元素这是div里面的元素
+        </div>
+    </div>
+</body>
+</html>

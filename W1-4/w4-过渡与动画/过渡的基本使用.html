@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡的基本使用</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin: 30px;
+            transition: width 5s linear 3s,height 5s linear 1s;
+            border-radius: 0;
+        }
+
+        .box1:hover {
+            width: 400px;
+            height: 400px;
+
+        }
+        .box2{
+            transition: border-radius 3s linear 0.5s;
+        }
+        .box2:hover{
+            border-radius: 50%;
+        }
+        .box3{
+            transition: transform 3s linear 0s;
+        }
+        .box3:hover{
+            transform: scale(2) rotate(360deg);
+        }
+        .box4{
+            perspective: 200px;
+        }
+        .box4 p{
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            transition: transform 3s linear 0s;
+            border: 2px solid red;
+            transform-origin: 50% 50%;
+        }
+        .box4:hover p{
+            transform: rotateX(360deg) rotateY(360deg) ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4">
+        <p>3D变形</p>
+    </div>
+    <div class="box5"></div>
+
+</body>
+
+</html>

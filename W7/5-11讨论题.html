@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun1(){
+            var num1=1;
+            var num2=100;
+            numadd=function(){//没有加 var  numadd是全局变量
+                num2+=10;
+                alert(num2);
+            }
+            function fn2(){
+                num1++;
+                alert(num1);
+            }
+            return fn2;
+        }
+        // numadd();//运行报错，因为fun1还没有被调用，numadd还没有生成
+        var result=fun1();
+        result();//2
+        numadd();//110
+        result();//3
+    </script>
+</body>
+</html>

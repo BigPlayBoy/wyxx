@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [55, 23, 3,  4,  2, 3, 1,  2, 3,   2, 4, 44, 55, 6, 666, 66,  5];
+        // 冒泡排序  按 从小到大的顺序排列
+        document.write("排序前的数组是：<br>");
+        document.write(arr + "<br>");
+        for (var i = 0; i < arr.length; i++) {
+
+            for (var j = arr.length-1; j >= i; j--) {
+                // 如果
+                document.write("此时比较的两项是"+j+":"+arr[j]+" ----"+arr[j-1]);
+                if (arr[j] < arr[j-1]) {
+                    var temp = arr[j-1];
+                    arr[j-1] = arr[j];
+                    arr[j] = temp;
+                    document.write("第" + i + "趟，第" + j + "次排序的结果是：<br>");
+                    document.write(arr + "<br>");
+                }
+            }
+            document.write("第" + i + "趟排序的结果是：<br>");
+            document.write(arr + "<br>");
+        }
+        document.write(arr + "<br>");
+    </script>
+</body>
+
+</html>

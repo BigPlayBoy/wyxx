@@ -1,0 +1,761 @@
+body {
+    font-family: "Microsoft YaHei";
+}
+
+/* header区域 */
+
+header {
+    height: 160px;
+}
+
+header .hd {
+    height: 40px;
+    background-color: #0058AA;
+}
+
+header .hd .center-wrap p {
+    float: right;
+    line-height: 40px;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+/* logo 导航栏 搜索框 */
+
+header .bd {
+    /* height: 120px; */
+    padding-top: 19px;
+}
+
+header .bd .logo {
+    height: 91px;
+    line-height: 91px;
+    font-size: 64px;
+    color: #0058AA;
+    font-weight: normal;
+    float: left;
+}
+
+header .bd nav {
+    float: left;
+    padding-left: 110px;
+}
+
+header .bd ul>li {
+    position: relative;
+    float: left;
+    width: 64px;
+    height: 91px;
+    margin-right: 60px;
+    z-index: 99;
+}
+
+header .bd ul>li a {
+    display: block;
+    height: 21px;
+    width: 64px;
+    padding-top: 70px;
+    color: #545454;
+}
+
+header .bd ul>li:last-child {
+    margin-right: 0;
+}
+
+header .bd ul>li a .bgc {
+    content: '';
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    border-radius: 50%;
+    z-index: 9;
+    transition: transform 0.5s linear 0s;
+}
+
+header .bd ul>li a:hover .bgc {
+    animation: huxi 1.2s ease 0s infinite;
+}
+
+/* 给导航栏的小图标添加动画 */
+
+@keyframes huxi {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+header .bd ul>li a .bgc .icon {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    width: 33px;
+    height: 33px;
+    background-image: url(../images/icon1.fw.png);
+    /* background-color: pink; */
+}
+
+header .bd ul>li:nth-child(1) a .bgc .icon {
+    background-position: -5px -40px;
+}
+
+header .bd ul>li:nth-child(2) a .bgc .icon {
+    background-position: -40px -37px;
+}
+
+header .bd ul>li:nth-child(3) a .bgc .icon {
+    background-position: -77px -38px;
+}
+
+header .bd ul>li:nth-child(4) a .bgc .icon {
+    background-position: -118px -36px;
+}
+
+header .bd ul>li:nth-child(5) a .bgc .icon {
+    background-position: -159px -39px;
+}
+
+header .bd ul>li:nth-child(1):hover a .bgc .icon {
+    background-position: -5px -5px;
+}
+
+header .bd ul>li:nth-child(2):hover a .bgc .icon {
+    background-position: -40px -2px;
+}
+
+header .bd ul>li:nth-child(3):hover a .bgc .icon {
+    background-position: -77px -5px;
+}
+
+header .bd ul>li:nth-child(4):hover a .bgc .icon {
+    background-position: -118px -1px;
+}
+
+header .bd ul>li:nth-child(5):hover a .bgc .icon {
+    background-position: -159px -4px;
+}
+
+header .bd ul>li:hover a .bgc {
+    background-color: #0058AA;
+}
+
+/* 小图标需要定位 */
+
+header .bd ul>li a .bgc img {
+    position: absolute;
+    top: 8px;
+    left: 9px;
+}
+
+/* 搜素框 */
+
+header .bd .searchbox {
+    width: 277px;
+    height: 39px;
+    float: right;
+    position: relative;
+    padding-top: 32px;
+}
+
+header .bd .searchbox input {
+    display: inline-block;
+    width: 217px;
+    height: 37px;
+    border: 1px solid #D3D3D3;
+    line-height: 37px;
+    font-size: 14px;
+    color: #545454;
+    padding-left: 10px;
+}
+
+header .bd .searchbox a {
+    position: absolute;
+    right: 0;
+    top: 32px;
+    display: inline-block;
+    width: 48px;
+    height: 39px;
+    background-color: #0058AA;
+    line-height: 39px;
+    text-align: center;
+}
+
+header .bd .searchbox a img {
+    vertical-align: middle;
+}
+
+/* banner区域 */
+
+.banner {
+    height: 650px;
+}
+
+/* banner轮播图区域样式 */
+
+.banner #banner-list {
+    width: 400%;
+    overflow: hidden;
+    transition: transform 0.5s linear 0s;
+}
+
+.banner #banner-list li {
+    width: 25%;
+    float: left;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+}
+
+.banner .info {
+    position: relative;
+}
+
+.banner .info ul {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -30px;
+    /* margin: 0 auto; */
+    width: 60px;
+    /* background-color:pink; */
+}
+
+.banner .info>ul>li {
+    float: left;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* 鼠标放到小圆点上,颜色会变 */
+
+.banner .info>ul>li.current {
+    background-color: #0058AA;
+}
+
+/* .banner .info>ul>li a {
+    display: block;
+    width: 10px;
+    height: 10px;
+} */
+
+/* 轮播图区域 */
+
+.lunbotu {
+    /* height: 255px; */
+    padding-top: 38px;
+}
+
+.lunbotu .center-wrap {
+    position: relative;
+}
+
+.lunbotu .center-wrap>div {
+    overflow: hidden;
+    width: 1055px;
+    margin: 0 auto;
+}
+
+.lunbotu .center-wrap ul {
+    /* overflow: hidden; */
+    width: 3055px;
+    /* padding: 0 72px; */
+    /* margin: 0 auto; */
+    position: relative;
+    left: 0px;
+    transition: left 0.5s linear 0s;
+}
+
+/* 左侧切换按钮 */
+
+.lunbotu .center-wrap .leftbtn {
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    left: 0px;
+    width: 48px;
+    height: 48px;
+    content: '';
+    /* background-color: pink; */
+    background-image: url(../images/icon1.fw.png);
+    background-position: -16px -80px;
+}
+
+.lunbotu .center-wrap .leftbtn:hover {
+    background-position: -65px -81px;
+}
+
+/* 左侧切换按钮 */
+
+.lunbotu .center-wrap .rightbtn {
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    right: 0px;
+    width: 24px;
+    height: 48px;
+    content: '';
+    /* background-color: pink; */
+    background-image: url(../images/icon1.fw.png);
+    background-position: -16px -140px;
+}
+
+.lunbotu .center-wrap .rightbtn:hover {
+    background-position: -65px -141px;
+}
+
+.lunbotu .center-wrap ul>li {
+    width: 171px;
+    height: 233px;
+    float: left;
+    margin-right: 50px;
+    padding-bottom: 32px;
+}
+
+.lunbotu .center-wrap ul>li:last-child {
+    margin-right: 0;
+}
+
+.lunbotu .center-wrap ul>li .product img {
+    width: 171px;
+    height: 175px;
+}
+
+.lunbotu .center-wrap ul>li .product p {
+    padding-top: 10px;
+    line-height: 22px;
+    font-size: 18px;
+    color: #838383;
+}
+
+/* 了解我们 */
+
+.aboutus {
+    height: 449px;
+}
+
+.aboutus .hd {
+    margin-bottom: 36px;
+}
+
+/* 关于我们 主要区域 */
+
+.aboutus .bd .leftdiv {
+    float: left;
+    width: 231px;
+    height: 256px;
+    padding-left: 5px;
+    /* background-color: pink; */
+}
+
+.aboutus .bd .leftdiv h3 {
+    font-size: 26px;
+    line-height: 32px;
+    color: #0058AA;
+}
+
+.aboutus .bd .leftdiv .ltd {
+    font-size: 21px;
+    line-height: 41px;
+    color: #5A5A5A;
+}
+
+.aboutus .bd .leftdiv .fenge {
+    width: 142px;
+    height: 4px;
+    background-color: #0058AA;
+}
+
+.aboutus .bd .leftdiv .p2 {
+    width: 240px;
+    font-size: 18px;
+    line-height: 26px;
+    color: #7B7C7C;
+    margin-bottom: 27px;
+}
+
+.aboutus .bd .leftdiv p a {
+    display: inline-block;
+    color: white;
+    width: 130px;
+    height: 38px;
+    font-size: 18px;
+    line-height: 38px;
+    text-align: center;
+    background-color: #0058AA;
+}
+
+/* 中间的图片 */
+
+.aboutus .bd .centerdiv {
+    position: absolute;
+    left: 50%;
+    margin-left: -192px;
+    float: left;
+    width: 384px;
+    height: 256px;
+    overflow: hidden;
+    /* margin: 0 auto; */
+    /* margin-left: 10px; */
+    /* background-color: pink; */
+}
+
+/* 右边的信息 */
+
+.aboutus .bd .rightdiv {
+    float: right;
+    width: 273px;
+    height: 256px;
+    color: #FFFFFF;
+    /* background-color: pink; */
+}
+
+.aboutus .bd .rightdiv>div {
+    position: relative;
+    /* width: 273px; */
+    height: 61px;
+    margin-bottom: 10px;
+    background-color: #CCCCCC;
+    padding: 10px 0 0 89px;
+    font-size: 22px;
+}
+
+.aboutus .bd .rightdiv>div p:last-child {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+/* 给右侧的三个div设置变色动画 动画结束后应停留在最后的状态 */
+
+.aboutus .bd .rightdiv>div:hover {
+    /* background-color: #0058AA; */
+    animation: bianse 0.5s linear 0s forwards;
+}
+
+@keyframes bianse {
+    from {
+        background-color: #CCCCCC;
+    }
+    to {
+        background-color: #0058AA;
+    }
+}
+
+.aboutus .bd .rightdiv>div::before {
+    content: '';
+    width: 40px;
+    height: 34px;
+    background-image: url(../images/icon1.fw.png);
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    left: 30px;
+}
+
+.aboutus .bd .rightdiv>div.on-line-message::before {
+    background-position: -111px -84px;
+}
+
+.aboutus .bd .rightdiv>div.ad-manag::before {
+    background-position: -111px -124px;
+}
+
+.aboutus .bd .rightdiv>div.Network-con::before {
+    background-position: -161px -124px;
+}
+
+/* 精品推荐区域 */
+
+.jptj {
+    height: 520px;
+    background-color: #EFF0F4;
+    padding-top: 70px;
+}
+
+.jptj .hd::before {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.jptj .hd::after {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.jptj .bd {
+    /* padding-top:40px ; */
+}
+
+/* 精品推荐区域 轮播图  基本样式 可以和上面的轮播图 复用 */
+
+section .lunbotu {
+    position: relative;
+    height: 326px;
+    /* padding-top: 38px; */
+}
+
+section .lunbotu ul {
+    width: 1055px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 左侧切换按钮 */
+
+section .lunbotu .leftbtn {
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    left: 0px;
+    width: 48px;
+    height: 48px;
+    content: '';
+    /* background-color: pink; */
+    background-image: url(../images/icon1.fw.png);
+    background-position: -16px -80px;
+}
+
+section .lunbotu .leftbtn:hover {
+    background-position: -65px -81px;
+}
+
+/* 左侧切换按钮 */
+
+section .lunbotu .rightbtn {
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    right: 0px;
+    width: 48px;
+    height: 48px;
+    content: '';
+    /* background-color: pink; */
+    background-image: url(../images/icon1.fw.png);
+    background-position: -16px -140px;
+    z-index: 9;
+}
+
+section .lunbotu .rightbtn:hover {
+    background-position: -65px -141px;
+}
+
+section .lunbotu ul>li {
+    width: 171px;
+    height: 233px;
+    float: left;
+    margin-right: 50px;
+    padding-bottom: 32px;
+}
+
+section .lunbotu ul>li:last-child {
+    margin-right: 0;
+}
+
+section .lunbotu ul>li .product img {
+    width: 171px;
+    height: 175px;
+}
+
+section .lunbotu ul>li .product p {
+    padding-top: 10px;
+    line-height: 22px;
+    font-size: 18px;
+    color: #838383;
+}
+
+/* 以上部分为复用部分 等下移到base.css中去 */
+
+.jptj .bd .jptj-lbt-box {
+    width: 1080px;
+    overflow: hidden;
+    margin-left: 50px;
+}
+
+.jptj .bd ul {
+    width: 2580px;
+    transition: left 0.5s linear 0s;
+    left: 0;
+}
+
+.jptj .bd ul>li {
+    width: 345px;
+    height: 326px;
+    margin-right: 22px;
+}
+
+.jptj .bd ul>li:last-child {
+    margin-right: 0;
+}
+
+.jptj .bd ul>li .product {
+    position: relative;
+}
+
+.jptj .bd ul>li .product img {
+    width: 345px;
+    height: 326px;
+}
+
+.jptj .bd ul>li .product p {
+    padding-top: 0;
+    width: 325px;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 20px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    color: white;
+}
+
+/* 新闻中心 */
+
+.xwzx {
+    height: 470px;
+    padding-top: 80px;
+}
+
+.xwzx .bd {
+    height: 325px;
+}
+
+.xwzx .bd ul {
+    padding-top: 70px;
+}
+
+.xwzx .bd ul li {
+    position: relative;
+    float: left;
+    width: 469px;
+    height: 110px;
+    margin-right: 56px;
+    /* background-color: pink; */
+    margin-bottom: 40px;
+    padding-left: 103px;
+    color: #4A4A4A;
+}
+
+.xwzx .bd ul li:nth-child(2n) {
+    margin-right: 0;
+}
+
+.xwzx .bd ul li .mask {
+    position: absolute;
+    width: 55px;
+    height: 61px;
+    background-image: url(../images/icon1.fw.png);
+    background-position: -15px -200px;
+    left: 0;
+    color: white;
+    font-size: 35px;
+    line-height: 54px;
+    text-align: center;
+    font-weight: normal;
+    transition: transform 0.5s linear 0s;
+    animation: ;
+}
+
+.xwzx .bd ul li dt {
+    font-size: 21px;
+    line-height: 25px;
+    margin-bottom: 12px;
+}
+
+.xwzx .bd ul li dd {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+/* 页脚区域 */
+
+footer {
+    color: white;
+}
+
+footer .footerup {
+    position: relative;
+    height: 210px;
+    background-color: #06142F;
+}
+
+footer .footerup .logo {
+    float: left;
+    /* width: ; */
+    font-size: 48px;
+    line-height: 58px;
+    font-weight: normal;
+    position: absolute;
+    top: 50%;
+    margin-top: -29px;
+}
+
+footer .footerup ul {
+    position: absolute;
+    top: 50%;
+    margin-top: -60px;
+    left: 600px;
+    float: left;
+    width: 210px;
+    height: 130px;
+    font-size: 16px;
+}
+
+footer .footerup ul li {
+    line-height: 40px;
+    /* margin-bottom: ; */
+}
+
+footer .footerdown {
+    height: 30px;
+    background-color: #202C46;
+    line-height: 30px;
+    text-align: center;
+}
+
+/* 部分动画效果 */
+
+p.learnmore a {}
+
+p.learnmore:hover a {
+    animation: rotate-it 0.5s linear 0s infinite alternate;
+}
+
+@keyframes rotate-it {
+    from {
+        transform: rotate(-15deg);
+    }
+    to {
+        transform: rotate(15deg);
+    }
+}
+
+.hover-scale img {
+    transition: transform 0.5s linear 0s;
+}
+
+.hover-scale:hover img {
+    transform: scale(1.2);
+}
+
+.xwzx .bd ul li .mask:hover {
+    animation: updown 0.5s linear 0s infinite alternate;
+}
+
+@keyframes updown {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}

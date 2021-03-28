@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点击获取浏览器信息" id="browser">
+       <script type="text/javascript">
+           //补充代码
+           var browser=navigator.userAgent;
+           var btn=document.getElementById("browser");
+           alert(browser);
+           var str='';
+           btn.onclick=function(){
+               if(browser.indexOf("Chrome")!=-1){
+                    str="谷歌";
+               }else if(browser.indexOf("Firefox")!=-1){
+                   str="火狐";
+               }else if(browser.indexOf("MSIE")!=-1){
+                   str="IE";
+               }
+              alert("您使用得当浏览器是："+str+"浏览器");
+           }
+       </script>
+    <script>
+        console.log("浏览器姓名",navigator.appName);
+        console.log("浏览器版本",navigator.appVersion);
+        console.log("代理",navigator.userAgent);
+        console.log("操作系统",navigator.platform);
+    </script>
+</body>
+</html>
