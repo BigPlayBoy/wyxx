@@ -20,5 +20,7 @@ https://babeljs.io/  babel 官网
 
  安装html-webpack-plugin
  npm install --save-dev html-webpack-plugin@4.3.0
-安装 css-loader
+安装 css-loader  这样可以识别到css文件
 npm install --save-dev css-loader@4.1.1
+#安装style-loader   把识别到的css文件，加载到网页的内联样式表中
+npm install --save-dev style-loader@1.2.1
