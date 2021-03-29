@@ -24,3 +24,5 @@ https://babeljs.io/  babel 官网
 npm install --save-dev css-loader@4.1.1
 #安装style-loader   把识别到的css文件，加载到网页的内联样式表中
 npm install --save-dev style-loader@1.2.1
+安装mini-css-extract-plugin  把处理后的参数苏文件以文件形式引入到网页中
+npm install --save-dev mini-css-extract-plugin@0.9.0
