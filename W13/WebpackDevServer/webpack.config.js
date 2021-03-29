@@ -17,6 +17,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test:/\.js$/,
+        exclude:/node_modules/,
+        loader:'babel-loader'
+      },
+      {
         test: /\.css$/,
         // 单个lodaer配置
         // loader:'css-loader',
