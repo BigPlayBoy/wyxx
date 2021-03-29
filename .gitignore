@@ -2,5 +2,6 @@
 /W13/webpack/node_modules/*
 /W13/Webpack处理CSS/node_modules/*
 /W13/freeCode/node_modules/*
-*.cmd
-*.ps1
+/W13/fileLoader/node_modules/*
+*/node_modules/*
+*/dist/*
