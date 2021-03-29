@@ -3,5 +3,6 @@
 /W13/Webpack处理CSS/node_modules/*
 /W13/freeCode/node_modules/*
 /W13/fileLoader/node_modules/*
-*/node_modules/*
-*/dist/*
+/W13/*/node_modules/*
+/W13/*/dist/*
+/W13/*/*.json

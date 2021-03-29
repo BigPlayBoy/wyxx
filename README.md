@@ -28,3 +28,5 @@ npm install --save-dev style-loader@1.2.1
 npm install --save-dev mini-css-extract-plugin@0.9.0
 安装file-loader  方便处理图片文件
 npm install --save-dev  file-loader@6.0.0
+安装html-withimg-loader  处理html里面的图片
+npm install --save-dev html-withimg-loader@0.1.16
