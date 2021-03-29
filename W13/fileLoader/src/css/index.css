@@ -5,7 +5,12 @@
 }
 body{
     background-color: pink;
-    background-image:url(http://zkzj.jxjyedu.org.cn/2019/images/banner1.png) ;
-    background-image:url(../images/banner01.png) ;
+    /* background-image:url(http://zkzj.jxjyedu.org.cn/2019/images/banner1.png) ; */
+    /* background-image:url(../images/banner01.png) ; */
     background-repeat: no-repeat;
+}
+.box{
+    width: 80%;
+    height: 500px;
+    border: 10px purple dashed ;
 }
