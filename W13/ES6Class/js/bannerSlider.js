@@ -14,11 +14,8 @@ class bannerSlider extends BaseSlider {
       this._bindEvent();
     }
     _bindEvent(){
-        // 这个地方要使用事件委托
         console.log("at ---bannerSlider.js --- _bindEvent");
-        // this.show(0);
         action.bindEvent(this);
-        // 还要添加鼠标移入移出的监听事件
         
     }
   }

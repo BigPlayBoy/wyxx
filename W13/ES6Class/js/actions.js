@@ -38,23 +38,7 @@ const action = {
                 arrow.style.opacity=0;
             }
         },true);
-        // Slider.slider.onmouseenter=function(){
-        //     console.log("鼠标移入事件触发");
-        //     // 移入鼠标，要显示两个方向键
-        //     for(const arrow of prev_next){
-        //         // console.log(arrow);
-        //         arrow.style.opacity=1;
-        //     }
-        // }
-        // Slider.slider.onmouseout=function(){
-        //     console.log("鼠标移出事件触发");
-        //     // 移入鼠标，要显示两个方向键
-        //     for(const arrow of prev_next){
-        //         // console.log(arrow);
-        //         arrow.style.opacity=0;
-        //     }
-        // }
-        // 不知道哪里写的有问题，这两个函数无法执行
+        
         sliderDiv.addEventListener ('mouseenter', function () {
             // 增加鼠标监听事件
             console.log("鼠标移入，暂停自动播放");
@@ -81,29 +65,5 @@ const action = {
     }
 }
 export { action }
-// const leftBtn = document.querySelector(".prev");
-// const rightBtn = document.querySelector(".next");
-// const mouseAction = {
-//     bindEvent(Slider) {
-//         leftBtn.addEventListener('click', ev => {
-//             Slider.prev();
-//         });
-//         rightBtn.addEventListener('click', ev => {
-//             Slider.next();
-//         });
-//     }
-// }
-// export default mouseAction;
-const leftBtn = document.querySelector(".prev");
-const rightBtn = document.querySelector(".next");
-const mouseAction = {
-    bindEvent(Slider) {
-        leftBtn.addEventListener('click', ev => {
-            Slider.prev();
-        });
-        rightBtn.addEventListener('click', ev => {
-            Slider.next();
-        });
-    }
-}
-export default mouseAction;
+
+

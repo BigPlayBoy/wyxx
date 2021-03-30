@@ -1,6 +1,4 @@
-import Slider from './Slider.js';
 import bannerSlider from './bannerSlider.js';
-import tabSlider from './tabSlider.js';
 
 const bannerDemo = document.querySelector(".banner");
 const tabDemo = document.querySelector(".tab");
@@ -24,21 +22,7 @@ const paginationArrowOptions = {
     autoplay:false,
     arrow:true
 }
-// paginationArrowDemo.addEventListener('mouseover', () => {
-//     leftBtn.style.opacity = "1";
-//     rightBtn.style.opacity = "1";
-//     leftBtn.style.display = "block";
-//     rightBtn.style.display = "block";
-// }, false);
-// paginationArrowDemo.addEventListener('mouseout', () => {
-//     leftBtn.style.opacity = "0";
-//     rightBtn.style.opacity = "0";
-//     setTimeout(() => {
-//         leftBtn.style.display = "none";
-//         rightBtn.style.display = "none";
-//     }, 1500);
-// }, false);
+
 new bannerSlider(bannerDemo, bannerOptions);
 new bannerSlider(tabDemo, tabOptions);
 new bannerSlider(paginationArrowDemo, paginationArrowOptions);
-// new mySlider(slider, myOptions);

@@ -21,35 +21,43 @@
             /* line-height: 200px; */
             /* font-size: 100px; */
             transition: all 5s linear 0s;
+            opacity: 1;
         }
 
-       div:hover {
+        div:hover {
             width: 400px;
             height: 400px;
+            opacity: 0;
 
         }
-        .box1{
-            transition-timing-function: cubic-bezier(.17,.67,.81,-0.8) ;
+
+        .box1 {
+            transition-timing-function: cubic-bezier(.17, .67, .81, -0.8);
 
         }
-        .box2{
-            transition-timing-function: linear ;
+
+        .box2 {
+            transition-timing-function: linear;
 
         }
-        .box3{
-            transition-timing-function:  ease-in ;
+
+        .box3 {
+            transition-timing-function: ease-in;
 
         }
-        .box4{
-            transition-timing-function:  ease-out ;
+
+        .box4 {
+            transition-timing-function: ease-out;
 
         }
-        .box5{
-            transition-timing-function:  ease-in-out ;
+
+        .box5 {
+            transition-timing-function: ease-in-out;
 
         }
-        .box6{
 
+        .box6 {
+            transition: opacity 2s linear 0s;
         }
     </style>
 </head>
@@ -61,6 +69,7 @@
     <div class="box4">ease-out
     </div>
     <div class="box5">ease-in-out</div>
+    <div class="box6">opacity</div>
 
 </body>
 

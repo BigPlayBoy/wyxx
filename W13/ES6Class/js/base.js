@@ -82,6 +82,7 @@ class BaseSlider {
         // index这一张要显示出来，其他的要隐藏起来
         // console.log(this.sliderItems);
         // console.log(this.sliderItems.length,this.sliderDots.length);
+        // this.sliderContent.style.transitionProperty='opacity';
         for (var i = 0; i < this.sliderItems.length; i++) {
             // console.log(this.sliderDots[i],i);
             if (i == this.currIndex) {
@@ -140,8 +141,11 @@ class BaseSlider {
     }
     // 设置切换动画速度
     setAnimationSpeed(speed) {
-        // console.log(`${speed}ms`);
-        this.sliderContent.style.transitionDuration = `${speed}ms`;
+        console.log(`${speed/1200}s`);
+        for(var i=0;i<this.sliderItems.length;i++){
+            this.sliderItems[i].style.transitionDuration = `${speed/1000}s`;
+        }
+        // this.sliderContent.style.transitionDuration = `${speed/1000}s`;
     }
 
     // 获取要移动的距离
@@ -151,7 +155,9 @@ class BaseSlider {
 
     // 开启动画
     openAnimation() {
-        this.sliderContent.classList.add(SLIDER_ANIMATION_CLASSNAME);
+        for(var i=0;i<this.sliderItems.length;i++){
+            this.sliderItems[i].classList.add(SLIDER_ANIMATION_CLASSNAME);
+        }
     }
 
     // 关闭动画

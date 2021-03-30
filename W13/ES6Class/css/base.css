@@ -131,10 +131,10 @@ h3 {
     padding: 20px 0;
 }
 
-.slider-animation {
+.slider-animation  {
     transition-property: opacity;
-    transition-duration: 0ms;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-    transition-delay:0ms;
+    transition-duration: 0s;
+    transition-timing-function:linear;
+    transition-delay:0s;
   }
   
