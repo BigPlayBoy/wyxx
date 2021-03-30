@@ -107,10 +107,7 @@ class BaseSlider {
         self.timer = setInterval(function () {
             // 获取到元素
             // console.log("设置自动播放");
-            // console.log(self.currIndex);
-            // 这里应该调用show函数，触底一个序号进去，
-            // 这个地方我只需要遍历序号就可以了
-           
+            // console.log(self.currIndex); 
             // 当前的index+1
             self.currIndex++;
             // 获取正确的index,过大或者过小都会被修正
@@ -145,7 +142,6 @@ class BaseSlider {
         for(var i=0;i<this.sliderItems.length;i++){
             this.sliderItems[i].style.transitionDuration = `${speed/1000}s`;
         }
-        // this.sliderContent.style.transitionDuration = `${speed/1000}s`;
     }
 
     // 获取要移动的距离
