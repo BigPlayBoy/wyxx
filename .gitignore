@@ -5,4 +5,4 @@
 /W13/fileLoader/node_modules/*
 /W13/*/node_modules/*
 /W13/*/dist/*
-/W13/*/*.json
+# /W13/*/*.json

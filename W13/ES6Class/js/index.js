@@ -1,5 +1,7 @@
-import bannerSlider from './bannerSlider.js';
-
+import 'babel-polyfill';
+import {bannerSlider} from './bannerSlider.js';
+import '../css/base.css';
+import '../css/index.css';
 const bannerDemo = document.querySelector(".banner");
 const tabDemo = document.querySelector(".tab");
 const paginationArrowDemo = document.querySelector(".pagination-arrow");

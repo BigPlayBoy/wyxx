@@ -21,4 +21,4 @@ class bannerSlider extends BaseSlider {
   }
 
 
-  export default bannerSlider;
+  export {bannerSlider} ;
