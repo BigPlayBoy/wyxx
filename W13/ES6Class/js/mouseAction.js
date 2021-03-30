@@ -1,5 +1,6 @@
-const leftBtn = document.querySelector(".leftBtn");
-const rightBtn = document.querySelector(".rightBtn");
+const leftBtn = document.querySelector(".prev");
+const rightBtn = document.querySelector(".next");
+
 const mouseAction = {
     bindEvent(Slider) {
         leftBtn.addEventListener('click', ev => {

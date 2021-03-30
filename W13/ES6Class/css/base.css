@@ -130,3 +130,11 @@ h3 {
     text-align: center;
     padding: 20px 0;
 }
+
+.slider-animation {
+    transition-property: opacity;
+    transition-duration: 0ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-delay:0ms;
+  }
+  
