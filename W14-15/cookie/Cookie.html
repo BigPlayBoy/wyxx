@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie的操作</title>
+</head>
+<body>
+    <button id='cn'>中文</button>
+    <button id='en'>英文</button>
+    <script type='module'>
+        import {set,get,remove} from './cookie.js';
+
+        const cnBtn=document.getElementById('cn');
+        const enBtn=document.getElementById('en');
+        cnBtn.onclick=function(){
+            set('language',"cn",{maxAge:30*60});
+            window.location='./Cookie.html';
+        }
+        enBtn.onclick=function(){
+            set('language',"en",{maxAge:30*60});
+            window.location='./Cookie.html';
+
+        }
+        // console.log("写入cookie");
+        // let username=encodeURIComponent("张三");
+        // document.cookie=`usename=${username}; expires=${new Date('2021-05-05 00:00:00')}`;
+        // document.cookie='age=15; max-age=+3600';
+        // document.cookie='sex=male';
+        // console.log(document.cookie);
+    </script>
+    <script type='module'>
+        // // console.log("封装Cookie")
+        // set('username','张三');
+        // // set('age',18);
+        // console.log(get("username"));
+        // remove('hobby');
+        // remove('sex');
+        // remove('age');
+        // remove('zs');
+        // remove('age');
+        // remove('username');
+        // console.log(get("hobby"));
+        // remove('hobby');
+
+    </script>
+</body>
+</html>

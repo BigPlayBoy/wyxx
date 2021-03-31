@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+</head>
+
+<body>
+    <form action="">
+        请输入用户名：<input id='username' type="text" placeholder="请输入用户名">
+        <button id='loginBtn'>登录</button><button id='deleteBtn'>删除</button>
+    </form>
+    <script  type="module">
+        import { set, get, remove } from './Cookie.js';
+        const usernameFiled = document.getElementById('username');
+        const loginBtn = document.getElementById('loginBtn');
+        const deleteBtn = document.getElementById('deleteBtn');
+        const userValue = get('username');
+        console.log(userValue);
+        console.log(123456);
+        if (userValue) {
+            // 
+            console.log("得到的用户名为", userValue);
+            usernameFiled.value = userValue;
+        }else{
+            console.log("还没有cookie");
+        }
+        loginBtn.addEventListener('click', () => {
+            const username=usernameFiled.value;
+            console.log(username);
+            set('username',username,{
+                maxAge:7*24*3600
+            });
+            window.location='./login.html';
+        }, false);
+        deleteBtn.addEventListener('click', () => {
+            remove('username');
+            usernameFiled.placeholder='请输入用户名';
+            usernameFiled.value='';
+        }, false);
+    </script>
+</body>
+
+</html>
