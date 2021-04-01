@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="module">
+        import { getJSON } from './index.js';
+        const url = 'https://www.imooc.com/api/http/search/suggest?words=js';
+        // const url = 'https://www.i1mooc.com/api/http/search/suggest?words=js';
+        const p = getJSON(url, {
+            params: { username: 'Tom', age: 18 },
+            data: { sex: 'male', hobby: 'swim' },
+            // timeoutTime: 10
+        });
+        p.xhr.abort();
+        const { ERROR_HTTP_CODE,
+            ERROR_REQUST,
+            ERROR_TIME_OUT,
+            ERROR_ABORT } = p;
+        p.then((response) => {
+            console.log("执行到then里面了");
+            console.log(response);
+        }).catch(err => {
+            console.log("执行到catch里面了");
+            console.log(err);
+            switch(err.type){
+                case ERROR_HTTP_CODE:console.log(err.text);break;
+                case ERROR_REQUST:console.log(err.text);break;
+                case ERROR_TIME_OUT:console.log(err.text);break;
+                case ERROR_ABORT:console.log(err.text);break;
+            }
+        });
+    </script>
+</body>
+
+</html>

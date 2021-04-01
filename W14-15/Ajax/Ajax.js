@@ -50,7 +50,7 @@ class Ajax {
         const { success, httpCodeError, error, abort, timeout } = this.options;
         xhr.addEventListener('load', () => {
             if (this.ok()) {
-                console.log(xhr.response);
+                // console.log(xhr.response);
                 success(xhr.response, xhr);
             } else {
                 httpCodeError(xhr.status, xhr);
