@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自由编程</title>
+</head>
+
+<body>
+    <h1>小慕想要在点击按钮的时候，发送一个post请求，将返回的数据打印在控制栏。</h1>
+    <p>我们来帮助它完成这个效果吧！</p>
+    <p>任务步骤：</p>
+    <p>设置一个按钮，并绑定点击事件。在该点击事件中：</p>
+    <p>1、使用提供的URL地址，创建一个接收数据的URL；</p>
+    <p>2、创建 XMLHttpRequest 对象；</p>
+    <p>3、监听onload事件，并在控制栏中输出响应数据。要注意的是，这里要设置正确的响应状态码；</p>
+    <p>4、建立一个POST的HTTP请求；</p>
+    <p>5、设置JSON格式的请求头；</p>
+    <p>6、发送一个对象类型的数据，对象内容为：username:'imooc'。</p>
+    <p>地址素材：https://www.imooc.com/api/http/json/search/suggest?words=js</p>
+    <button id='btn'>按钮</button>
+    <script>
+        const btn = document.getElementById('btn');
+        const url = 'https://www.imooc.com/api/http/json/search/suggest?words=js';
+
+        const xhr = new XMLHttpRequest();
+        xhr.addEventListener('load', () => {
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                console.log(xhr.response);
+            }
+        }, false);
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        btn.addEventListener('click', () => {
+            xhr.send({
+                username: 'imooc'
+            })
+        },false);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用localStorage</title>
+</head>
+
+<body>
+    <form action="" id='login'>
+        手机号：<input type="text" name="telphone" id='telphone'>
+        密 码：<input type="text" name="" id="password">
+        <input type="submit" value="提交" id='btn'>
+    </form>
+    <script type='module'>
+        // 使用localStorage实现自动填充
+        import { set, get, remove, clear } from './storage.js';
+        console.log(localStorage);
+        const loginForm = document.getElementById('login');
+        // const telphoneField = document.getElementById('telphone');
+        // const passwdField = document.getElementById('password');
+        const btn = document.getElementById('btn');
+        const userinfo = get('userinfo');
+        if (userinfo) {
+
+            const telephone = userinfo['telephone'];
+            const password = userinfo['password'];
+            if (telephone) {
+                loginForm.telphone.value = telephone;
+            }
+            if (password) {
+                loginForm.password.value = password;
+            }
+        }
+        let count = parseInt(localStorage.getItem('count'));
+        console.log(count);
+        // var str=`这是您第${count}次访问本页面`;
+        if (count != null) {
+            count++;
+            document.write(`这是您第${count}次访问本页面`);
+            localStorage.setItem('count', count);
+
+        } else {
+            count = 0;
+            localStorage.setItem('count', count);
+        }
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log(loginForm.telphone.value, loginForm.password.value);
+            set('userinfo', {
+                'telephone': loginForm.telphone.value,
+                'password': loginForm.password.value
+            })
+            // localStorage.setItem('telephone', loginForm.telphone.value);
+            // localStorage.setItem('password', loginForm.password.value);
+            // loginForm.submit();
+        })
+        // set('test', {
+        //     name: '张三',
+        //     age: 18
+        // });
+        remove('test');
+        remove('telephone');
+        remove('password');
+    </script>
+</body>
+
+</html>

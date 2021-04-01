@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax的基本用法</title>
+</head>
+
+<body>
+    <h1>Ajax的基本用法</h1>
+    <script>
+        // 创建xhr对象
+        // const url='./arr.json';
+        const url='https://www.imooc.com/search/hotwords';
+        // const url='https://www.imooc.com/';
+        // const url='./obj.json';
+        const xhr = new XMLHttpRequest();
+        // 准备发送请求
+        xhr.onreadystatechange = function()  {
+            // console.log(xhr.readyState);
+            if (xhr.readyState !== 4) return;
+            if ((xhr.status >= 200 && xhr.status <= 300) || xhr.status === 304) {
+                console.log("接收数据成功，");
+                // console.log(xhr.responseText);
+                let result=JSON.parse(xhr.responseText);
+                console.log(result);
+                console.log(Array.isArray(result));
+                console.log(typeof result);
+            }else{
+                console.log("数据出错");
+                console.log(xhr.status);
+                console.log(xhr.responseText);
+
+            }
+        };
+        xhr.open('GET',url,true);
+        const obj={
+            username:'zhangsan',
+            age:18,
+            sex:'mail'
+        }
+        xhr.timeout=500;
+        // let 
+        xhr.send(null);
+    </script>
+</body>
+
+</html>
