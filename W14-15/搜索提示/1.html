@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索提示</title>
+    <style>
+        li {
+            width: 500px;
+            height: 50px;
+            background-color: rgba(200, 100, 50, 0.5);
+            padding: 10px;
+            font-size: 30px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id='search'>
+    <ul id='result'></ul>
+    <script type='module'>
+        import { getJSON } from '../Ajax/index.js';
+        const searchInput = document.getElementById('search');
+        const resultList = document.getElementById('result');
+        const url = 'https://www.imooc.com/api/http/search/suggest?words=';
+        let timer;
+        searchInput.addEventListener('input', () => {
+            if(timer) clearInterval(timer);
+            timer=setTimeout(handleInputEvent,500);
+            
+        }, false);
+        const handleInputEvent = () => {
+            let liList = '';
+
+            if (searchInput.value.trim() === '') {
+                resultList.innerHTML = '';
+                return
+            };
+            const p = getJSON(`${url}${searchInput.value}`);
+            p.then((response) => {
+                // console.log(response.data);
+                const result = response.data;
+                for (const value of result) {
+                    liList += `<li>${value.word}</li>`;
+                } 
+                resultList.innerHTML = liList;
+            }).catch(err => {
+                console.log(err);
+            });
+            console.log('开始输入');
+        }
+    </script>
+</body>
+
+</html>
