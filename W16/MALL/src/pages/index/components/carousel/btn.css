@@ -1,0 +1,27 @@
+.banner .center .leftbtn {
+    position: absolute;
+    width: 32px;
+    height: 44px;
+    top: 50%;
+    left: -40px;
+    margin-top: -22px;
+    background-image: url('images/leftbtn.png');
+}
+
+.banner .center .leftbtn:hover {
+    opacity: 0.6;
+}
+
+.banner .center .rightbtn {
+    position: absolute;
+    width: 32px;
+    height: 44px;
+    top: 50%;
+    right: -40px;
+    margin-top: -22px;
+    background-image: url('images/rightbtn.png');
+}
+
+.banner .center .rightbtn:hover {
+    opacity: 0.6;
+}

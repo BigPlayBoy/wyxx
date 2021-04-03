@@ -13,79 +13,9 @@
 
 <body>
     <!-- 顶部区域 -->
-    <header class="">
-        <div class="nav-top">
-            <div class="shortcut-links center">
-                <ul>
-                    <li><a href="#">目的地</a></li>
-                    <li><a href="#">锦囊</a></li>
-                    <li class="have-menu"><a href="#">社区</a>
-                        <em class="arrow">
-                            <b></b>
-                            <i></i>
-                        </em>
-                        <div class="menu sqmenu">
-                            <ul>
-                                <li><a href="#">旅行论坛</a></li>
-                                <li><a href="#">旅行专栏</a></li>
-                                <li><a href="#">旅行问答</a></li>
-                                <li><a href="#">旅行生活分享平台</a></li>
-                                <li><a href="#">JNE旅行生活美学</a></li>
-                                <li><a href="#">Biu伴(原结伴同游)</a></li>
-                                <li><a href="#">Biu伴(原结伴同游负责人的旅行</a></li>
-                                <li><a href="#">特别策划</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="#">行程助手</a></li>
-                    <li class="have-menu"><a href="#">商城</a>
-                        <em class="arrow">
-                            <b></b>
-                            <i></i>
-                        </em>
-                        <div class="menu scmenu">
-                            <ul>
-                                <li><a href="#">机酒自由行</a></li>
-                                <li><a href="#">当地玩乐</a></li>
-                                <li><a href="#">签证</a></li>
-                                <li><a href="#">保险</a></li>
-                                <li><a href="#">租车自驾</a></li>
-                                <li><a href="#">邮轮</a></li>
-                                <li><a href="#">河轮</a></li>
-                                <li><a href="#">私人定制</a></li>
-                                <li><a href="#">欧洲铁路</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="have-menu"><a href="#">酒店-民宿</a>
-                        <em class="arrow">
-                            <b></b>
-                            <i></i>
-                        </em>
-                        <div class="menu jdmsmenu">
-                            <ul>
-                                <li><a href="#">酒店</a></li>
-                                <li><a href="#">爱彼迎</a></li>
-                                <li><a href="#">华人旅馆</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="#">特价酒店</a></li>
-                </ul>
-                <div class="topbar-right">
-
-                    <a href="#" class="iconfont">&#xe6cf;</a>
-                    <a href="#" class="iconfont">&#xe663;</a>
-                    <a href="#" class="iconfont">&#xe63a;</a>
-                    <a href="#" class="iconfont">&#xe60e;</a>
-                    <a href="#" class="iconfont">&#xe62a;</a>
-                    <a href="#">登录</a>
-                    <a href="#">注册</a>
-
-
-                </div>
-            </div>
-        </div>
+    <header class="site-head">
+    <!-- topbar 区域 -->
+    {{include '../../components/topbar/topbar.art'}}
         <nav class="main-nav">
             <div class="center">
                 <ul>
@@ -178,260 +108,229 @@
     </header>
     <!-- banner区域 -->
     <section class="banner" id="banner">
-        <div class="carousel">
-            <ul id="carousel_list">
-                <li>
-                    <img src="images/banner1.jpg" alt="">
+        {{include './components/carousel/carousel.art'}}
+        
+    <div class="center">
+        {{include './components/carousel/btn.art'}}
+        <nav class="banner-nav" id="banner-nav">
+            <!-- banner區域一級菜單 -->
+            <ul id="banner_nav_ul">
+                <li class=" rmcfd" data-t="rmcfd">
+                <dl>
+                    <dt><a href="#">热门出发地</a></dt>
+                    <dd>
+                        <a href="#">北京</a>
+                        <a href="#">上海</a>
+                        <a href="#">广深</a>
+                        <a href="#">西南</a>
+                        <a href="#">国内其他</a>
+                    </dd>
+                </dl>
                 </li>
-                <li>
-                    <img src="images/banner2.jpg" alt="">
+                <li class="gangaotai" data-t="gangaotai">
+                <dl>
+                    <dt><a href="#">港澳台</a>
+                        <a href="#">国内</a>
+                    </dt>
+                    <dd>
+                        <a href="#">香港</a>
+                        <a href="#">澳门</a>
+                        <a href="#">台湾</a>
+                        <a href="#">国内其他</a>
+                    </dd>
+                </dl>
                 </li>
-                <li>
-                    <img src="images/banner3.jpg" alt="">
+                <li class="ribenhanguo" data-t="ribenhanguo">
+                <dl>
+                    <dt><a href="#">日本</a>
+                        <a href="#">韩国</a>
+                    </dt>
+                    <dd>
+                        <a href="#">香港</a>
+                        <a href="#">澳门</a>
+                        <a href="#">台湾</a>
+                        <a href="#">国内其他</a>
+                    </dd>
+                </dl>
                 </li>
-                <li>
-                    <img src="images/banner4.jpg" alt="">
+                <li class="dongnanya" data-t="dongnanya">
+                <dl>
+                    <dt><a href="#">东南亚</a>
+                        <a href="#">南亚</a>
+                    </dt>
+                    <dd>
+                        <a href="#">香港</a>
+                        <a href="#">澳门</a>
+                        <a href="#">台湾</a>
+                        <a href="#">国内其他</a>
+                    </dd>
+                </dl>
                 </li>
-                <li>
-                    <img src="images/banner5.jpg" alt="">
+                <li class="ouzhoumeizhou" data-t="ouzhoumeizhou">
+                <dl>
+                    <dt><a href="#">欧洲</a>
+                        <a href="#">美洲</a>
+                    </dt>
+                    <dd>
+                        <a href="#">香港</a>
+                        <a href="#">澳门</a>
+                        <a href="#">台湾</a>
+                        <a href="#">国内其他</a>
+                    </dd>
+                </dl>
+                </li>
+                <li class="aoxin" data-t="aoxin">
+                <dl>
+                    <dt><a href="#">澳新</a>
+                        <a href="#">中东非</a>
+                    </dt>
+                    <dd>
+                        <a href="#">香港</a>
+                        <a href="#">澳门</a>
+                        <a href="#">台湾</a>
+                        <a href="#">国内其他</a>
+                    </dd>
+                </dl>
                 </li>
             </ul>
-        </div>
-        <!-- ol里面加上data-n的原因是为了js事件委托的时候，好定位第几个 -->
-        <ol class="circles" id="circles">
-            <li data-n="0" class="current"></li>
-            <li data-n="1"></li>
-            <li data-n="2"></li>
-            <li data-n="3"></li>
-            <li data-n="4"></li>
-        </ol>
-        <div class="center">
-            <a href="javascript:;" id="leftbtn" class="leftbtn"></a>
-            <a href="javascript:;" id="rightbtn" class="rightbtn"></a>
-            <nav class="banner-nav" id="banner-nav">
-                <!-- banner區域一級菜單 -->
-                <ul id="banner_nav_ul">
-                    <li class=" rmcfd" data-t="rmcfd">
-                        <dl>
-                            <dt><a href="#">热门出发地</a></dt>
-                            <dd>
-                                <a href="#">北京</a>
-                                <a href="#">上海</a>
-                                <a href="#">广深</a>
-                                <a href="#">西南</a>
-                                <a href="#">国内其他</a>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="gangaotai" data-t="gangaotai">
-                        <dl>
-                            <dt><a href="#">港澳台</a>
-                                <a href="#">国内</a>
-                            </dt>
-                            <dd>
-                                <a href="#">香港</a>
-                                <a href="#">澳门</a>
-                                <a href="#">台湾</a>
-                                <a href="#">国内其他</a>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="ribenhanguo" data-t="ribenhanguo">
-                        <dl>
-                            <dt><a href="#">日本</a>
-                                <a href="#">韩国</a>
-                            </dt>
-                            <dd>
-                                <a href="#">香港</a>
-                                <a href="#">澳门</a>
-                                <a href="#">台湾</a>
-                                <a href="#">国内其他</a>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="dongnanya" data-t="dongnanya">
-                        <dl>
-                            <dt><a href="#">东南亚</a>
-                                <a href="#">南亚</a>
-                            </dt>
-                            <dd>
-                                <a href="#">香港</a>
-                                <a href="#">澳门</a>
-                                <a href="#">台湾</a>
-                                <a href="#">国内其他</a>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="ouzhoumeizhou" data-t="ouzhoumeizhou">
-                        <dl>
-                            <dt><a href="#">欧洲</a>
-                                <a href="#">美洲</a>
-                            </dt>
-                            <dd>
-                                <a href="#">香港</a>
-                                <a href="#">澳门</a>
-                                <a href="#">台湾</a>
-                                <a href="#">国内其他</a>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="aoxin" data-t="aoxin">
-                        <dl>
-                            <dt><a href="#">澳新</a>
-                                <a href="#">中东非</a>
-                            </dt>
-                            <dd>
-                                <a href="#">香港</a>
-                                <a href="#">澳门</a>
-                                <a href="#">台湾</a>
-                                <a href="#">国内其他</a>
-                            </dd>
-                        </dl>
-                    </li>
-                </ul>
-                <div class="menus-box" id="menus-box">
-
-                    <div class="menu" data-t="rmcfd">
-                        <dl>
-                            <dt>热门出发地</dt>
-                            <dd>
-                                <a href="#">香港</a>
-                                <a href="#">澳门</a>
-                                <a href="#">台北</a>
-                                <a href="#">高雄</a>
-                                <a href="#">香港迪士尼</a>
-                                <a href="#">香港海洋公园</a>
-                                <a href="#">交通接驳</a>
-                                <a href="#">澳门塔</a>
-                                <a href="#">新濠天地水舞间</a>
-                                <a href="#">澳门豪华自助</a>
-                                <a href="#">台北101</a>
-                                <a href="#">台湾美食</a>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="menu" data-t="gangaotai">
-                        <dl>
-                            <dt>日本</dt>
-                            <dd>
-                                <a href="#">香港</a>
-                                <a href="#">澳门</a>
-                                <a href="#">台北</a>
-                                <a href="#">高雄</a>
-                                <a href="#">香港迪士尼</a>
-                                <a href="#">香港海洋公园</a>
-                                <a href="#">交通接驳</a>
-                                <a href="#">澳门塔</a>
-                                <a href="#">新濠天地水舞间</a>
-                                <a href="#">澳门豪华自助</a>
-                                <a href="#">台北101</a>
-                                <a href="#">台湾美食</a>
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="menu " data-t="ribenhanguo">
-                        <dl>
-                            <dt>泰新马</dt>
-                            <dd>
-                                <a href="#">普吉岛</a>
-                                <a href="#">清迈</a>
-                                <a href="#">曼谷</a>
-                                <a href="#">苏梅岛</a>
-                                <a href="#">甲米</a>
-                                <a href="#">芭堤雅</a>
-                                <a href="#">拜县</a>
-                                <a href="#">新加坡</a>
-                                <a href="#">马来西亚</a>
-                                <a href="#">沙巴</a>
-                                <a href="#">吉隆坡</a>
-                                <a href="#">皇帝岛</a>
-                                <a href="#">泰国人妖</a>
-                                <a href="#">泰国丛林飞跃</a>
-                                <a href="#">泰国spa按摩</a>
-                                <a href="#">清迈夜间动物园</a>
-                                <a href="#">泰拳表演</a>
-                                <a href="#">清莱一日游</a>
-                                <a href="#">新加坡环球影城</a>
-                                <a href="#">新加坡日游</a>
-                                <a href="#">新加坡濱海灣花園</a>
-                                <a href="#">沙巴美人魚島</a>
-                                <a href="#">沙巴紅樹林螢火蟲</a>
-                            </dd>
-                        </dl>
-                       
-                        
-                    </div>
-                    <div class="menu" data-t="dongnanya">
-                        <dl>
-                            <dt>東南亞</dt>
-                            <dd>
-                                <a href="#">普吉岛</a>
-                                <a href="#">清迈</a>
-                                <a href="#">曼谷</a>
-                                <a href="#">苏梅岛</a>
-                                <a href="#">甲米</a>
-                                <a href="#">芭堤雅</a>
-                                <a href="#">拜县</a>
-                                <a href="#">新加坡</a>
-                                <a href="#">马来西亚</a>
-                                <a href="#">沙巴</a>
-                                <a href="#">吉隆坡</a>
-                                <a href="#">皇帝岛</a>
-                                <a href="#">泰国人妖</a>
-                                <a href="#">泰国丛林飞跃</a>
-                                <a href="#">泰国spa按摩</a>
-
-                            </dd>
-                        </dl>
-                        <dl>
-                            <dt>南亚 西亚</dt>
-                            <dd>
-                                <a href="#">普吉岛</a>
-                                <a href="#">清迈</a>
-                                <a href="#">曼谷</a>
-                                <a href="#">苏梅岛</a>
-                                <a href="#">甲米</a>
-                                <a href="#">芭堤雅</a>
-
-                            </dd>
-                        </dl>
-                    </div>
-                    <div class="menu" data-t="ouzhoumeizhou"></div>
-                    <div class="menu" data-t="aoxin">
-                        <dl>
-                            <dt>泰新马</dt>
-                            <dd>
-                                <a href="#">普吉岛</a>
-                                <a href="#">清迈</a>
-                                <a href="#">曼谷</a>
-                                <a href="#">苏梅岛</a>
-                                <a href="#">甲米</a>
-                                <a href="#">芭堤雅</a>
-                                <a href="#">拜县</a>
-                                <a href="#">新加坡</a>
-                                <a href="#">马来西亚</a>
-                                <a href="#">沙巴</a>
-                                <a href="#">吉隆坡</a>
-                                <a href="#">皇帝岛</a>
-                                <a href="#">泰国人妖</a>
-                                <a href="#">泰国丛林飞跃</a>
-                                <a href="#">泰国spa按摩</a>
-                                <a href="#">清迈夜间动物园</a>
-                                <a href="#">泰拳表演</a>
-                                <a href="#">清莱一日游</a>
-                                <a href="#">新加坡环球影城</a>
-                                <a href="#">新加坡日游</a>
-                                <a href="#">新加坡濱海灣花園</a>
-                                <a href="#">沙巴美人魚島</a>
-                                <a href="#">沙巴紅樹林螢火蟲</a>
-                            </dd>
-                        </dl>
-                    </div>
+            <!-- banner區域二級菜單 -->
+            <div class="menus-box" id="menus-box">
+                <div class="menu" data-t="rmcfd">
+                    <dl>
+                        <dt>热门出发地</dt>
+                        <dd>
+                            <a href="#">香港</a>
+                            <a href="#">澳门</a>
+                            <a href="#">台北</a>
+                            <a href="#">高雄</a>
+                            <a href="#">香港迪士尼</a>
+                            <a href="#">香港海洋公园</a>
+                            <a href="#">交通接驳</a>
+                            <a href="#">澳门塔</a>
+                            <a href="#">新濠天地水舞间</a>
+                            <a href="#">澳门豪华自助</a>
+                            <a href="#">台北101</a>
+                            <a href="#">台湾美食</a>
+                        </dd>
+                    </dl>
                 </div>
-            </nav>
-        </div>
+                <div class="menu" data-t="gangaotai">
+                <dl>
+                    <dt>日本</dt>
+                    <dd>
+                        <a href="#">香港</a>
+                        <a href="#">澳门</a>
+                        <a href="#">台北</a>
+                        <a href="#">高雄</a>
+                        <a href="#">香港迪士尼</a>
+                        <a href="#">香港海洋公园</a>
+                        <a href="#">交通接驳</a>
+                        <a href="#">澳门塔</a>
+                        <a href="#">新濠天地水舞间</a>
+                        <a href="#">澳门豪华自助</a>
+                        <a href="#">台北101</a>
+                        <a href="#">台湾美食</a>
+                    </dd>
+                </dl>
+                </div>
+                <div class="menu " data-t="ribenhanguo">
+                <dl>
+                    <dt>泰新马</dt>
+                    <dd>
+                        <a href="#">普吉岛</a>
+                        <a href="#">清迈</a>
+                        <a href="#">曼谷</a>
+                        <a href="#">苏梅岛</a>
+                        <a href="#">甲米</a>
+                        <a href="#">芭堤雅</a>
+                        <a href="#">拜县</a>
+                        <a href="#">新加坡</a>
+                        <a href="#">马来西亚</a>
+                        <a href="#">沙巴</a>
+                        <a href="#">吉隆坡</a>
+                        <a href="#">皇帝岛</a>
+                        <a href="#">泰国人妖</a>
+                        <a href="#">泰国丛林飞跃</a>
+                        <a href="#">泰国spa按摩</a>
+                        <a href="#">清迈夜间动物园</a>
+                        <a href="#">泰拳表演</a>
+                        <a href="#">清莱一日游</a>
+                        <a href="#">新加坡环球影城</a>
+                        <a href="#">新加坡日游</a>
+                        <a href="#">新加坡濱海灣花園</a>
+                        <a href="#">沙巴美人魚島</a>
+                        <a href="#">沙巴紅樹林螢火蟲</a>
+                    </dd>
+                </dl>
+                </div>
+                <div class="menu" data-t="dongnanya">
+                <dl>
+                    <dt>東南亞</dt>
+                    <dd>
+                        <a href="#">普吉岛</a>
+                        <a href="#">清迈</a>
+                        <a href="#">曼谷</a>
+                        <a href="#">苏梅岛</a>
+                        <a href="#">甲米</a>
+                        <a href="#">芭堤雅</a>
+                        <a href="#">拜县</a>
+                        <a href="#">新加坡</a>
+                        <a href="#">马来西亚</a>
+                        <a href="#">沙巴</a>
+                        <a href="#">吉隆坡</a>
+                        <a href="#">皇帝岛</a>
+                        <a href="#">泰国人妖</a>
+                        <a href="#">泰国丛林飞跃</a>
+                        <a href="#">泰国spa按摩</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>南亚 西亚</dt>
+                    <dd>
+                        <a href="#">普吉岛</a>
+                        <a href="#">清迈</a>
+                        <a href="#">曼谷</a>
+                        <a href="#">苏梅岛</a>
+                        <a href="#">甲米</a>
+                        <a href="#">芭堤雅</a>
+                    </dd>
+                </dl>
+                </div>
+                <div class="menu" data-t="ouzhoumeizhou"></div>
+                <div class="menu" data-t="aoxin">
+                <dl>
+                    <dt>泰新马</dt>
+                    <dd>
+                        <a href="#">普吉岛</a>
+                        <a href="#">清迈</a>
+                        <a href="#">曼谷</a>
+                        <a href="#">苏梅岛</a>
+                        <a href="#">甲米</a>
+                        <a href="#">芭堤雅</a>
+                        <a href="#">拜县</a>
+                        <a href="#">新加坡</a>
+                        <a href="#">马来西亚</a>
+                        <a href="#">沙巴</a>
+                        <a href="#">吉隆坡</a>
+                        <a href="#">皇帝岛</a>
+                        <a href="#">泰国人妖</a>
+                        <a href="#">泰国丛林飞跃</a>
+                        <a href="#">泰国spa按摩</a>
+                        <a href="#">清迈夜间动物园</a>
+                        <a href="#">泰拳表演</a>
+                        <a href="#">清莱一日游</a>
+                        <a href="#">新加坡环球影城</a>
+                        <a href="#">新加坡日游</a>
+                        <a href="#">新加坡濱海灣花園</a>
+                        <a href="#">沙巴美人魚島</a>
+                        <a href="#">沙巴紅樹林螢火蟲</a>
+                    </dd>
+                </dl>
+                </div>
+            </div>
+        </nav>
+    </div>
     </section>
-    
     <!-- 热门广告:四张图片 -->
     <section class="hot-ads clearfix content-part">
         <div class="center">
@@ -482,108 +381,108 @@
     <section class="jjzyx content-part common-style">
         <div class="center">
             <!-- 本区域顶部元素 -->
-            <div class="hd clearfix">
-                <h2>机酒自由行</h2>
-                <em>挑选全球机票、酒店、邮轮等旅行产品</em>
-                <nav>
-                    <ul class="clearfix">
-                        <li class="current"><a href="#">近期好货</a></li>
-                        <li><a href="#">新品汇聚</a></li>
-                        <li class="current"><a href="#">定制游</a></li>
-                        <li><a href="#">国内推荐</a></li>
-                        <li><a href="#">优惠机票</a></li>
-                        <li><a href="#">热门海岛</a></li>
-                        <li><a href="#">热卖签证</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <!-- 图文元素 -->
-            <div class="bd">
-                <ul class="clearfix">
-                    <li class="big-grid">
-                        <a href="#">
-                            <div class="picbox">
-                                <img src="images/机酒配图01.png" alt="">
-                            </div>
-                            <div class="wordbox">
-                                <b>机票</b>
-                                <p>[樱花季]天津直飞东京/大阪/名古屋/冲绳/札幌2-30天往返
-                                    含税机票【甩尾/多团期】</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="pro-grid current">
-                        <a href="#">
-                            <div class="picbox">
-                                <img src="images/机酒配图02.png" alt="">
-                            </div>
-                            <div class="wordbox">
-                                <b>跟团游</b>
-                                <p>北京/上海/南京/杭州直飞巴厘岛5-7天往返含税机票（赠送旅游意外险…</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="pro-grid">
-                        <a href="#">
-                            <div class="picbox">
-                                <img src="images/机酒配图03.png" alt="">
-                            </div>
-                            <div class="wordbox">
-                                <b>机票</b>
-                                <p>北京/天津直飞日本东京/大阪/东阪/福冈/名古屋冲绳/北海道4-7天往返…</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="pro-grid">
-                        <a href="#">
-                            <div class="picbox">
-                                <img src="images/机酒配图04.png" alt="">
-                            </div>
-                            <div class="wordbox">
-                                <b>自助游玩</b>
-                                <p>[樱花季] 北京/天津直飞东京/大阪/名古屋/福冈/广岛/北海道/冲绳往返…</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="pro-grid">
-                        <a href="#">
-                            <div class="picbox">
-                                <img src="images/机酒配图05.png" alt="">
-                            </div>
-                            <div class="wordbox">
-                                <b>机票</b>
-                                <p>杭州/上海/宁波/义乌直飞越南芽庄/岘港4-6天往返含税机票（20KG行…</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="pro-grid">
-                        <a href="#">
-                            <div class="picbox">
-                                <img src="images/机酒配图06.png" alt="">
-                            </div>
-                            <div class="wordbox">
-                                <b>机票</b>
-                                <p>[赠自由行礼包] 上海/杭州/南京/合肥/宁波/徐州直飞日本东京/大阪…</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="more-grid">
-                        <a href="#">
-                            <div class="more-info">
-                                <p>查看更多</p>
-                                <p>机酒自由行产品</p>
-                            </div>
-                            <div class="rightarrow iconfont">&#xe619;</div>
-                            <div class="links">
-                                <a href="#">机票</a> |
-                                <a href="#">酒店</a> |
-                                <a href="#">机+酒</a> |
-                                <a href="#">邮轮</a>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+             <!-- <div class="hd clearfix">
+                 <h2>机酒自由行</h2>
+                 <em>挑选全球机票、酒店、邮轮等旅行产品</em>
+                 <nav>
+                     <ul class="clearfix">
+                         <li class="current"><a href="#">近期好货</a></li>
+                         <li><a href="#">新品汇聚</a></li>
+                         <li class="current"><a href="#">定制游</a></li>
+                         <li><a href="#">国内推荐</a></li>
+                         <li><a href="#">优惠机票</a></li>
+                         <li><a href="#">热门海岛</a></li>
+                         <li><a href="#">热卖签证</a></li>
+                     </ul>
+                 </nav>
+             </div> -->
+             <!-- 图文元素 -->
+             <!-- <div class="bd">
+                 <ul class="clearfix">
+                     <li class="big-grid">
+                         <a href="#">
+                             <div class="picbox">
+                                 <img src="images/机酒配图01.png" alt="">
+                             </div>
+                             <div class="wordbox">
+                                 <b>机票</b>
+                                 <p>[樱花季]天津直飞东京/大阪/名古屋/冲绳/札幌2-30天往返
+                                     含税机票【甩尾/多团期】</p>
+                             </div>
+                         </a>
+                     </li>
+                     <li class="pro-grid current">
+                         <a href="#">
+                             <div class="picbox">
+                                 <img src="images/机酒配图02.png" alt="">
+                             </div>
+                             <div class="wordbox">
+                                 <b>跟团游</b>
+                                 <p>北京/上海/南京/杭州直飞巴厘岛5-7天往返含税机票（赠送旅游意外险…</p>
+                             </div>
+                         </a>
+                     </li>
+                     <li class="pro-grid">
+                         <a href="#">
+                             <div class="picbox">
+                                 <img src="images/机酒配图03.png" alt="">
+                             </div>
+                             <div class="wordbox">
+                                 <b>机票</b>
+                                 <p>北京/天津直飞日本东京/大阪/东阪/福冈/名古屋冲绳/北海道4-7天往返…</p>
+                             </div>
+                         </a>
+                     </li>
+                     <li class="pro-grid">
+                         <a href="#">
+                             <div class="picbox">
+                                 <img src="images/机酒配图04.png" alt="">
+                             </div>
+                             <div class="wordbox">
+                                 <b>自助游玩</b>
+                                 <p>[樱花季] 北京/天津直飞东京/大阪/名古屋/福冈/广岛/北海道/冲绳往返…</p>
+                             </div>
+                         </a>
+                     </li>
+                     <li class="pro-grid">
+                         <a href="#">
+                             <div class="picbox">
+                                 <img src="images/机酒配图05.png" alt="">
+                             </div>
+                             <div class="wordbox">
+                                 <b>机票</b>
+                                 <p>杭州/上海/宁波/义乌直飞越南芽庄/岘港4-6天往返含税机票（20KG行…</p>
+                             </div>
+                         </a>
+                     </li>
+                     <li class="pro-grid">
+                         <a href="#">
+                             <div class="picbox">
+                                 <img src="images/机酒配图06.png" alt="">
+                             </div>
+                             <div class="wordbox">
+                                 <b>机票</b>
+                                 <p>[赠自由行礼包] 上海/杭州/南京/合肥/宁波/徐州直飞日本东京/大阪…</p>
+                             </div>
+                         </a>
+                     </li>
+                     <li class="more-grid">
+                         <a href="#">
+                             <div class="more-info">
+                                 <p>查看更多</p>
+                                 <p>机酒自由行产品</p>
+                             </div>
+                             <div class="rightarrow iconfont">&#xe619;</div>
+                             <div class="links">
+                                 <a href="#">机票</a> |
+                                 <a href="#">酒店</a> |
+                                 <a href="#">机+酒</a> |
+                                 <a href="#">邮轮</a>
+                             </div>
+                         </a>
+                     </li>
+                 </ul>
+             </div> -->
         </div>
     </section>
     <!-- 当地玩乐区域,小标题与机酒自由行样式相同,可以借鉴 -->
