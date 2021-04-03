@@ -8,8 +8,7 @@ module.exports = {
   mode: 'development',
   // Webpack 入口文件
   entry: {
-    index: './src/index.js',
-    list: './src/list.js'
+    index: './src/pages/index/index.js',
   },
   // Webpack 输出路径
   output: {
@@ -77,10 +76,10 @@ module.exports = {
       template: './src/pages/index/index.art',
       chunks: ['index']
     }),
-    new HtmlWebpackPlugin({
-      filename: 'list.html',
-      template: './src/list.art',
-      chunks: ['list']
-    })
+    // new HtmlWebpackPlugin({
+    //   filename: 'list.html',
+    //   template: './src/list.art',
+    //   chunks: ['list']
+    // })
   ]
 };
