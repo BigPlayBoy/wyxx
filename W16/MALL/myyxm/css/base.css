@@ -1,0 +1,287 @@
+.clearfix {
+    overflow: hidden;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+
+/* 原子類 */
+
+.mgt10 {
+    margin-top: 10px;
+}
+
+.mgt12 {
+    margin-top: 12px;
+}
+
+.mgt14 {
+    margin-top: 14px;
+}
+
+.mgt16 {
+    margin-top: 16px;
+}
+
+.tac {
+    text-align: center;
+}
+
+.center {
+    width: 1152px;
+    margin: 0 auto;
+}
+
+body a {
+    color: white;
+}
+
+/* 导入字体图标 */
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('../fonts/iconfont.eot');
+    src: url('../fonts/iconfont.eot?#iefix') format('../fonts/embedded-opentype'), url('../fonts/iconfont.woff2') format('woff2'), url('../fonts/iconfont.woff') format('woff'), url('../fonts/iconfont.ttf') format('truetype'), url('../fonts/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.content-part h2{
+    font-size: 36px;
+    font-weight: normal;
+    color: #1C1F21;
+    line-height: 54px;
+}
+
+.content-part em{
+    float: left;
+    padding-top: 26px;
+    padding-left: 12px;
+}
+
+/* more grid */
+.content-part .more-grid {
+    /* width: 264px;
+    height: 270px; */
+}
+.content-part .more-grid .more-info{
+    width: 236px;
+    height: 44px;
+    line-height: 22px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    margin: 0 auto;
+    padding-top: 46px;
+    margin-bottom: 28px;
+}
+.content-part .more-grid .rightarrow{
+    width: 48px;
+    height: 48px;
+    /* background-color: pink; */
+    margin: 0 auto 36px;
+    font-size: 48px;
+    color: white;
+}
+.content-part .more-grid:hover .rightarrow{
+    animation: updown .5s linear 0s infinite alternate;
+
+}
+@keyframes updown{
+    from{
+        transform: translateY(-10px) scale(1);
+    }
+    to{
+        transform: translateY(10px) scale(1.1);
+
+    }
+}
+.content-part .more-grid:hover .rightarrow{
+    /* transform: scale(1.4); */
+    /* cursor:pointer; */
+}
+.content-part .more-grid .links{
+    height: 22px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+.content-part .more-grid .links a{
+    color: white;
+
+}
+
+/* 机酒自由行 */
+
+.common-style {
+    /* height: 698px; */
+    padding-top: 40px;
+    /* padding-bottom: 40px;  */
+    /* box-sizing: border-box;  */
+}
+
+.common-style a {
+    color: #1C1F21;
+}
+
+.common-style .hd {
+    margin-bottom: 32px;
+}
+
+.common-style .hd h2 {
+    float: left;
+}
+
+.content-part .hd nav {
+    /* width: 462px; */
+    float: right;
+}
+
+.content-part .hd nav ul li {
+    float: left;
+    margin-right: 14px;
+    line-height: 46px;
+    font-size: 14px;
+}
+
+.content-part .hd nav ul li:last-child {
+    margin-right: 0;
+    height: 46px;
+}
+
+.content-part .hd nav ul li.current a {
+    color: #20BD9A;
+    padding-bottom: 2px;
+    border-bottom: 4px solid #20BD9A;
+}
+
+.content-part .hd nav a {
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.common-style .bd ul li {
+    float: left;
+    height: 270px;
+    margin: 0 32px 32px 0;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+
+.common-style .bd ul li:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.20);
+}
+
+.common-style .bd ul li:nth-child(3), .common-style .bd ul li:nth-child(7) {
+    margin-right: 0;
+}
+
+.common-style .bd ul li a {
+    height: 270px;
+}
+
+/* 第一个li的宽度是560px */
+
+.common-style .bd ul li.big-grid {
+    position: relative;
+    width: 560px;
+}
+
+.common-style .bd ul li.big-grid .wordbox p {
+    padding: 30px 26px 29px;
+    line-height: 22px;
+    position: absolute;
+    bottom: 0;
+    width: 508px;
+    color: white;
+    font-size: 14px;
+    background-color: rgba(28, 31, 33, .55);
+}
+
+.common-style .bd ul li.big-grid img {
+    width: 560px;
+    height: 270px;
+}
+
+.common-style .bd ul li.big-grid b {
+    background-color: rgba(28, 31, 33, .6);
+    bottom: 103px;
+    position: absolute;
+    padding: 9px 23px;
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* 产品盒子 pro-grid */
+
+.common-style .bd ul li.pro-grid {
+    width: 264px;
+    position: relative;
+}
+
+.common-style .bd ul li.pro-grid img {
+    width: 264px;
+    height: 184px;
+    vertical-align: middle;
+}
+
+.common-style .bd ul li.pro-grid b {
+    background-color: rgba(28, 31, 33, .6);
+    bottom: 86px;
+    position: absolute;
+    padding: 9px 23px;
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.common-style .bd ul li.pro-grid p {
+    padding: 20px 14px 22px;
+    line-height: 22px;
+    width: 236px;
+    font-size: 14px;
+}
+
+/* more 盒子 */
+
+.common-style .bd ul li.more-grid {
+    width: 264px;
+    height: 270px;
+}
+
+.common-style .bd ul li.more-grid .more-info {
+    /* margin-top: 46px;
+    margin-bottom: 28px; */
+}
+/* 公共的一个特效：鼠标触碰图片 能够放大 */
+.content-part img{
+    transition: transform 0.5s linear 0s;
+}
+.content-part img:hover{
+transform: scale(1.1);
+}
+.content-part li{
+    overflow: hidden;
+}
+.content-part li .picbox{
+    overflow: hidden;
+
+}
+.content-part .more-grid{
+    overflow: hidden;
+}
+.content-part .small-grid{
+    overflow: hidden;
+}
+.content-part .big-grid{
+    overflow: hidden;
+}
