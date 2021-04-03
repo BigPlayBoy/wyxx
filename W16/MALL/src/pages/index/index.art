@@ -1012,31 +1012,8 @@
             </div>
         </div>
         <!-- 返回顶部按钮 -->
-            <a href="javascript:;" class="backTop iconfont" id="backTop" class="iconfont">&#xe73b;</a>
-        <script>
-            var backTop = document.getElementById("backTop");
-            var timer;
-            backTop.onclick = function () {
-                clearInterval(timer);
-                timer = setInterval(function () {
-                    document.documentElement.scrollTop -= 10;
-                    if (document.documentElement.scrollTop <= 0) {
-                        clearInterval(timer);
-                    }
-                }, 20);
-            }
-            // 获得卷动值
-            window.onscroll=function(){
-                var scrollTop = document.documentElement.scrollTop || window.scrollY;
-                if(scrollTop==0){
-                    backTop.style.display='none';
-                }else{
-                    backTop.style.display='block';
-
-                }
-            }
-
-        </script>
+        <a href="javascript:;" class="backTop iconfont" id="backTop" class="iconfont">&#xe73b;</a>
+        
     </footer>
 </body>
 
