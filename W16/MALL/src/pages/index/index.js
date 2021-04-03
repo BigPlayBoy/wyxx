@@ -22,3 +22,8 @@ import './components/xxsw/'
 import './components/ddwl/'
 import './components/tsddty/'
 import './components/zsj/'
+
+// 公共模块
+import 'components/footer-nav/'
+import 'components/bottom-bar/'
+import 'components/backtoTop/'

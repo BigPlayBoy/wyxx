@@ -1,0 +1,42 @@
+
+footer .part2{
+    height: 225px;
+    background-color: #1c1f21;
+}
+footer .part2 .hd{
+    padding-top: 48px;
+    color: white;
+    margin-bottom: 31px;
+}
+footer .part2 .hd h2{
+    float: left;
+    font-size: 46px;
+    font-weight: normal;
+    line-height: 46px;
+}
+footer .part2 .hd .slogn{
+    float: left;
+    width: 532px;
+    font-size: 14px;
+    margin-left: 21px;
+    line-height: 23px;
+}
+footer .part2 .bd{
+    margin-bottom: 8px;
+}
+footer .part2 .bd ul li{
+    float: left;
+    font-size: 14px;
+    border-right: 2px solid white;
+    padding:0 14px;
+}
+footer .part2 .bd ul li:first-child{
+    padding-left: 0;
+}
+footer .part2 .bd ul li:last-child{
+    border-right: none;
+}
+footer .part2 .copyrights{
+    color: white;
+    font-size: 14px;
+}
