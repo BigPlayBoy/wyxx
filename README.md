@@ -43,3 +43,8 @@ npm install --save-dev webpack-dev-server@3.11.0
 引入模板art-template
 <script src='https://unpkg.com/art-template@4.13.2/lib/template-web.js'>
 #官方文档http://aui.github.io/art-template/zh-cn/docs/
+
+在webpack中使用art-template 
+npm install art-template@4.13.2
+
+npm install art-template-loader@1.4.3 --save-dev

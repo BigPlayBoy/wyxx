@@ -6,3 +6,5 @@
 /W13/*/node_modules/*
 /W13/*/dist/*
 # /W13/*/*.json
+/W16/*/node_modules/*
+/*/*/node_modules/*
