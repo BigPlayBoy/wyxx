@@ -1,7 +1,10 @@
 // 导入CSS
-import './css/base.css'
-import './css/reset.css'
 import './css/index.css'
+
+
+// 公共样式
+import 'styles/base.css'
+import 'styles/reset.css'
 import 'styles/layOut.css'
 // 导入js
 // import './js/index.js'
@@ -14,3 +17,6 @@ console.log("引入index.js成功");
 import 'components/topbar/'
 import './components/carousel/'
 import './components/jjzyx/'
+import './components/fav-ad/'
+import './components/xxsw/'
+import './components/ddwl/'

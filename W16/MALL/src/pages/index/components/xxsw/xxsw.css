@@ -1,0 +1,56 @@
+/* 新鲜甩尾区域 */
+
+.fresh {
+    height: 740px;
+    /* padding-top: 40px; */
+    background-color: #F7F7F7;
+    /* margin-bottom: 32px; */
+}
+
+.fresh .center {
+    color: #1C1F21;
+    position: relative;
+}
+
+.fresh .center .hd {
+    margin-bottom: 32px;
+}
+
+.fresh .center h2 {
+    float: left;
+}
+
+.fresh .center ul {
+    height: 270px;
+}
+
+.fresh .center ul li {
+    width: 264px;
+    height: 270px;
+    float: left;
+    margin-right: 32px;
+    margin-bottom: 32px;
+    background-color: #fff;
+}
+
+.fresh .center ul li:hover {
+    box-shadow: 0 8px 16px 0;
+}
+
+/* 每一排第四个要把margin去掉 */
+
+.fresh .center ul li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.fresh .center ul li img {
+    height: 184px;
+    margin-bottom: 20px;
+}
+
+.fresh .center ul li p {
+    width: 240px;
+    padding: 0 12px;
+    font-size: 14px;
+    color: #1C1F21;
+}

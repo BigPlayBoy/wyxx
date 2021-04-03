@@ -1,0 +1,22 @@
+/* 热门广告四张图片 */
+
+.hot-ads .center {
+    height: 110px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.hot-ads .center ul {
+    /* overflow: hidden; */
+}
+
+.hot-ads .center ul li {
+    width: 264px;
+    height: 110px;
+    float: left;
+    margin-right: 32px;
+}
+
+.hot-ads .center ul li:last-child {
+    margin-right: 0;
+}
