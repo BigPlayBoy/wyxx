@@ -1,0 +1,10 @@
+
+/* 跟团游  半自助游 */
+
+.gtbzz .more-grid {
+    background-image: linear-gradient(180deg, #41D8E9 0%, #3685EA 98%);
+}
+
+.gtbzz .big-grid .mask .cicle p:last-child {
+    left: 37px;
+}
