@@ -34,8 +34,11 @@ npm install --save-dev html-withimg-loader@0.1.16
 npm install --save-dev url-loader@4.1.0
 安装 webpack-dev-sercer
 npm install --save-dev webpack-dev-server@3.11.0
- "scripts": {
-    "webpack": "webpack --config webpack.config.js",
-    开发时使用下面的命令，运行一次就好了，有修改会自动运行
-    "dev":"webpack-dev-server"
-  },
+    "scripts": {
+       "webpack": "webpack --config webpack.config.js",
+       开发时使用下面的命令，运行一次就好了，有修改会自动运行
+       "dev":"webpack-dev-server"
+     },
+
+引入模板art-template
+<script src='https://unpkg.com/art-template@4.13.2/lib/template-web.js'>

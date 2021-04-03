@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二级菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+
+        li {
+            list-style: none;
+            background-color: rgba(200, 100, 50, 0.5);
+            padding: 5px;
+        }
+
+        /* menu */
+        .menu {
+            width: 1080px;
+            background-color: rgba(0, 0, 0, .1);
+            height: 50px;
+            padding: 10px;
+        }
+
+        .menu-item {
+            float: left;
+            cursor: pointer;
+            height: 20px;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 50px;
+            width: 200px;
+            /* height: 100px; */
+            padding: 0 5px;
+            background-color: rgba(22, 22, 22, 0.2);
+        }
+
+        .menu-item:hover {
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+        .menu-item:hover .menu-content {
+            display: block;
+        }
+
+        .menu-loading {
+            margin: 45px 0 092px;
+            width: 40%;
+        }
+
+        .center-warp{
+            width: 1080px;
+            margin: 0 auto;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center-warp">
+        <ul id='menu' class="menu">
+            <!-- <li class="menu-item" data-key='hot' data-done='done'>
+            <span>热门</span>
+            <div class="menu-content">
+                <p><img src="./loading.gif" class='menu-loading' alt="加载中"></p>
+            </div>
+        </li> -->
+        </ul>
+    </div>
+    <script type='module'>
+        const menu_url = 'https://www.imooc.com/api/mall-PC/index/menu/';
+        const menu_ele = document.getElementById('menu');
+        const url_hot = 'https://www.imooc.com/api/mall-PC/index/menu/hot';
+        import { getJSON } from '../Ajax/index.js';
+        getJSON(menu_url).then(response => {
+            // 获取一级菜单成功执行的内容
+            // console.log(response);
+            // 存放一级菜单的内容
+            let menu_ele_inner = '';
+            for (const item of response.data) {
+                const key = item.key;
+                const title = item.title;
+                const subTitles = item.subTitles;
+                console.log(key, title, subTitles);
+                menu_ele_inner += `<li class="menu-item" data-key="${key}" >
+                    <span>${title}</span>
+                    <div class="menu-content">
+                    <p><img src="./loading.gif" class='menu-loading' alt="加载中"></p> 
+                    </div>
+                </li>`;
+            }
+            menu_ele.innerHTML = menu_ele_inner;
+        }).then(() => {
+            const items = menu_ele.querySelectorAll('.menu-item');
+            for (const item of items) {
+                // console.log(item);
+                let menu_content_html = '';
+                item.addEventListener('mouseenter', () => {
+
+                    // if(item.getAttribute('data-done'==='none')){
+                    if (item.dataset.done === 'done') {
+                        console.log("已经加二级菜单了")
+                    } else {
+                        console.log("二级菜单还没有加载，需要加载");
+                        getJSON(`${menu_url}${item.dataset.key}`).then(response => {
+                            //                             data: Array(2)
+                            // 0: {title: "澳新 南太平洋", cities: Array(18)}
+                            // 1: {title: "中东非", cities: Array(21)}
+                            item.dataset.done = 'done';
+                            console.log(response);
+                            for (const item of response.data) {
+                                menu_content_html += `<p>${item.title}</p><p>`;
+                                for (const citys of item.cities) {
+                                    menu_content_html += `<a href='${citys.link}'>${citys.text}</a>`;
+                                }
+                                menu_content_html += `</p>`;
+                                // <p>${item.cities.join("&")}<{/p>
+                            }
+                            item.querySelector('.menu-content').innerHTML = menu_content_html;
+                        }).catch
+                            (err => {
+                                console.log(err);
+
+                            });
+                    }
+                }, false);
+            }
+        }).catch(err => {
+            console.log(err);
+        });
+        let timer;
+
+        const handleInputEvent = () => {
+            let liList = '';
+
+            if (searchInput.value.trim() === '') {
+                resultList.innerHTML = '';
+                return
+            };
+            const p = getJSON(`${url}${searchInput.value}`);
+            p.then((response) => {
+                // console.log(response.data);
+                const result = response.data;
+                for (const value of result) {
+                    liList += `<li>${value.word}</li>`;
+                }
+                resultList.innerHTML = liList;
+            }).catch(err => {
+                console.log(err);
+            });
+            console.log('开始输入');
+        }
+    </script>
+</body>
+
+</html>

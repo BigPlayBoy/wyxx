@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
+
+</head>
+<body>
+    <script>
+        console.log(axios);
+        // const url = 'https://www.imooc.com/api/http/search/suggest?words=js';
+        const url = 'https://www.imooc.com/api/http/json/search/suggest?words=js';
+        // axios(url,{
+        //     method:"POST",
+        //     // headers:{
+        //     //     "Content-Type":'application/x-www-form-urlencoded'
+        //     //     // "Content-Type":'application/json'
+        //     // },
+        //     // params:{
+        //     //     username:'alex'
+        //     // },
+        //     // data:{
+        //     //     sex:'male',
+        //     //     age:18
+        //     // },
+        //     // timeout:10,
+        //     // withCredentials:true
+        // }).then(response=>{
+        //     console.log(response.data.data);
+        // }).catch(err=>{
+        //     console.log(err);;
+        // })
+        // axios.post(url,'username=alax&age=19').then(response=>{
+        //     console.log(response);
+        // }).catch(err=>{
+        //     console.log(err);
+        // });
+        axios.post(url,{username:"alex",age:18}).then(response=>{
+            console.log(response);
+        }).catch(err=>{
+            console.log(err);
+        });
+    </script>
+</body>
+</html>
