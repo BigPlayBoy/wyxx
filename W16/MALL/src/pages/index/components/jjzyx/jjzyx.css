@@ -1,0 +1,10 @@
+/* 机酒自由行 */
+
+.jjzyx {
+    height: 698px;
+    /* padding-top: 40px; */
+}
+
+.jjzyx .more-grid {
+    background-image: linear-gradient(180deg, #34E3BC 0%, #15AF7A 98%);
+}

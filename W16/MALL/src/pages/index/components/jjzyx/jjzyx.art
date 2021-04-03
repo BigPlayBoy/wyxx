@@ -1,0 +1,103 @@
+<!-- 本区域顶部元素 -->
+<div class="hd clearfix">
+    <h2>机酒自由行</h2>
+    <em>挑选全球机票、酒店、邮轮等旅行产品</em>
+    <nav>
+        <ul class="clearfix">
+            <li class="current"><a href="#">近期好货</a></li>
+            <li><a href="#">新品汇聚</a></li>
+            <li class="current"><a href="#">定制游</a></li>
+            <li><a href="#">国内推荐</a></li>
+            <li><a href="#">优惠机票</a></li>
+            <li><a href="#">热门海岛</a></li>
+            <li><a href="#">热卖签证</a></li>
+        </ul>
+    </nav>
+</div>
+<!-- 图文元素 -->
+<div class="bd">
+    <ul class="clearfix">
+        <li class="big-grid">
+            <a href="#">
+                <div class="picbox">
+                    <img src="./images/机酒配图01.png" alt="">
+                </div>
+                <div class="wordbox">
+                    <b>机票</b>
+                    <p>[樱花季]天津直飞东京/大阪/名古屋/冲绳/札幌2-30天往返
+                        含税机票【甩尾/多团期】</p>
+                </div>
+            </a>
+        </li>
+        <li class="pro-grid current">
+            <a href="#">
+                <div class="picbox">
+                    <img src="./images/机酒配图02.png" alt="">
+                </div>
+                <div class="wordbox">
+                    <b>跟团游</b>
+                    <p>北京/上海/南京/杭州直飞巴厘岛5-7天往返含税机票（赠送旅游意外险…</p>
+                </div>
+            </a>
+        </li>
+        <li class="pro-grid">
+            <a href="#">
+                <div class="picbox">
+                    <img src="./images/机酒配图03.png" alt="">
+                </div>
+                <div class="wordbox">
+                    <b>机票</b>
+                    <p>北京/天津直飞日本东京/大阪/东阪/福冈/名古屋冲绳/北海道4-7天往返…</p>
+                </div>
+            </a>
+        </li>
+        <li class="pro-grid">
+            <a href="#">
+                <div class="picbox">
+                    <img src="./images/机酒配图04.png" alt="">
+                </div>
+                <div class="wordbox">
+                    <b>自助游玩</b>
+                    <p>[樱花季] 北京/天津直飞东京/大阪/名古屋/福冈/广岛/北海道/冲绳往返…</p>
+                </div>
+            </a>
+        </li>
+        <li class="pro-grid">
+            <a href="#">
+                <div class="picbox">
+                    <img src="./images/机酒配图05.png" alt="">
+                </div>
+                <div class="wordbox">
+                    <b>机票</b>
+                    <p>杭州/上海/宁波/义乌直飞越南芽庄/岘港4-6天往返含税机票（20KG行…</p>
+                </div>
+            </a>
+        </li>
+        <li class="pro-grid">
+            <a href="#">
+                <div class="picbox">
+                    <img src="./images/机酒配图06.png" alt="">
+                </div>
+                <div class="wordbox">
+                    <b>机票</b>
+                    <p>[赠自由行礼包] 上海/杭州/南京/合肥/宁波/徐州直飞日本东京/大阪…</p>
+                </div>
+            </a>
+        </li>
+        <li class="more-grid">
+            <a href="#">
+                <div class="more-info">
+                    <p>查看更多</p>
+                    <p>机酒自由行产品</p>
+                </div>
+                <div class="rightarrow iconfont">&#xe619;</div>
+                <div class="links">
+                    <a href="#">机票</a> |
+                    <a href="#">酒店</a> |
+                    <a href="#">机+酒</a> |
+                    <a href="#">邮轮</a>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
