@@ -8,3 +8,4 @@
 # /W13/*/*.json
 /W16/*/node_modules/*
 /*/*/node_modules/*
+/W16/*/dist/*

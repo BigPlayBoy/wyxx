@@ -37,7 +37,7 @@ npm install --save-dev webpack-dev-server@3.11.0
     "scripts": {
        "webpack": "webpack --config webpack.config.js",
        开发时使用下面的命令，运行一次就好了，有修改会自动运行
-       "dev":"webpack-dev-server"
+       "dev":"webpack-dev-server --open chrome"
      },
 
 引入模板art-template
