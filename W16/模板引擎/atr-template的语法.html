@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>art-template的语法</title>
+    <script src="https://unpkg.com/art-template@4.13.2/lib/template-web.js"></script>
+
+</head>
+
+<body>
+    <div id="content"></div><br>
+    <div id="othercontent"></div><br>
+
+    <ul id="list"></ul>
+
+    <!-- 输出的模板 -->
+    <script id="tpl-1" type='text/html'>
+    {{value }}    <br>    {{data.key}}    <br>    {{hobby[0]}}    <br>
+    {{a*b}}    <br>
+    {{$data}}    <br>
+    {{text}}    <br>
+    {{@text}}    <br>
+
+    </script>
+    <!-- 条件 -->
+    <script id="tpl-2" type='text/html'>
+        {{if sex==='male'}}
+            男
+        {{else if sex==='female'}}
+        女
+        {{/if}}
+    </script>
+    <!-- 循环语法 -->
+    <script id="tpl-3" type="text/html">
+        {{each students }}
+    <li>姓名：{{$value.name}} {{$value.age}} {{$value.sex}}{{$index}}</li>
+    {{/each}}
+    </script>
+    <!-- 主模板 -->
+
+    <script id='tpl-4' type='text/html'>
+        {{include 'tpl-4-2-header'}}
+        <p>我本身的首页</p>
+        {{include 'tpl-4-2-footer'}}
+    </script>
+    <!-- 两个子模板 -->
+    <script id='tpl-4-header' type='text/html'>
+        <header>我是公共头部</header>
+    </script>
+    <script id='tpl-4-footer' type='text/html'>
+    <footer>我是公共的尾部</footer>
+    </script>
+    <!-- 向子模板传参 -->
+    <!-- 主模板 -->
+    <script id='tpl-4-2-index' type='text/html'>
+        <!-- {{include 'tpl-4-2-header'}} -->
+        <% include('tpl-4-2-header',{
+            page:"首页"
+        })%>
+        <p>我本身的首页</p>
+        <!-- {{include 'tpl-4-2-footer'}} -->
+        <% include('tpl-4-2-footer',{
+            page:"首页"
+        })%>
+    </script>
+    <script id='tpl-4-2-header' type='text/html'>
+        <header>我是{{page}}公共头部</header>
+    </script>
+    <script id='tpl-4-2-footer' type='text/html'>
+    <footer>我是{{page}}公共的尾部</footer>
+    </script>
+    <script>
+        const students = [{
+            name: "张三",
+            age: 22,
+            sex: "男"
+        },
+        {
+            name: "李四",
+            age: 18,
+            sex: "男"
+        },
+        {
+            name: "王五",
+            age: 33,
+            sex: "男"
+        },
+        {
+            name: "赵六",
+            age: 18,
+            sex: "男"
+        }, {
+            name: "六七",
+            age: 18,
+            sex: "女"
+        }]
+        const content = document.getElementById('content');
+        const othercontent = document.getElementById('othercontent');
+        const list = document.getElementById('list');
+
+        // 参数要放在对象中，即使没有参数，也要传空对象
+        // content.innerHTML=template('tpl-1',{
+        //     value:1,
+        //     data:{
+        //         key:2
+        //     },
+        //     hobby:['游泳','跑步'],
+        //     a:3,
+        //     b:5,
+        //     text:'<strong>加粗</strong>'
+        // });
+        // 条件语法
+        // content.innerHTML = template('tpl-2', {
+        //     sex: "female"
+        // });
+        // 循环语法
+        list.innerHTML = template('tpl-3', {
+            students
+        });
+        // 子模板的使用
+        content.innerHTML = template('tpl-4', { });
+        othercontent.innerHTML=template('tpl-4-2-index',{})
+    </script>
+</body>
+
+</html>
