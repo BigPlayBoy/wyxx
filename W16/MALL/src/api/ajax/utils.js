@@ -1,19 +1,25 @@
 // 工具函数
-const serialize = function (params) {
-    const results = [];
-    for (const [key, value] of Object.entries(params)) {
-        results.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
+// 给 URL 添加参数
+export const addURLData = (url, param) => {
+  if (!param) return '';
 
-    }
-    return results.join("&");
-}
-const serializeJSON = function (params) {
-    return JSON.stringify(params);
-}
-const addURLData=(url,data)=>{
-    if(!data) return '';
-    const mask=url.includes("?")?'&':'?';
-    return `${mask}${data}`;
-}
+  const mark = url.includes('?') ? '&' : '?';
 
-export {serialize,addURLData,serializeJSON};
+  return `${mark}${param}`;
+};
+
+// 数据序列化成 urlencoded 格式的字符串
+export const serialize = param => {
+  const results = [];
+
+  for (const [key, value] of Object.entries(param)) {
+    results.push(`${encodeURIComponent(key)}=${encodeURIComponent(value)}`);
+  }
+
+  return results.join('&');
+};
+
+// 数据序列化成 JSON 格式的字符串
+export const serializeJSON = param => {
+  return JSON.stringify(param);
+};

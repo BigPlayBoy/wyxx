@@ -142,27 +142,28 @@
     position: relative;
     width: 560px;
 }
-
-.common-style .bd ul li.big-grid .wordbox p {
-    padding: 30px 26px 29px;
+.common-style .bd ul li.big-grid .wordbox{
+    padding: 21px 26px 21px;
     line-height: 22px;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     width: 508px;
     color: white;
     font-size: 14px;
     background-color: rgba(28, 31, 33, .55);
 }
 
+
 .common-style .bd ul li.big-grid img {
     width: 560px;
     height: 270px;
 }
 
-.common-style .bd ul li.big-grid b {
+.common-style .bd ul li.big-grid div.type {
     background-color: rgba(28, 31, 33, .6);
-    bottom: 103px;
+    bottom: 80px;
     position: absolute;
+    left:0px;
     padding: 9px 23px;
     color: white;
     font-size: 14px;
@@ -279,24 +280,24 @@
     top: 0;
 }
 
-.common-style .big-grid .mask .cicle p:first-child {
+.common-style .big-grid .mask .cicle p.tag {
     position: absolute;
     top: 20px;
-    left: 38px;
     width: 106px;
     height: 53px;
     /* padding: none; */
     background-color: unset;
+    text-align: center;
 }
 
-.common-style .big-grid .mask .cicle p:last-child {
+.common-style .big-grid .mask .cicle p.extra-tag {
     position: absolute;
-    top: 40px;
-    left: 20px;
+    top: 50px;
     width: 106px;
     height: 53px;
     /* padding: none; */
     background-color: unset;
+    text-align: center;
 }
 
 .common-style .big-grid .mask .word {

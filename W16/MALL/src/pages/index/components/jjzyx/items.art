@@ -1,0 +1,42 @@
+<ul class="clearfix">
+    <li class="big-grid">
+        <a href="#"> 
+            <div class="picbox">
+                <img src="{{one.url}}" alt="">
+            </div>
+            <div class="wordbox">
+                <div class="type">{{one.type}}</div>
+                <p>{{one.title}}</p>
+                <p>{{one["extra-info"]}}</p>
+            </div>
+        </a>
+    </li>
+    {{each items}}
+    <li class="pro-grid current">
+        <a href="#">
+            <div class="picbox">
+                <img src="{{$value.url}}" alt="">
+            </div>
+            <div class="wordbox">
+                <b>{{$value.type}}</b>
+                <p>{{$value.title}}</p>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+
+    <li class="more-grid">
+        <a href="#">
+            <div class="more-info">
+                <p>查看更多</p>
+                <p>{{more.title}}</p>
+            </div>
+            <div class="rightarrow iconfont">&#xe619;</div>
+            <div class="links">
+                {{each more.items}}
+                <a href="#">{{$value}}</a> |
+                {{/each}}
+            </div>
+        </a>
+    </li>
+</ul>

@@ -1,0 +1,13 @@
+<!-- menu 一級菜單 -->
+{{each $data}}
+<li class="menu-item" data-key="{{$value.key}}" style="height:{{99.99/$data.length}}%">
+    <dl>
+    <dt><a href="#">{{$value.title}}</a></dt>
+    <dd>
+        {{each $value.subTitles}}
+        <a href="javascript:;">{{$value}}</a>
+        {{/each}}
+    </dd>
+</dl>
+</li>
+{{/each}}

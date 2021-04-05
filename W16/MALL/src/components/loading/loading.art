@@ -1,0 +1,6 @@
+<div class="loading {{inline ? 'loading-inline':''}}" style="font-size:{{fontSize ? fontSize:14}}px">
+    <div class="loading-indocator">
+        <img src="./loading.gif" alt="loading">
+    </div>
+    <div class="loading-text">{{text?text:'加载中...'}}</div>
+</div>

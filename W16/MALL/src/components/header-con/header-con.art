@@ -1,0 +1,9 @@
+<div class="header-con">
+    <div class="center">
+        <h1>暮云游商城</h1>
+        <div class="search">
+            <input type="text" placeholder="请输入城市/酒店/机票">
+            <a href="#" class="btn iconfont">&#xe6cf;</a>
+        </div>
+    </div>
+</div>

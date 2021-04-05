@@ -15,83 +15,43 @@
         <li class="big-grid ">
             <div class="mask">
                 <div class="cicle">
-                    <p>半自</p>
-                    <p>助游</p>
+                    <p class="tag">{{one.tag}}</p>
+                    <p class="extra-tag">{{one['extra-tag']}}</p>
                 </div>
-                <p class="word">天津直飞沙巴5-6天半自助游（自由活动+出海两岛游+市区游+多种星级酒店）</p>
+                <p class="word">{{one.title}}</p>
             </div>
             <a href="#">
                 <div class="picbox">
-                    <img src="./images/yh.jpg" alt="">
+                    <img src="{{one.url}}" alt="">
                 </div>
-
             </a>
         </li>
+        {{each items}}
         <li class="pro-grid current">
             <a href="#">
                 <div class="picbox">
-                    <img src="./images/跟团配图02.png" alt="">
+                    <img src="{{$value.url}}" alt="">
                 </div>
                 <div class="wordbox">
                     <!-- <b>跟团游</b> -->
-                    <p>成都/西安直飞清迈+拜县6-7天半自助游（2-8人纯玩私家小包团+萌妹子…</p>
+                    <p>{{$value.title}}</p>
                 </div>
             </a>
         </li>
-        <li class="pro-grid">
-            <a href="#">
-                <div class="picbox">
-                    <img src="./images/跟团配图03.png" alt="">
-                </div>
-                <div class="wordbox">
-                    <!-- <b>机票</b> -->
-                    <p>[City Walk] 京都好物—京都达人带你探店、美物、饮茶、艺术、日杂…</p>
-                </div>
-            </a>
-        </li>
-        <li class="pro-grid">
-            <a href="#">
-                <div class="picbox">
-                    <img src="./images/跟团配图04.png" alt="">
-                </div>
-                <div class="wordbox">
-                    <!-- <b>自助游玩</b> -->
-                    <p>[Citywalk] 一日游禅意京都——千年古都的维新之路…</p>
-                </div>
-            </a>
-        </li>
-        <li class="pro-grid">
-            <a href="#">
-                <div class="picbox">
-                    <img src="./images/跟团配图05.png" alt="">
-                </div>
-                <div class="wordbox">
-                    <!-- <b>机票</b> -->
-                    <p>[City Walk] 日本桥— 穿街走巷看东京，感受大城市的市井人情…</p>
-                </div>
-            </a>
-        </li>
-        <li class="pro-grid">
-            <a href="#">
-                <div class="picbox">
-                    <img src="./images/跟团配图06.png" alt="">
-                </div>
-                <div class="wordbox">
-                    <!-- <b>机票</b> -->
-                    <p>[Citywalk] 将军之道—京都绝景之旅(含米其林午餐）…</p>
-                </div>
-            </a>
-        </li>
+        {{/each}}
+        
         <li class="more-grid">
             <a href="#">
                 <div class="more-info">
                     <p>查看更多</p>
-                    <p>精品跟团/半自助游</p>
+                    <p>{{more.title}}</p>
                 </div>
                 <div class="rightarrow iconfont">&#xe619;</div>
                 <div class="links">
-                    <a href="#">跟团游</a> |
-                    <a href="#">半自助游</a>
+                    {{each more.items}}
+                    <a href="#">{{$value}}</a> |
+                    {{/each}}
+                    
 
                 </div>
             </a>

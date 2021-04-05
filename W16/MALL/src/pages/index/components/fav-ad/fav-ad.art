@@ -1,6 +1,8 @@
 <ul>
-    <li><a href="#"><img src="./images/small01.png" alt=""></a></li>
-    <li><a href="#"><img src="./images/small02.png" alt=""></a></li>
-    <li><a href="#"><img src="./images/small03.png" alt=""></a></li>
-    <li><a href="#"><img src="./images/small04.png" alt=""></a></li>
+    
+    {{each $data}}
+   
+    <li><a href="#"><img src="{{$value.url}}" alt=""></a></li>
+    {{/each}}
+    
 </ul>

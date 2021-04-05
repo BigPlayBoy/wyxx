@@ -51,7 +51,7 @@ module.exports = {
           loader: 'url-loader',
           options: {
             // 小于10k的图片，会进行base64编码
-            limit: 10000,
+            limit: 1000,
             // 其他的图片转移到下面的文件夹里面
             name: 'images/[name].[ext]',
             esModule: false,

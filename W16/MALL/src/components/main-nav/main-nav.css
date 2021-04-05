@@ -1,0 +1,91 @@
+/* main nav */
+
+.main-nav {
+    height: 40px;
+    background-color: #20BD9A;
+}
+
+.main-nav .center>ul {
+    /* overflow: hidden; */
+}
+
+.main-nav .center>ul>li {
+    float: left;
+    line-height: 40px;
+    margin-right: 18px;
+    font-size: 16px;
+}
+
+.main-nav .center>ul>li.have-menu {
+    padding-right: 16px;
+    position: relative;
+}
+
+.main-nav .center>ul>li.have-menu::before {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 18px;
+    width: 0px;
+    height: 0px;
+    border: 8px solid transparent;
+    border-top-color: white;
+    border-bottom: none;
+    transition: transform 0.3s linear 0s;
+    /* background-color: white; */
+    /* transform: rotate(45deg); */
+}
+
+.main-nav .center>ul>li.have-menu:hover::before {
+    transform: rotate(180deg);
+}
+
+/* 导航栏二级菜单 */
+
+.main-nav .center .menu {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: white;
+    display: none;
+    padding: 10px;
+}
+
+.main-nav .center .menu dt {
+    font-size: 14px;
+}
+
+.main-nav .center .menu a {
+    color: #1C1F21;
+    font-size: 12px;
+    /* margin-right: 4px; */
+}
+
+.main-nav .center .menu a:hover {
+    color: orange;
+}
+
+.main-nav .center ul li.have-menu {
+    position: relative;
+    z-index: 9999;
+}
+
+.main-nav .center ul li.have-menu:hover .menu {
+    display: block;
+}
+
+.main-nav .center .jjzyxmenu {
+    width: 150px;
+}
+
+.main-nav .center .gtymenu {
+    width: 90px;
+}
+
+.main-nav .center .ddwlmenu {
+    width: 190px;
+}
+
+.main-nav .center .sdlymenu {
+    width: 160px;
+}

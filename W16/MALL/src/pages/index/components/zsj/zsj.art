@@ -15,85 +15,43 @@
         <li class="big-grid">
             <div class="mask">
                 <div class="cicle">
-                    <p>城市</p>
-                    <p>CityWalk</p>
+                    <p class='tag'>{{one.tag}}</p>
+                    <p class="extra-tag">{{one['extra-tag']}}</p>
                 </div>
-                <p class="word">【City Walk】大阪浪花の城——美食、动漫和不为人知的大阪人辛秘生活</p>
+                <p class="word">{{one.title}}</p>
             </div>
             <a href="#">
                 <div class="picbox">
-                    <img src="./images/yh.jpg" alt="">
+                    <img src="{{one.url}}" alt="">
                 </div>
 
             </a>
         </li>
+        {{each items}}
         <li class="pro-grid current">
             <a href="#">
                 <div class="picbox">
-                    <img src="./images/最世界配图02.png" alt="">
+                    <img src="{{$value.url}}" alt="">
                 </div>
                 <div class="wordbox">
                     <!-- <b>跟团游</b> -->
-                    <p>[City Walk] 京都伏见稻荷大社日本清酒厂巡礼半日游——赏千本鸟居…</p>
+                    <p>{{$value.title}}</p>
                 </div>
             </a>
         </li>
-        <li class="pro-grid">
-            <a href="#">
-                <div class="picbox">
-                    <img src="./images/最世界配图03.png" alt="">
-                </div>
-                <div class="wordbox">
-                    <!-- <b>机票</b> -->
-                    <p>[City Walk] 京都好物—京都达人带你探店、美物、饮茶、艺术、日杂…</p>
-                </div>
-            </a>
-        </li>
-        <li class="pro-grid">
-            <a href="#">
-                <div class="picbox">
-                    <img src="./images/最世界配图04.png" alt="">
-                </div>
-                <div class="wordbox">
-                    <!-- <b>自助游玩</b> -->
-                    <p>[Citywalk] 一日游禅意京都——千年古都的维新之路…</p>
-                </div>
-            </a>
-        </li>
-        <li class="pro-grid">
-            <a href="#">
-                <div class="picbox">
-                    <img src="./images/最世界配图05.png" alt="">
-                </div>
-                <div class="wordbox">
-                    <!-- <b>机票</b> -->
-                    <p>[City Walk] 日本桥— 穿街走巷看东京，感受大城市的市井人情…</p>
-                </div>
-            </a>
-        </li>
-        <li class="pro-grid">
-            <a href="#">
-                <div class="picbox">
-                    <img src="./images/最世界配图06.png" alt="">
-                </div>
-                <div class="wordbox">
-                    <!-- <b>机票</b> -->
-                    <p>[Citywalk] 将军之道—京都绝景之旅(含米其林午餐）…</p>
-                </div>
-            </a>
-        </li>
+        {{/each}}
         <li class="more-grid">
             <a href="#">
                 <div class="more-info">
                     <p>查看更多</p>
-                    <p>机酒自由行产品</p>
+                    <p>{{more.title}}</p>
                 </div>
                 <div class="rightarrow iconfont">&#xe619;</div>
                 <div class="links">
-                    <a href="#">日游</a> |
-                    <a href="#">周末</a> |
-                    <a href="#">亲子</a> |
-                    <a href="#">长线</a>
+                    {{each more.items}}
+                    <a href="#">{{$value}}</a> |
+                    {{/each}}
+                    
                 </div>
             </a>
         </li>

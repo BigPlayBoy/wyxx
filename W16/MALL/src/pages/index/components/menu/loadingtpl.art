@@ -1,0 +1,3 @@
+<li class="{{key}} current" data-key="{{key}}">
+    <% include('../../../../components/loading/loading.art',{ inline:true,text:"请君稍后",fontSize:32 })%>
+</li>

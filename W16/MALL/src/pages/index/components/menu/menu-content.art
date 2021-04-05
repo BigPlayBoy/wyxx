@@ -1,0 +1,12 @@
+<li class="{{$data.class}}" data-key="{{$data.key}}">
+{{each $data}}
+    <dl>
+        <dt>{{$value.title}}</dt>
+        <dd>
+            {{each $value.cities}}
+            <a href="javascript:;">{{$value.text}}</a>
+            {{/each}}
+        </dd>
+    </dl>
+    {{/each}}
+</li>

@@ -4,41 +4,17 @@
 </div>
 <div class="bd">
     <ul class="clearfix">
+        {{each $data}}
         <li><a href="#">
-                <div class="picbox"><img src="./images/特色当地配图01.png" alt=""></div>
+                <div class="picbox"><img src="{{$value.url}}" alt=""></div>
                 <div class="wordbox">
-                    <p class="proname">香港迪士尼乐园门票(一日 / 两日) - 无需换票扫码入园）</p>
-                    <p class="info"><span class="score">4.8★</span>
-                        (<span>9283</span>条评价)<span>2334.69k</span>人参加
+                    <p class="proname">{{$value.title}}</p>
+                    <p class="info"><span class="score">{{$value.score}}★</span>
+                        (<span>{{$value.comments}}</span>条评价)<span>{{$value['join_counts']}}</span>人参加
                     </p>
                 </div>
             </a></li>
-        <li><a href="#">
-                <div class="picbox"><img src="./images/特色当地配图02.png" alt=""></div>
-                <div class="wordbox">
-                    <p class="proname">罗马金宫剧场人妖秀</p>
-                    <p class="info"><span class="score">4.8★</span>
-                        (<span>9283</span>条评价)<span>2334.69k</span>人参加
-                    </p>
-                </div>
-            </a></li>
-        <li><a href="#">
-                <div class="picbox"><img src="./images/特色当地配图03.png" alt=""></div>
-                <div class="wordbox">
-                    <p class="proname"> 京都和服体验 - 梦馆</p>
-                    <p class="info"><span class="score">4.8★</span>
-                        (<span>9283</span>条评价)<span>2334.69k</span>人参加
-                    </p>
-                </div>
-            </a></li>
-        <li><a href="#">
-                <div class="picbox"><img src="./images/特色当地配图04.png" alt=""></div>
-                <div class="wordbox">
-                    <p class="proname">英国巨石阵 & 温莎城堡 & 巴斯罗马浴场一日游</p>
-                    <p class="info"><span class="score">4.8★</span>
-                        (<span>9283</span>条评价)<span>2334.69k</span>人参加
-                    </p>
-                </div>
-            </a></li>
+            {{/each}}
+        
     </ul>
 </div>

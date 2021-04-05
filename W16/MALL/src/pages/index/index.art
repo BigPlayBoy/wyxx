@@ -14,378 +14,75 @@
 <body>
     <!-- 顶部区域 -->
     <header class="site-head">
-    <!-- topbar 区域 -->
-    {{include '../../components/topbar/topbar.art'}}
-        <nav class="main-nav">
-            <div class="center">
-                <ul>
-                    <li class="have-menu"><a href="#">机酒自由行</a>
-                        <div class="menu jjzyxmenu">
-                            <dl>
-                                <dt>全部</dt>
-                                <dd>
-                                    <a href="#">自由行</a>
-                                    <a href="#">优惠机票</a>
-                                    <a href="#">酒店</a>
-                                    <a href="#">邮轮</a>
-                                    <a href="#">定制游</a>
-                                    <a href="#">马尔代夫</a>
-                                    <a href="#">海岛游</a>
-
-                                </dd>
-                            </dl>
-                        </div>
-                    </li>
-                    <li><a href="#">优惠机票</a></li>
-                    <li class="have-menu"><a href="#">跟团游</a>
-                        <div class="menu gtymenu">
-                            <dl>
-                                <dt>全部</dt>
-                                <dd>
-                                    <a href="#">跟团游</a>
-                                    <a href="#">半自助游</a>
-
-
-                                </dd>
-                            </dl>
-                        </div>
-                    </li>
-                    <li><a href="#">酒店</a></li>
-                    <li class="have-menu">
-                        <a href="#">当地玩乐</a>
-                        <div class="menu ddwlmenu">
-                            <dl>
-                                <dt>全部</dt>
-                                <dd>
-                                    <a href="#">自由行</a>
-                                    <a href="#">优惠机票</a>
-                                    <a href="#">酒店</a>
-                                    <a href="#">邮轮</a>
-                                    <a href="#">定制游</a>
-                                    <a href="#">马尔代夫</a>
-                                    <a href="#">海岛游</a>
-
-                                </dd>
-                            </dl>
-                        </div>
-                    </li>
-                    <li><a href="#">签证</a></li>
-                    <li><a href="#">游轮</a></li>
-                    <li><a href="#">河轮</a></li>
-                    <li><a href="#">保险</a></li>
-                    <li><a href="#">租车自驾</a></li>
-                    <li class="have-menu"><a href="#">深度旅游</a>
-                        <div class="menu sdlymenu">
-                            <dl>
-                                <dt>全部</dt>
-                                <dd>
-                                    <a href="#">自由行</a>
-                                    <a href="#">优惠机票</a>
-                                    <a href="#">酒店</a>
-                                    <a href="#">邮轮</a>
-                                    <a href="#">定制游</a>
-                                    <a href="#">马尔代夫</a>
-                                    <a href="#">海岛游</a>
-
-                                </dd>
-                            </dl>
-                        </div>
-                    </li>
-                    <li><a href="#">私人定制</a></li>
-                </ul>
-            </div>
-        </nav>
+        <!-- topbar 区域 -->
+        {{include '../../components/topbar/topbar.art'}}
+        {{include '../../components/main-nav/main-nav.art'}}
         <!-- 页面LOGO和搜索框 -->
-        <div class="header-con">
-            <div class="center">
-                <h1>暮云游商城</h1>
-                <div class="search">
-                    <input type="text" placeholder="请输入城市/酒店/机票">
-                    <a href="#" class="btn iconfont">&#xe6cf;</a>
-                </div>
-            </div>
-        </div>
+        {{include '../../components/header-con/header-con.art'}}
     </header>
     <!-- banner区域 -->
     <section class="banner" id="banner">
-        {{include './components/carousel/carousel.art'}}
-        
-    <div class="center">
-        {{include './components/carousel/btn.art'}}
-        <nav class="banner-nav" id="banner-nav">
-            <!-- banner區域一級菜單 -->
-            <ul id="banner_nav_ul">
-                <li class=" rmcfd" data-t="rmcfd">
-                <dl>
-                    <dt><a href="#">热门出发地</a></dt>
-                    <dd>
-                        <a href="#">北京</a>
-                        <a href="#">上海</a>
-                        <a href="#">广深</a>
-                        <a href="#">西南</a>
-                        <a href="#">国内其他</a>
-                    </dd>
-                </dl>
-                </li>
-                <li class="gangaotai" data-t="gangaotai">
-                <dl>
-                    <dt><a href="#">港澳台</a>
-                        <a href="#">国内</a>
-                    </dt>
-                    <dd>
-                        <a href="#">香港</a>
-                        <a href="#">澳门</a>
-                        <a href="#">台湾</a>
-                        <a href="#">国内其他</a>
-                    </dd>
-                </dl>
-                </li>
-                <li class="ribenhanguo" data-t="ribenhanguo">
-                <dl>
-                    <dt><a href="#">日本</a>
-                        <a href="#">韩国</a>
-                    </dt>
-                    <dd>
-                        <a href="#">香港</a>
-                        <a href="#">澳门</a>
-                        <a href="#">台湾</a>
-                        <a href="#">国内其他</a>
-                    </dd>
-                </dl>
-                </li>
-                <li class="dongnanya" data-t="dongnanya">
-                <dl>
-                    <dt><a href="#">东南亚</a>
-                        <a href="#">南亚</a>
-                    </dt>
-                    <dd>
-                        <a href="#">香港</a>
-                        <a href="#">澳门</a>
-                        <a href="#">台湾</a>
-                        <a href="#">国内其他</a>
-                    </dd>
-                </dl>
-                </li>
-                <li class="ouzhoumeizhou" data-t="ouzhoumeizhou">
-                <dl>
-                    <dt><a href="#">欧洲</a>
-                        <a href="#">美洲</a>
-                    </dt>
-                    <dd>
-                        <a href="#">香港</a>
-                        <a href="#">澳门</a>
-                        <a href="#">台湾</a>
-                        <a href="#">国内其他</a>
-                    </dd>
-                </dl>
-                </li>
-                <li class="aoxin" data-t="aoxin">
-                <dl>
-                    <dt><a href="#">澳新</a>
-                        <a href="#">中东非</a>
-                    </dt>
-                    <dd>
-                        <a href="#">香港</a>
-                        <a href="#">澳门</a>
-                        <a href="#">台湾</a>
-                        <a href="#">国内其他</a>
-                    </dd>
-                </dl>
+        <div id="slider-layout">
+            <% include('../../components/loading/loading.art',{ inline:true,text:"请君稍后" })%>
+        </div>
+        <div class="center">
+            {{include './components/slider/btn.art'}}
+            <!-- menu 一級菜單 -->
+
+            <ul class="menu" id="banner_nav_ul">
+            </ul>
+            <!-- menu 二级菜单 -->
+            <ul class='menu-content' id='menu-content'>
+                <li>
+                    <% include('../../components/loading/loading.art',{ inline:true,text:"请君稍后" })%>
                 </li>
             </ul>
-            <!-- banner區域二級菜單 -->
-            <div class="menus-box" id="menus-box">
-                <div class="menu" data-t="rmcfd">
-                    <dl>
-                        <dt>热门出发地</dt>
-                        <dd>
-                            <a href="#">香港</a>
-                            <a href="#">澳门</a>
-                            <a href="#">台北</a>
-                            <a href="#">高雄</a>
-                            <a href="#">香港迪士尼</a>
-                            <a href="#">香港海洋公园</a>
-                            <a href="#">交通接驳</a>
-                            <a href="#">澳门塔</a>
-                            <a href="#">新濠天地水舞间</a>
-                            <a href="#">澳门豪华自助</a>
-                            <a href="#">台北101</a>
-                            <a href="#">台湾美食</a>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="menu" data-t="gangaotai">
-                <dl>
-                    <dt>日本</dt>
-                    <dd>
-                        <a href="#">香港</a>
-                        <a href="#">澳门</a>
-                        <a href="#">台北</a>
-                        <a href="#">高雄</a>
-                        <a href="#">香港迪士尼</a>
-                        <a href="#">香港海洋公园</a>
-                        <a href="#">交通接驳</a>
-                        <a href="#">澳门塔</a>
-                        <a href="#">新濠天地水舞间</a>
-                        <a href="#">澳门豪华自助</a>
-                        <a href="#">台北101</a>
-                        <a href="#">台湾美食</a>
-                    </dd>
-                </dl>
-                </div>
-                <div class="menu " data-t="ribenhanguo">
-                <dl>
-                    <dt>泰新马</dt>
-                    <dd>
-                        <a href="#">普吉岛</a>
-                        <a href="#">清迈</a>
-                        <a href="#">曼谷</a>
-                        <a href="#">苏梅岛</a>
-                        <a href="#">甲米</a>
-                        <a href="#">芭堤雅</a>
-                        <a href="#">拜县</a>
-                        <a href="#">新加坡</a>
-                        <a href="#">马来西亚</a>
-                        <a href="#">沙巴</a>
-                        <a href="#">吉隆坡</a>
-                        <a href="#">皇帝岛</a>
-                        <a href="#">泰国人妖</a>
-                        <a href="#">泰国丛林飞跃</a>
-                        <a href="#">泰国spa按摩</a>
-                        <a href="#">清迈夜间动物园</a>
-                        <a href="#">泰拳表演</a>
-                        <a href="#">清莱一日游</a>
-                        <a href="#">新加坡环球影城</a>
-                        <a href="#">新加坡日游</a>
-                        <a href="#">新加坡濱海灣花園</a>
-                        <a href="#">沙巴美人魚島</a>
-                        <a href="#">沙巴紅樹林螢火蟲</a>
-                    </dd>
-                </dl>
-                </div>
-                <div class="menu" data-t="dongnanya">
-                <dl>
-                    <dt>東南亞</dt>
-                    <dd>
-                        <a href="#">普吉岛</a>
-                        <a href="#">清迈</a>
-                        <a href="#">曼谷</a>
-                        <a href="#">苏梅岛</a>
-                        <a href="#">甲米</a>
-                        <a href="#">芭堤雅</a>
-                        <a href="#">拜县</a>
-                        <a href="#">新加坡</a>
-                        <a href="#">马来西亚</a>
-                        <a href="#">沙巴</a>
-                        <a href="#">吉隆坡</a>
-                        <a href="#">皇帝岛</a>
-                        <a href="#">泰国人妖</a>
-                        <a href="#">泰国丛林飞跃</a>
-                        <a href="#">泰国spa按摩</a>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt>南亚 西亚</dt>
-                    <dd>
-                        <a href="#">普吉岛</a>
-                        <a href="#">清迈</a>
-                        <a href="#">曼谷</a>
-                        <a href="#">苏梅岛</a>
-                        <a href="#">甲米</a>
-                        <a href="#">芭堤雅</a>
-                    </dd>
-                </dl>
-                </div>
-                <div class="menu" data-t="ouzhoumeizhou"></div>
-                <div class="menu" data-t="aoxin">
-                <dl>
-                    <dt>泰新马</dt>
-                    <dd>
-                        <a href="#">普吉岛</a>
-                        <a href="#">清迈</a>
-                        <a href="#">曼谷</a>
-                        <a href="#">苏梅岛</a>
-                        <a href="#">甲米</a>
-                        <a href="#">芭堤雅</a>
-                        <a href="#">拜县</a>
-                        <a href="#">新加坡</a>
-                        <a href="#">马来西亚</a>
-                        <a href="#">沙巴</a>
-                        <a href="#">吉隆坡</a>
-                        <a href="#">皇帝岛</a>
-                        <a href="#">泰国人妖</a>
-                        <a href="#">泰国丛林飞跃</a>
-                        <a href="#">泰国spa按摩</a>
-                        <a href="#">清迈夜间动物园</a>
-                        <a href="#">泰拳表演</a>
-                        <a href="#">清莱一日游</a>
-                        <a href="#">新加坡环球影城</a>
-                        <a href="#">新加坡日游</a>
-                        <a href="#">新加坡濱海灣花園</a>
-                        <a href="#">沙巴美人魚島</a>
-                        <a href="#">沙巴紅樹林螢火蟲</a>
-                    </dd>
-                </dl>
-                </div>
-            </div>
-        </nav>
-    </div>
+
+        </div>
     </section>
     <!-- 热门广告:四张图片 -->
     <section class="hot-ads clearfix content-part">
         <div class="center">
             <!-- 广告显示区域 -->
-           {{include './components/fav-ad/fav-ad.art'}}
         </div>
     </section>
     <!-- 新鲜甩尾区域 -->
     <section class="fresh content-part common-style">
         <div class="center ">
-           {{include './components/xxsw/xxsw.art'}}
-            
         </div>
     </section>
     <!-- 机酒自由行区域 -->
     <section class="jjzyx content-part common-style">
         <div class="center">
             {{include './components/jjzyx/jjzyx.art'}}
-
-            </div>
+        </div>
     </section>
     <!-- 当地玩乐区域,小标题与机酒自由行样式相同,可以借鉴 -->
     <section class="ddwl content-part">
         <div class="center">
-            {{include './components/ddwl/ddwl.art'}}
-            
         </div>
     </section>
     <!-- 特色当地体验 -->
     <section class="tsddty content-part">
         <div class="center">
-            {{include './components/tsddty/tsddty.art'}}
         </div>
     </section>
     <!-- 最世界；深度旅行 -->
     <section class="zsj content-part common-style">
         <div class="center">
-            {{include './components/zsj/zsj.art'}}
-            
         </div>
     </section>
     <!-- 跟团/半自助游 -->
     <section class="gtbzz content-part common-style">
         <div class="center">
-            {{include './components/gt/gt.art'}}
         </div>
     </section>
     <!-- 页脚 -->
     <footer>
         {{include '../../components/footer-nav/footer-nav.art'}}
         {{include '../../components/bottom-bar/bottom-bar.art'}}
-        
         <!-- 返回顶部按钮 -->
         {{include '../../components/backtotop/backtotop.art'}}
-        
     </footer>
 </body>
 

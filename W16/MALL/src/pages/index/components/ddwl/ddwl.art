@@ -20,13 +20,13 @@
         <div class="big-grid">
             <a href="#">
                 <div class="picbox">
-                    <img src="images/当地玩乐配图01.png" alt="">
+                    <img src="{{one.url}}" alt="">
                 </div>
                 <div class="infobox">
-                    <p>[亲子佳选]泰国清迈夜间动物园/Night Safari（可选接送；导游；长颈鹿餐厅）</p>
+                    <p>{{one.title}}</p>
                     <div class="bottom clearfix">
-                        <p class="tag">城市玩乐</p>
-                        <p class="price"><strong>199</strong>元起</p>
+                        <p class="tag">{{one.type}}</p>
+                        <p class="price"><strong>{{one.price}}</strong>元起</p>
                     </div>
                 </div>
             </a>
@@ -34,10 +34,10 @@
         <div class="small-grid clearfix">
             <a href="#">
                 <div class="picbox">
-                    <img src="images/当地玩乐配图02.png" alt="">
+                    <img src="{{items[0].url}}" alt="">
                 </div>
                 <div class="wordbox">
-                    <p>[樱花季] 北京/天津直飞东京/大阪/名古屋/福冈/广岛/北海道/冲绳往返…</p>
+                    <p>{{items[0].title}}</p>
                 </div>
             </a>
         </div>
@@ -46,30 +46,30 @@
         <div class="small-grid clearfix">
             <a href="#">
                 <div class="picbox">
-                    <img src="images/当地玩乐配图03.png" alt="">
+                    <img src="{{items[1].url}}" alt="">
                 </div>
                 <div class="wordbox">
-                    <p>[网红新选] 泰国清迈黑白蓝庙一日游清莱黑庙 白庙 蓝庙 温泉驿站中文导游+酒店接送+餐赠小…</p>
+                    <p>{{items[1].title}}</p>
                 </div>
             </a>
         </div>
         <div class="small-grid clearfix">
             <a href="#">
                 <div class="picbox">
-                    <img src="images/当地玩乐配图04.png" alt="">
+                    <img src="{{items[2].url}}" alt="">
                 </div>
                 <div class="wordbox">
-                    <p>[全岛接送+中文导游] 泰国普吉岛+皇帝岛+珊瑚岛一日游双体帆船海钓 [帆船晚会+浮潜]…</p>
+                    <p>{{items[2].title}}</p>
                 </div>
             </a>
         </div>
         <div class="small-grid clearfix">
             <a href="#">
                 <div class="picbox">
-                    <img src="images/当地玩乐配图05.png" alt="">
+                    <img src="{{items[3].url}}" alt="">
                 </div>
                 <div class="wordbox">
-                    <p>享行之旅|泰国苏梅岛一日游 越野车丛林环岛之旅 骑大象纳蒙瀑布</p>
+                    <p>{{items[3].title}}</p>
                 </div>
             </a>
         </div>
@@ -78,10 +78,10 @@
         <div class="small-grid clearfix">
             <a href="#">
                 <div class="picbox">
-                    <img src="images/当地玩乐配图06.png" alt="">
+                    <img src="{{items[4].url}}" alt="">
                 </div>
                 <div class="wordbox">
-                    <p>[可接急单] 泰国普吉岛西蒙Simon人妖秀门票VIP专座近距离与人妖互动合影…</p>
+                    <p>{{items[4].title}}</p>
                 </div>
             </a>
         </div>
@@ -89,14 +89,14 @@
             <a href="#">
                 <div class="more-info">
                     <p>查看更多</p>
-                    <p>当地玩乐产品</p>
+                    <p>{{more.title}}</p>
                 </div>
                 <div class="rightarrow iconfont">&#xe619;</div>
                 <div class="links">
-                    <a href="#">wifi/电话卡</a> |
-                    <a href="#">交通门票</a> |
-                    <a href="#">景点门票</a> |
-                    <a href="#">特色体验</a>
+                    {{each more.items}}
+                    <a href="#">{{$value}}</a> |
+                    {{/each}}
+                    
                 </div>
             </a>
         </div>

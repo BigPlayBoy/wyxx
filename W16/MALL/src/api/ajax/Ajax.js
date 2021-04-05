@@ -1,156 +1,213 @@
-import { serialize, addURLData, serializeJSON } from "./utils.js";
-const HTTP_GET = "GET";
-const HTTP_POST = "POST";
-const CONTENT_TYPE_FORM_URLENCODED = 'application/x-www-form-urlencoded';
-const CONTENT_TYPE_JSON = 'application/json';
-// import (serialize)
-const DEFAULTS = {
-    method: HTTP_GET,
-    // 请求头携带的数据
-    params: null,
-    // 请求体携带数据
-    data: null,
-    contentType: CONTENT_TYPE_FORM_URLENCODED,
-    responseType: '',
-    timeoutTime: 0,
-    withCredentials: false,
+// 这就是模块化开发
 
-    success() { },
-    httpCodeError() { },
-    error() { },
-    abort() { },
-    timeout() { }
-}
-// Ajax类
-class Ajax {
-    constructor(url, options) {
-        this.url = url;
-        this.options = Object.assign({}, DEFAULTS, options);
-        console.log(this.options);
-        this.init();
-    }
+// 需要用到再写
+
+// 常量
+import {
+  HTTP_GET,
+  CONTENT_TYPE_FORM_URLENCODED,
+  CONTENT_TYPE_JSON
+} from './constants.js';
+// 工具函数
+import { addURLData, serialize, serializeJSON } from './utils.js';
+// 默认参数
+import { DEFAULTS } from './defaults.js';
+
+// Ajax 类
+export default class Ajax {
+  constructor(url, options) {
+    this.url = url;
+    this.options = Object.assign({}, DEFAULTS, options);
 
     // 初始化
-    init() {
-        const xhr = new XMLHttpRequest();
-        this.xhr = xhr;
+    this.init();
+  }
 
-        this.bindEvents();
+  // 初始化
+  init() {
+    this.xhr = new XMLHttpRequest();
 
-        xhr.open(this.options.method, this.url + this.addParam(), true);
-        this.setResponseType();
-        this.setCookie();
-        this.setTimeout();
-        this.sendData();
-        
-    }
-    // 事件监听
-    bindEvents() {
-        const xhr = this.xhr;
-        const { success, httpCodeError, error, abort, timeout } = this.options;
-        xhr.addEventListener('load', () => {
-            if (this.ok()) {
-                // console.log(xhr.response);
-                success(xhr.response, xhr);
-            } else {
-                httpCodeError(xhr.status, xhr);
-            }
-        }, false);
-        // 当请求遇到错误时，将触发ERROR事件
-        xhr.addEventListener('error', () => {
-            error(xhr);
-        }, false);
-        xhr.addEventListener('abort', () => {
-            abort(xhr);
-        }, false);
-        xhr.addEventListener('timeout', () => {
-            timeout(xhr);
-        }, false);
-    }
-    // 检测响应的HTTP状态码是否正常
-    ok() {
-        const xhr = this.xhr;
-        return ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304);
-    }
-    // 在地址上添加数据
-    addParam() {
-        const { params } = this.options;
-        if (!params) return '';
-        return addURLData(this.url, serialize(params));
+    const xhr = this.xhr;
 
-    }
-    setResponseType() {
-        this.xhr.responseType = this.options.responseType;
-    }
-    setCookie() {
-        if (this.withCredentials) {
+    // 绑定响应事件处理程序
+    // 先写，再移出去
+    this.bindEvents();
 
-            this.xhr.withCredentials = this.options.withCredentials;
-        }
+    xhr.open(this.options.method, this.url + this.addParam(), true);
 
-    }
-    setTimeout() {
-        const { timeoutTime } = this.options;
-        if (timeoutTime > 0) {
+    // console.log(this.url + this.addParam());
 
-            this.xhr.timeout = timeoutTime;
-        }
-    }
+    // 设置 responseType
+    // 先写，再移出去
+    this.setResponseType();
+
+    // 设置跨域是否携带 cookie
+    this.setCookie();
+
+    // 设置超时
+    this.setTimeout();
+
     // 发送请求
-    sendData() {
-        const xhr = this.xhr;
-        if (!this.isSendData()) {
-            return xhr.send(null);
-        }
-        let resultData = null;
-        if (this.isFormData()) {
-            resultData = this.options.data;
-        } else if (this.isFormURLEncodedData()) {
-            // 发送application/x-www-form-urlencoded格式的数据
-            this.setContentType(CONTENT_TYPE_FORM_URLENCODED);
-            resultData = serialize(this.options.data);
-        } else if (this.isJSONData()) {
-            this.setContentType(CONTENT_TYPE_JSON);
-            resultData = serializeJSON(this.options.data);
-        } else {
-            // 发送其他数据的格式
-            this.setContentType();
-            resultData = this.options.data;
-        }
+    this.sendData();
+  }
 
-        xhr.send(resultData);
-    }
-    // 是否需要使用send发送数据
-    isSendData() {
-        const { data, method } = this.options;
-        if (!data) {
-            return false;
+  // 绑定响应事件处理程序
+  // 这里为了讲解的方便，不考虑兼容性
+  // 不然会多出很多兼容性的代码，影响大家听课体验
+  // 对兼容性感兴趣的可以自己试试，我们之前已经说过各属性、方法以及事件的兼容性了
+  bindEvents() {
+    const xhr = this.xhr;
+    const { success, httpCodeError, error, abort, timeout } = this.options;
+
+    // load
+    xhr.addEventListener(
+      'load',
+      () => {
+        if (this.ok()) {
+          success(xhr.response, xhr);
+        } else {
+          httpCodeError(xhr.status, xhr);
         }
-        if (method.toLowerCase() === HTTP_GET.toLowerCase()) {
-            return false;
-        }
-        return true;
+      },
+      false
+    );
+
+    // error
+    // 当请求遇到错误时，将触发 error 事件
+    xhr.addEventListener(
+      'error',
+      () => {
+        error(xhr);
+      },
+      false
+    );
+
+    // abort
+    this.xhr.addEventListener(
+      'abort',
+      () => {
+        abort(xhr);
+      },
+      false
+    );
+
+    // timeout
+    this.xhr.addEventListener(
+      'timeout',
+      () => {
+        timeout(xhr);
+      },
+      false
+    );
+  }
+
+  // 检测响应的 HTTP 状态码是否正常
+  ok(xhr = this.xhr) {
+    return (xhr.status >= 200 && xhr.status < 300) || xhr.status === 304;
+  }
+
+  // 在地址上添加数据
+  addParam() {
+    const { params } = this.options;
+
+    if (!params) return '';
+
+    return addURLData(this.url, serialize(params));
+  }
+
+  // 设置 responseType
+  setResponseType() {
+    this.xhr.responseType = this.options.responseType;
+  }
+
+  // 设置跨域是否携带 cookie
+  setCookie() {
+    if (this.options.withCredentials) {
+      this.xhr.withCredentials = true;
     }
-    // 是否发送FormData格式的数据
-    isFormData() {
-        // 判断data数据是否是FromData格式
-        return this.options.data instanceof FormData;
+  }
+
+  // 设置超时
+  setTimeout() {
+    const { timeoutTime } = this.options;
+
+    if (timeoutTime > 0) {
+      this.xhr.timeout = timeoutTime;
     }
-    isFormURLEncodedData() {
-        return this.options.contentType.toLowerCase().includes(CONTENT_TYPE_FORM_URLENCODED);
+  }
+
+  // 发送请求
+  sendData(xhr = this.xhr) {
+    if (!this.isSendData()) {
+      return xhr.send(null);
     }
-    isJSONData() {
-        return this.options.contentType.toLowerCase().includes(CONTENT_TYPE_JSON);
+
+    let resultData = null;
+    const { data } = this.options;
+
+    // 发送 FormData 格式的数据
+    if (this.isFormData()) {
+      resultData = data;
+    } else if (this.isFormURLEncodedData()) {
+      // 发送 application/x-www-form-urlencoded 格式的数据
+      // 设置 Content-Type
+      this.setContentType(CONTENT_TYPE_FORM_URLENCODED);
+      resultData = serialize(data);
+    } else if (this.isJSONData()) {
+      // 发送 application/json 格式的数据
+
+      // 设置 Content-Type
+      this.setContentType(CONTENT_TYPE_JSON);
+      resultData = serializeJSON(data);
+    } else {
+      // 发送其他格式的数据
+
+      // 设置 Content-Type
+      this.setContentType();
+      resultData = data;
     }
-    // 设置Content-Type
-    setContentType(contentType = this.options.contentType) {
-        if (!contentType) return;
-        this.xhr.setRequestHeader('Content-Type',contentType);
-    }
-    // 获取XHR对象
-    getXHR(){
-        return this.xhr;
-    }
-} 
-// export {getXHR};
-export default Ajax;
+
+    // 发送请求
+    xhr.send(resultData);
+  }
+
+  // 是否需要使用 send 发送数据
+  isSendData() {
+    const { data, formData, method } = this.options;
+
+    if (!data && !formData) return false;
+
+    if (method === HTTP_GET) return false;
+
+    return true;
+  }
+
+  // 是否发送 FormData 格式的数据
+  isFormData() {
+    return this.options.data instanceof FormData;
+  }
+
+  // 是否发送 application/x-www-form-urlencoded 格式的数据
+  isFormURLEncodedData() {
+    return this.options.contentType
+      .toLowerCase()
+      .includes(CONTENT_TYPE_FORM_URLENCODED);
+  }
+
+  // 是否发送 application/json 格式的数据
+  isJSONData() {
+    return this.options.contentType.toLowerCase().includes(CONTENT_TYPE_JSON);
+  }
+
+  // 设置 Content-Type
+  setContentType(contentType = this.options.contentType) {
+    if (!contentType) return;
+
+    this.xhr.setRequestHeader('Content-Type', contentType);
+  }
+
+  // 获取 xhr
+  getXHR() {
+    return this.xhr;
+  }
+}

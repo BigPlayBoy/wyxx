@@ -1,0 +1,41 @@
+/* LOGO区域 搜索框区域*/
+
+.header-con .center {
+    height: 36px;
+    overflow: hidden;
+    padding: 21px 0;
+}
+
+.header-con .center .search {
+    float: left;
+    width: 405px;
+    padding-top: 2px;
+    overflow: hidden;
+}
+
+.header-con .center h1 {
+    float: left;
+    font-size: 24px;
+    color: #20BD9A;
+    margin-right: 20px;
+    line-height: 36px;
+}
+
+.header-con .center .search input {
+    float: left;
+    width: 371px;
+    height: 28px;
+    border: 1px solid #20BD9A;
+    border-radius: 3px 0 0 3px;
+}
+
+.header-con .center .search .btn {
+    float: left;
+    width: 32px;
+    height: 30px;
+    background-color: #20BD9A;
+    border-radius: 0 3px 3px 0;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+}
