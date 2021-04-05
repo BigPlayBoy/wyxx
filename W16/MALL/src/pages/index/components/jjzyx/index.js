@@ -5,9 +5,12 @@ import { getData, getDelayedData } from 'api/getData';
 import { JJZYX_URL } from 'api/mall_url.config.js';
 
 import render from './items.art';
+import renderhd from './jjzyx.art';
+const jjzyx=document.querySelector('.jjzyx .center');
+jjzyx.innerHTML=renderhd();
 const layoutEl=document.querySelector('.jjzyx .bd');
 getDelayedData(JJZYX_URL).then(data => {
-    console.log(data);
+    // console.log(data);
     // console.log(render(data));
     layoutEl.innerHTML=render(data);
 }).catch(err => {

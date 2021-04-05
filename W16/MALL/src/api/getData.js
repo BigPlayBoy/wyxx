@@ -1,6 +1,6 @@
 import { SUCC_CODE, TIMEOUT } from './config';
 import { getJSON } from './ajax';
-
+const DELAYEDTIME=1;
 // 获取数据
 const getData = (url, options) => {
   return getJSON(url, {
@@ -31,7 +31,7 @@ const delay = ms => {
 
 // 获取延迟的数据
 const getDelayedData = (url, options) => {
-  return delay(1000).then(() => {
+  return delay(DELAYEDTIME).then(() => {
     return getData(url, options);
   });
 };

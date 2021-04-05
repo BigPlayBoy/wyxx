@@ -6,7 +6,7 @@
         <ul class="clearfix">
             <li class="current"><a href="#">近期好货</a></li>
             <li><a href="#">新品汇聚</a></li>
-            <li class="current"><a href="#">定制游</a></li>
+            <li class=""><a href="#">定制游</a></li>
             <li><a href="#">国内推荐</a></li>
             <li><a href="#">优惠机票</a></li>
             <li><a href="#">热门海岛</a></li>
@@ -16,6 +16,6 @@
 </div>
 <!-- 图文元素 -->
 <div class="bd">
-    <% include('../../../../components/loading/loading.art',{ inline:true,text:"内容正在加载中" })%>
+    <% include('../../../../components/loading/loading.art',{ inline:true,text:"机酒自由行内容正在加载中" })%>
 
 </div>

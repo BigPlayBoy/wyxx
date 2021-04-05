@@ -1,21 +1,10 @@
-<!-- 本区域顶部元素 -->
-<div class="hd clearfix">
-    <h2>最世界·深度旅行</h2>
-    <em>摆脱千篇一律的旅行，探索属于自己的世界</em>
-    <nav>
-        <ul class="clearfix">
-            <li class="current"><a href="#">城市CityWalk</a></li>
-
-        </ul>
-    </nav>
-</div>
 <!-- 图文元素 -->
 <div class="bd">
     <ul class="clearfix">
-        <li class="big-grid">
+        <li class="big-grid ">
             <div class="mask">
                 <div class="cicle">
-                    <p class='tag'>{{one.tag}}</p>
+                    <p class="tag">{{one.tag}}</p>
                     <p class="extra-tag">{{one['extra-tag']}}</p>
                 </div>
                 <p class="word">{{one.title}}</p>
@@ -24,7 +13,6 @@
                 <div class="picbox">
                     <img src="{{one.url}}" alt="">
                 </div>
-
             </a>
         </li>
         {{each items}}
@@ -40,6 +28,7 @@
             </a>
         </li>
         {{/each}}
+        
         <li class="more-grid">
             <a href="#">
                 <div class="more-info">
@@ -52,6 +41,7 @@
                     <a href="#">{{$value}}</a> |
                     {{/each}}
                     
+
                 </div>
             </a>
         </li>

@@ -5,8 +5,7 @@
     const menu_content_ele = document.querySelector(".banner .center .menu-content")
     var ele = document.querySelector(".banner .center");
     // 这里必须使用onmouseover事件监听 因为onmouseenter 不冒泡
-
-    banner_nav_ul.onmouseover = function (e) {
+    banner_nav_ul.addEventListener('mouseenter', (e) => {
         console.log("鼠标移入事件");
         if (e.target.tagName.toLowerCase() == 'li') {
             var t = e.target.getAttribute("data-key");
@@ -32,6 +31,9 @@
             }
             console.log(menu_content_lis);
         }
+    }, true);
+    banner_nav_ul.onmouseover = function (e) {
+
     }
     // 当鼠标移出菜单区域的时候，要清除掉所有的current类
     ele.onmouseleave = function () {

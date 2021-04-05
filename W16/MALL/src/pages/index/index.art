@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>慕云游商城-机票\酒店\高铁\旅游攻略</title>
-
     <meta name="Keywords" content="机票">
     <meta name="Description" content="jipiao">
 </head>
@@ -28,16 +27,11 @@
         <div class="center">
             {{include './components/slider/btn.art'}}
             <!-- menu 一級菜單 -->
-
             <ul class="menu" id="banner_nav_ul">
             </ul>
             <!-- menu 二级菜单 -->
             <ul class='menu-content' id='menu-content'>
-                <li>
-                    <% include('../../components/loading/loading.art',{ inline:true,text:"请君稍后" })%>
-                </li>
             </ul>
-
         </div>
     </section>
     <!-- 热门广告:四张图片 -->
@@ -54,7 +48,6 @@
     <!-- 机酒自由行区域 -->
     <section class="jjzyx content-part common-style">
         <div class="center">
-            {{include './components/jjzyx/jjzyx.art'}}
         </div>
     </section>
     <!-- 当地玩乐区域,小标题与机酒自由行样式相同,可以借鉴 -->

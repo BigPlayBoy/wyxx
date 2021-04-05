@@ -1,13 +1,17 @@
 import './xxsw.css';
 import {XXSW_URL} from 'api/mall_url.config.js';
-import {getData} from 'api/getData';
-import render from './xxsw.art';
+import {getData,getDelayedData} from 'api/getData';
+import renderHd from './xxsw-hd.art';
+import renderBd from './xxsw-bd.art';
 const xxsw_field=document.querySelector('.fresh .center');
-getData(XXSW_URL).then(data=>{
+xxsw_field.innerHTML=renderHd();
 
+getDelayedData(XXSW_URL).then(data=>{
+console.log("新鲜甩尾获取的数据");
     // console.log(data);
     // console.log(render(data));
-    xxsw_field.innerHTML=render(data);
+    const xxswBd=document.querySelector('.fresh .center .bd');
+    xxswBd.innerHTML=renderBd(data);
 }
 ).catch(err=>{
     console.error(err);

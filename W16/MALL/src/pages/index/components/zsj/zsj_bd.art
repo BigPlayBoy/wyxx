@@ -1,21 +1,10 @@
-<!-- 本区域顶部元素 -->
-<div class="hd clearfix">
-    <h2>跟团/半自助游</h2>
-    <em>旅游需要好的选择，踏实省心</em>
-    <nav>
-        <ul class="clearfix">
-            <li class="current"><a href="#">半自助游</a></li>
-            <li class=""><a href="#">城市CityWalk</a></li>
-        </ul>
-    </nav>
-</div>
 <!-- 图文元素 -->
 <div class="bd">
     <ul class="clearfix">
-        <li class="big-grid ">
+        <li class="big-grid">
             <div class="mask">
                 <div class="cicle">
-                    <p class="tag">{{one.tag}}</p>
+                    <p class='tag'>{{one.tag}}</p>
                     <p class="extra-tag">{{one['extra-tag']}}</p>
                 </div>
                 <p class="word">{{one.title}}</p>
@@ -24,6 +13,7 @@
                 <div class="picbox">
                     <img src="{{one.url}}" alt="">
                 </div>
+
             </a>
         </li>
         {{each items}}
@@ -39,7 +29,6 @@
             </a>
         </li>
         {{/each}}
-        
         <li class="more-grid">
             <a href="#">
                 <div class="more-info">
@@ -52,7 +41,6 @@
                     <a href="#">{{$value}}</a> |
                     {{/each}}
                     
-
                 </div>
             </a>
         </li>

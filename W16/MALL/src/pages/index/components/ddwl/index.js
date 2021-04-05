@@ -1,11 +1,14 @@
 import './ddwl.css';
 import {DDWL_URL} from 'api/mall_url.config.js';
-import {getData} from 'api/getData';
-import render from './ddwl.art';
+import {getData,getDelayedData} from 'api/getData';
+import renderHd from './ddwl_hd.art';
+import renderBd from './ddwl_bd.art';
 const ddwl_field=document.querySelector('.ddwl .center');
-getData(DDWL_URL).then(data=>{
+ddwl_field.innerHTML=renderHd();
+getDelayedData(DDWL_URL).then(data=>{
     console.log(data);
-    ddwl_field.innerHTML=render(data);
+    const ddwl_bd=ddwl_field.querySelector('.bd');
+    ddwl_bd.innerHTML=renderBd(data);
 }).catch(err=>{
     console.error(err);
 });

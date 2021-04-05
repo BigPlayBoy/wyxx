@@ -1,0 +1,16 @@
+<!-- 本区域顶部元素 -->
+<div class="hd clearfix">
+    <h2>跟团/半自助游</h2>
+    <em>旅游需要好的选择，踏实省心</em>
+    <nav>
+        <ul class="clearfix">
+            <li class="current"><a href="#">半自助游</a></li>
+            <li class=""><a href="#">城市CityWalk</a></li>
+        </ul>
+    </nav>
+</div>
+<!-- 图文元素 -->
+<div class="bd">
+    <% include('../../../../components/loading/loading.art',{ inline:true,text:"跟团游/半自助游内容正在加载中" })%>
+    
+</div>

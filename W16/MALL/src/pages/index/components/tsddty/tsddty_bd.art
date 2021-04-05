@@ -1,7 +1,3 @@
-<div class="hd">
-    <h2>特色当地体验</h2>
-
-</div>
 <div class="bd">
     <ul class="clearfix">
         {{each $data}}
